@@ -1,0 +1,13 @@
+{
+  "plugins": {
+    "postcss-import": {},
+    "postcss-preset-env": {},
+    "postcss-css-variables": {},
+    "postcss-calc": {},
+    "postcss-mq-last": {},
+    "css-mqgroup": {
+      "sort": true
+    },
+    "postcss-normalize": {}
+  }
+}

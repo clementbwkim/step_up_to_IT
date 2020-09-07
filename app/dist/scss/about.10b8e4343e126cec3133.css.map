@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///app/src/scss/about.scss"],"names":[],"mappings":"AAAA,UACE,WACA,YACA,yB","file":"scss/about.10b8e4343e126cec3133.css","sourcesContent":["html, body {\n  width: 100%;\n  height: 100%;\n  border: 5px solid steelblue;\n}"],"sourceRoot":""}
