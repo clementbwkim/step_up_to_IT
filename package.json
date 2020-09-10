@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js --progress --colors --watch"
+    "dev": "webpack-dev-server --config webpack.dev.js --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/uoon-dev/webpack-boilerplate#readme",
   "dependencies": {
     "install": "^0.13.0",
+    "jquery": "^3.5.1",
     "npm": "^6.13.4",
     "reset-css": "^5.0.1"
   },

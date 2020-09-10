@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///app/src/scss/index.scss"],"names":[],"mappings":"AAEA,UACE,WACA,YACA,kBALM,CAMN,wB","file":"scss/index.3f330794d78b2f19966e.css","sourcesContent":["$black: steelblue;\n\nhtml, body {\n  width: 100%;\n  height: 100%;\n  background: $black;\n  border: 10px solid green;\n}"],"sourceRoot":""}

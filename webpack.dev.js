@@ -9,7 +9,8 @@ const phase1 = merge.smartStrategy({plugins: 'prepend'})(common, {
   mode: 'development',
   devServer: {
     contentBase: distDir,
-    hot: true,
+    // inline: true,
+    // hot: true,
     host: "localhost",
     compress: true,
     port: 9000
