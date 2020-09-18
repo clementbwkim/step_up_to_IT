@@ -1,25 +1,25 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 const path = require('path');
 const distDir = path.resolve(__dirname, 'app/dist');
 const srcDir = path.resolve(__dirname, 'app/src');
 
 module.exports = {
-  entry: { 
+  entry: {
     index: [
-      path.resolve(srcDir, 'js/index.js'), 
-      path.resolve(srcDir, 'scss/index.scss')
+      path.resolve(srcDir, 'js/index.js'),
+      path.resolve(srcDir, 'scss/index.scss'),
     ],
     about: [
-      path.resolve(srcDir, 'js/about.js'), 
-      path.resolve(srcDir, 'scss/about.scss')
+      path.resolve(srcDir, 'js/about.js'),
+      path.resolve(srcDir, 'scss/about.scss'),
     ],
     test: [
-      path.resolve(srcDir, 'js/test.js'), 
-      path.resolve(srcDir, 'scss/test.scss'), 
-    ]
+      path.resolve(srcDir, 'js/test.js'),
+      path.resolve(srcDir, 'scss/test.scss'),
+    ],
   },
   output: {
     path: distDir,
@@ -30,32 +30,37 @@ module.exports = {
     rules: [
       { parser: { system: false } },
       {
-          test: /\.js$/,
-          use: {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"]
-            }            
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
           },
-          exclude: /node_modules/
+        },
+        exclude: /node_modules/,
       },
-      { 
+      {
         test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", {
-          loader: 'postcss-loader',
-          // options: {
-          //   plugins: () => [require('autoprefixer')({
-          //     'browsers': ['> 1%', 'last 2 versions']
-          //   })],
-          // }
-        }]
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'postcss-loader',
+            // options: {
+            //   plugins: () => [require('autoprefixer')({
+            //     'browsers': ['> 1%', 'last 2 versions']
+            //   })],
+            // }
+          },
+        ],
       },
-      { 
-        test: /\.html$/, 
+      {
+        test: /\.html$/,
         loader: 'html-loader',
         options: {
           interpolate: true,
-        }
+        },
       },
       {
         test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -64,14 +69,16 @@ module.exports = {
             loader: 'url-loader',
             options: {
               esModule: false,
-              limit: 10000
-            },            
-          }
-        ]
-      }
-    ]
+              limit: 10000,
+              publicPath: '../',
+              useRelativePaths: true,
+            },
+          },
+        ],
+      },
+    ],
   },
-  plugins: [    
+  plugins: [
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(srcDir, 'index.html'),
@@ -92,14 +99,24 @@ module.exports = {
     }),
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: "scss/[name].[chunkhash].css",
+      filename: 'scss/[name].[chunkhash].css',
     }),
   ],
   resolve: {
     modules: ['node_modules', srcDir],
     alias: {
-      '~scss': path.resolve(__dirname, 'app/src/scss/')
+      '~scss': path.resolve(__dirname, 'app/src/scss/'),
     },
-    extensions: [".wasm", ".mjs", ".js", ".jsx", ".ts", ".tsx", ".json", '.scss', '.css']
+    extensions: [
+      '.wasm',
+      '.mjs',
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.json',
+      '.scss',
+      '.css',
+    ],
   },
 };
