@@ -1,8 +1,12 @@
 @import './includes/_config.scss';
-//변수 설정
+
 %btn-design {
   border: 1px solid $black;
   padding: 8px 23px;
+}
+%burger-menu-ul-gap {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .container {
@@ -17,6 +21,7 @@
     padding: 0 40px;
     position: relative;
     height: 70px;
+    font-family: $gothic;
 
     .header-navigation-items {
       display: flex;
@@ -58,6 +63,78 @@
     }
     .header-icon-item .menu-bar-line:nth-child(2) {
       margin: 6px 0;
+    }
+  }
+
+  .burger-menu-container {
+    display: none;
+    width: 490px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+
+    .burger-menu-close-icon {
+      position: absolute;
+      top: 27px;
+      right: 30px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .burger-menu-navigation {
+      margin: 0 24px;
+      padding-top: 40px;
+      height: 80%;
+      overflow: hidden scroll;
+    }
+
+    .burger-menu-navigation .burger-menu-category-items {
+      @extend %burger-menu-ul-gap;
+      border-bottom: 1px solid $light-grey;
+      font-size: $fs-burger;
+      font-family: $lora;
+
+      .burger-menu-category-item {
+        margin-bottom: $mb-8;
+      }
+    }
+
+    .burger-menu-navigation .burger-menu-main-items {
+      @extend %burger-menu-ul-gap;
+      border-bottom: 4px solid #000;
+      font-size: $fs-burger;
+      font-family: $lora;
+
+      .burger-menu-main-item {
+        margin-bottom: $mb-8;
+      }
+    }
+    .burger-menu-navigation .burger-menu-sns-items {
+      margin-bottom: 25px;
+      font-family: $light-gothic;
+
+      .burger-menu-sns-item {
+        padding: 0;
+        margin: 0 0 4px;
+      }
+    }
+
+    .burger-menu-btn-items {
+      margin: 0 24px;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      text-align: center;
+      font-family: $gothic;
+
+      .burger-menu-btn-item {
+        border: 1px solid #222;
+        padding: 8px 23px;
+        flex: 1;
+        margin-right: 5px;
+      }
     }
   }
 }
