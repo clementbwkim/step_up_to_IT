@@ -1,21 +1,25 @@
 import $ from 'jquery';
 
-(() => {
-  const handleLogo = () => {
-    const logo = document.querySelector('.main-img-title img');
-    const scrollMax = 95;
-    // scaleX / 95;
-    let scaleX = 3.5;
-    let scaleY = 3.5;
-    let translateY = 112;
+const searchOpenIcon = document.querySelector('.header-icon-item.search');
+const searchContainer = document.querySelector('.search-container');
+const searchCloseIcon = document.querySelector('.search-close-icon');
 
-    // (scaleX / window.scrollY) * 95;
+const burgerMenuOpenIcon = document.querySelector('.header-icon-item.burger');
+const burgerMenuContainer = document.querySelector('.burger-menu-container');
+const burgerMenuCloseIcon = document.querySelector('.burger-menu-close-icon');
 
-    if (window.scrollY === 0) return;
+searchOpenIcon.addEventListener('click', function () {
+  searchContainer.classList.remove('hidden');
+});
 
-    logo.style.transform = `matrix(3.5,0,0, 3.5, 0 112)`;
-  };
+searchCloseIcon.addEventListener('click', function () {
+  searchContainer.classList.add('hidden');
+});
 
-  // ${scaleX - (scaleX / window.scrollY * scrollMax)}, 0, 0, ${scaleY -(scaleY / window.scrollY * scrollMax)}
-  window.addEventListener('scroll', handleLogo);
-})();
+burgerMenuOpenIcon.addEventListener('click', function () {
+  burgerMenuContainer.classList.remove('hidden');
+});
+
+burgerMenuCloseIcon.addEventListener('click', function () {
+  burgerMenuContainer.classList.add('hidden');
+});
