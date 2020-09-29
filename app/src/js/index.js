@@ -25,11 +25,9 @@ function burgerHiddenAdd() {
 
 function handleLogo() {
   const scrollMax = 95;
-  // scaleX / 95;
   let scaleX = 3.5;
   let scaleY = 3.5;
   let translateY = 112;
-  // (scaleX / window.scrollY) * 95;
 
   if (window.scrollY === 0) {
     console.log(1111);
