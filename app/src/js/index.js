@@ -9,6 +9,11 @@ const burgerMenuContainer = document.querySelector('.burger-menu-container');
 const burgerMenuCloseIcon = document.querySelector('.burger-menu-close-icon');
 const logo = document.querySelector('.header-logo-items');
 
+const scrollMax = 95;
+let scaleX = 3.5;
+let scaleY = 3.5;
+let translateY = 112;
+
 function searchHiddenOff() {
   searchContainer.classList.remove('hidden');
   document.querySelector('.search-input-bar').focus();
@@ -24,11 +29,6 @@ function burgerHiddenAdd() {
 }
 
 function handleLogo() {
-  const scrollMax = 95;
-  let scaleX = 3.5;
-  let scaleY = 3.5;
-  let translateY = 112;
-
   if (window.scrollY === 0) {
     console.log(1111);
     logo.style.transform = `matrix(3.5,0,0, 3.5, 0, 112)`;
