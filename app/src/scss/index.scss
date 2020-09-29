@@ -22,10 +22,12 @@
 
   .header-container {
     display: flex;
+    box-sizing: border-box;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    position: relative;
+    position: fixed;
     height: 70px;
     font-family: $gothic;
 
@@ -54,6 +56,8 @@
 
       .header-logo-items {
         width: 170px;
+        max-width: 800px;
+        transform: matrix(3.5, 0, 0, 3.5, 0, 112);
       }
     }
 
@@ -63,17 +67,17 @@
       .header-icon-item {
         margin-left: 20px;
         cursor: pointer;
-      }
-    }
 
-    .header-icon-items .header-icon-item .menu-bar-line {
-      display: block;
-      width: 30px;
-      height: 2px;
-      background: $black;
-    }
-    .header-icon-item .menu-bar-line:nth-child(2) {
-      margin: 6px 0;
+        .menu-bar-line {
+          display: block;
+          width: 30px;
+          height: 2px;
+          background: $black;
+        }
+      }
+      .menu-bar-line:nth-child(2) {
+        margin: 6px 0;
+      }
     }
   }
 
@@ -84,11 +88,15 @@
     top: 0;
     background: $white;
     z-index: 1;
+    position: fixed;
+    opacity: 1;
+    transition: all 0.3s ease;
 
     &.hidden {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
-
     .search-close-icon {
       position: absolute;
       font-size: 30px;
@@ -107,14 +115,15 @@
 
       .search-input-content {
         margin-bottom: 50px;
+        .search-input-bar {
+          border: 0;
+          border-bottom: 1px solid #222;
+          width: 60%;
+          padding: 12px 0;
+          outline: none;
+        }
       }
-      .search-input-content .search-input-bar {
-        border: 0;
-        border-bottom: 1px solid #222;
-        width: 60%;
-        padding: 12px 0;
-        outline: none;
-      }
+
       .search-categories {
         margin-bottom: 10px;
         font-size: $fs-13;
@@ -137,13 +146,14 @@
         .search-category-item a:hover {
           border-bottom: 1px solid $black;
         }
-      }
-      .search-category-items .search-category-item::after {
-        content: '/';
-        padding: 0 6px;
-      }
-      .search-category-items .search-category-item:last-child::after {
-        content: '';
+
+        .search-category-item::after {
+          content: '/';
+          padding: 0 6px;
+        }
+        .search-category-item:last-child::after {
+          content: '';
+        }
       }
     }
   }
@@ -155,7 +165,7 @@
     top: 0;
     right: 0;
     background: #fff;
-
+    transition: width ease 0.5s;
     /* width */
     ::-webkit-scrollbar {
       width: 8px;
@@ -179,7 +189,10 @@
     }
 
     &.hidden {
-      display: none;
+      width: 0;
+      right: 0;
+      overflow: hidden;
+      transition: width ease 0.5s;
     }
 
     .burger-menu-close-icon {
