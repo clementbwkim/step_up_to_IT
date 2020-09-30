@@ -30,6 +30,8 @@
   position: fixed;
   height: 70px;
   font-family: $gothic;
+  background: $white;
+  z-index: 2;
 
   .header-navigation-items {
     display: flex;
@@ -82,12 +84,11 @@
 }
 
 .search-container {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   background: $white;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   opacity: 1;
   transition: all 0.3s ease;
@@ -166,6 +167,7 @@
   right: 0;
   background: #fff;
   transition: width ease 0.5s;
+  z-index: 2;
 
   &.hidden {
     width: 0;
@@ -248,6 +250,303 @@
     }
     .burger-menu-btn-item a:hover {
       @extend %btn-hover;
+    }
+  }
+}
+
+.main-container {
+  box-sizing: border-box;
+  padding-top: 150px;
+
+  .sub-wrap {
+    padding: 0 20px;
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+
+  .main-banner-container {
+    padding-bottom: 70px;
+  }
+  .main-banner-texts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+    z-index: 1;
+  }
+  .main-banner-texts .main-banner-text.li {
+    margin-bottom: 8px;
+  }
+
+  .main-banner-texts .main-banner-text.h1 {
+    font-size: 75px;
+    font-size: 4.6875rem;
+    text-transform: uppercase;
+  }
+  .main-banner-texts .main-banner-text.p {
+    font-size: 16px;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    margin-top: 30px;
+    line-height: 2;
+  }
+}
+
+.latest-stories-container {
+  .latest-stories-contents {
+    display: flex;
+    margin: 0 20px 100px;
+    flex-wrap: wrap;
+
+    .latest-stories-content {
+      flex: 1 1 50%;
+    }
+    .latest-stories-content.cover {
+      box-sizing: border-box;
+      padding-right: 1.25rem;
+    }
+    .latest-stories-content .cover-texts {
+      text-align: center;
+      padding: 40px;
+    }
+    .latest-stories-content .cover-texts .cover-text.issue {
+      font-size: 60px;
+      font-size: 3.75rem;
+      margin-bottom: 30px;
+    }
+    .latest-stories-content .cover-texts .cover-text.info {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 1.2;
+    }
+    .latest-stories-content.stories {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 12px;
+
+      .latest-story-items {
+        flex: 1 1 33%;
+        padding-left: 1.25rem;
+        box-sizing: border-box;
+        margin-bottom: 100px;
+      }
+      .latest-story-item .latest-story-item-img {
+        margin-bottom: 7px;
+      }
+      .latest-story-item
+        .latest-story-item-texts
+        .latest-story-item-text.links {
+        margin-bottom: 12px;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          letter-spacing: 2px;
+        }
+        ul li {
+          line-height: 1.4;
+        }
+        ul li::after {
+          content: ', ';
+        }
+        ul li:last-child::after {
+          content: '';
+        }
+      }
+      .latest-story-item
+        .latest-story-item-texts
+        .latest-story-item-text.title {
+        font-size: 17px;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+      .latest-story-item .latest-story-item-texts .latest-story-item-text.info {
+        line-height: 1.5;
+        font-size: 15px;
+        font-size: 0.9375rem;
+      }
+    }
+
+    .latest-stories-contents-btn {
+      width: 100vw;
+      text-align: center;
+    }
+    .latest-stories-contents-btn .all-stories {
+      border: 1px solid $black;
+      padding: 8px 23px;
+      transition: 0.5s;
+    }
+    .latest-stories-contents-btn .all-stories:hover {
+      background: $black;
+      color: $white;
+      transition: 0.5s;
+    }
+  }
+}
+
+.art-and-culture-recommendation-container {
+  .art-and-culture-contents {
+    border-top: 1px solid #222;
+    margin-bottom: 100px;
+
+    .art-and-culture-content {
+      display: flex;
+      padding-top: 50px;
+      margin: 0 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .art-and-culture-content .art-and-culture-texts {
+      flex: 2 1 0;
+
+      .title-text {
+        font-size: 75px;
+        font-size: 4.6875rem;
+        height: 395px;
+      }
+      .intro-text {
+        line-height: 1.4;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    .art-and-culture-content .art-and-culture-img {
+      flex: 1 1 0;
+    }
+  }
+}
+.parachute-ad-container {
+  .parachute-ad-contents {
+    display: block;
+    margin-bottom: 100px;
+
+    .parachute-ad-content {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      background: url(../img/parachute.jpg) no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  }
+}
+
+.current-issues-container {
+  .current-issues-header {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .current-issues-main {
+    .current-issues-contents {
+      display: flex;
+    }
+  }
+  .current-issues-footer {
+    margin: 0 20px 100px;
+    padding-bottom: 30px;
+
+    .current-issues-from {
+      margin: 35px 250px 70px;
+      text-align: center;
+    }
+    .current-issues-buy {
+      text-align: center;
+    }
+    .current-issues-buy .current-issues-buy-btn {
+      border: 1px solid #222;
+      padding: 8px 23px;
+      transition: 0.5s;
+    }
+    .current-issues-buy .current-issues-buy-btn:hover {
+      background: $black;
+      color: $white;
+      transition: 0.5s;
+    }
+  }
+}
+
+.selected-stories-container {
+  .selected-stories-contents {
+    border-top: 1px solid #222;
+    padding-top: 50px;
+    margin: 0 20px;
+  }
+  .selected-stories-contents .selected-stories-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .selected-stories-contents .selected-stories-content {
+    display: flex;
+
+    .selected-story-items {
+      flex: 1 1 0;
+      padding: 0 0.67rem;
+      box-sizing: border-box;
+      margin-bottom: 100px;
+    }
+    .selected-story-item .selected-story-item-img {
+      margin-bottom: 7px;
+    }
+    .selected-story-item
+      .selected-story-item-texts
+      .selected-story-item-text.links {
+      margin-bottom: 12px;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+      ul li {
+        line-height: 1.4;
+      }
+      ul li::after {
+        content: ', ';
+      }
+      ul li:last-child::after {
+        content: '';
+      }
+    }
+    .selected-story-item
+      .selected-story-item-texts
+      .selected-story-item-text.title {
+      font-size: 17px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .selected-story-item
+      .selected-story-item-texts
+      .selected-story-item-text.info {
+      line-height: 1.5;
+      font-size: 15px;
+      font-size: 0.9375rem;
+    }
+  }
+}
+
+.new-announcement-container {
+  .new-announcement-content-items {
+    position: relative;
+    margin-bottom: 100px;
+  }
+  .new-announcement-content-items .new-announcement-content-item.texts {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 1.5;
+    width: 80%;
+    max-width: 800px;
+    color: $white;
+
+    .new-announcement-content-item-title {
+      font-size: 90px;
+      font-size: 5.625rem;
     }
   }
 }
