@@ -1,5 +1,9 @@
 import $ from 'jquery';
 
+import 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 const searchOpenIcon = document.querySelector('.header-icon-item.search');
 const searchContainer = document.querySelector('.search-container');
 const searchCloseIcon = document.querySelector('.search-close-icon');
@@ -45,3 +49,34 @@ searchCloseIcon.addEventListener('click', searchHiddenAdd);
 burgerMenuOpenIcon.addEventListener('click', burgerHiddenOff);
 burgerMenuCloseIcon.addEventListener('click', burgerHiddenAdd);
 window.addEventListener('scroll', handleLogo);
+
+$(function () {
+  $('.current-issues-contents').slick({
+    centerMode: true,
+    infinite: true,
+    centerPadding: '20px',
+    slidesToShow: 3,
+    speed: 500,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
+});
