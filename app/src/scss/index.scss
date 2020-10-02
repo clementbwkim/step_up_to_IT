@@ -256,7 +256,6 @@
 
 .main-container {
   box-sizing: border-box;
-  padding-top: 150px;
 
   .sub-wrap {
     padding: 0 20px;
@@ -275,7 +274,7 @@
     text-align: center;
     color: #fff;
     line-height: 1;
-    z-index: 1;
+    z-index: 100;
   }
   .main-banner-texts .main-banner-text.li {
     margin-bottom: 8px;
@@ -302,7 +301,7 @@
     flex-wrap: wrap;
 
     .latest-stories-content {
-      flex: 1 1 50%;
+      width: 50%;
     }
     .latest-stories-content.cover {
       box-sizing: border-box;
@@ -326,9 +325,20 @@
       display: flex;
       flex-wrap: wrap;
       font-size: 12px;
+      height: 950px;
+      overflow-y: scroll;
+
+      ::-webkit-scrollbar {
+      }
+
+      ::-webkit-scrollbar-track {
+      }
+
+      ::-webkit-scrollbar-thumb {
+      }
 
       .latest-story-items {
-        flex: 1 1 33%;
+        width: 33%;
         padding-left: 1.25rem;
         box-sizing: border-box;
         margin-bottom: 100px;
@@ -371,8 +381,9 @@
     }
 
     .latest-stories-contents-btn {
-      width: 100vw;
+      width: 100%;
       text-align: center;
+      padding-top: 90px;
     }
     .latest-stories-contents-btn .all-stories {
       border: 1px solid $black;
@@ -385,6 +396,16 @@
       transition: 0.5s;
     }
   }
+}
+.slick-prev:before {
+  left: 0;
+  content: url(../img/left-arrow.png);
+  z-index: 1;
+}
+.slick-next::before {
+  right: 0;
+  content: url(../img/right-arrow.png);
+  z-index: 1;
 }
 
 .art-and-culture-recommendation-container {
@@ -400,8 +421,7 @@
       position: relative;
     }
     .art-and-culture-content .art-and-culture-texts {
-      flex: 2 1 0;
-
+      width: 70%;
       .title-text {
         font-size: 75px;
         font-size: 4.6875rem;
@@ -414,7 +434,7 @@
       }
     }
     .art-and-culture-content .art-and-culture-img {
-      flex: 1 1 0;
+      width: 30%;
     }
   }
 }
@@ -439,9 +459,18 @@
     text-align: center;
     margin-bottom: 100px;
   }
+
   .current-issues-main {
     .current-issues-contents {
-      display: flex;
+      width: 85%;
+      height: 350px;
+      margin: 0 auto;
+
+      .current-issues-content {
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+      }
     }
   }
   .current-issues-footer {
@@ -547,6 +576,102 @@
     .new-announcement-content-item-title {
       font-size: 90px;
       font-size: 5.625rem;
+    }
+  }
+}
+
+.popular-container {
+  .popular-contents {
+    border-top: 1px solid #222;
+    padding-top: 50px;
+    margin: 0 20px;
+
+    .popular-content-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .popular-content-items {
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-bottom: 30px;
+
+      .popular-content-item-wrapper {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 0 20px;
+        .popular-content-item {
+          display: flex;
+          margin-bottom: 80px;
+          .popular-content-item-img {
+            margin-bottom: 7px;
+            width: 220px;
+            min-width: 220px;
+          }
+          .popular-content-item-texts {
+            padding-left: 35px;
+
+            .popular-content-item-text-list {
+              margin-bottom: 15px;
+
+              ul {
+                display: flex;
+                flex-wrap: wrap;
+              }
+              ul li {
+                line-height: 1.4;
+              }
+              ul li::after {
+                content: ',';
+                padding-right: 5px;
+              }
+              ul li:last-child::after {
+                content: '';
+              }
+            }
+
+            .popular-content-item-text-title {
+              margin-bottom: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .popular-content-newsletter {
+    text-align: center;
+    margin: 0 20px;
+    padding-bottom: 30px;
+
+    h2 {
+      margin-bottom: 55px;
+    }
+    .popular-content-newsletter-contents {
+      .popular-content-newletter-input-container {
+        border-bottom: 1px solid #222222;
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+
+        input {
+          border: 0;
+          background: none;
+          cursor: pointer;
+        }
+        input[type='text']::placeholder {
+          text-align: left;
+        }
+      }
+      .popular-content-newsletter-checkbox-container {
+        .popular-content-newsletter-checkbox-contents {
+          display: flex;
+          justify-content: center;
+        }
+      }
     }
   }
 }
