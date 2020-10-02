@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const searchOpenIcon = document.querySelector('.header-icon-item.search');
 const searchContainer = document.querySelector('.search-container');
 const searchCloseIcon = document.querySelector('.search-close-icon');
+const searchInputBar = document.querySelector('.search-input-bar');
 
 const burgerMenuOpenIcon = document.querySelector('.header-icon-item.burger');
 const burgerMenuContainer = document.querySelector('.burger-menu-container');
@@ -20,7 +21,7 @@ let translateY = 112;
 
 function searchHiddenOff() {
   searchContainer.classList.remove('hidden');
-  document.querySelector('.search-input-bar').focus();
+  searchInputBar.focus();
 }
 function searchHiddenAdd() {
   searchContainer.classList.add('hidden');

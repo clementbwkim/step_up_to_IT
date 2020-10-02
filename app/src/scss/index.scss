@@ -256,6 +256,7 @@
 
 .main-container {
   box-sizing: border-box;
+  padding-top: 150px;
 
   .sub-wrap {
     padding: 0 20px;
@@ -274,7 +275,7 @@
     text-align: center;
     color: #fff;
     line-height: 1;
-    z-index: 100;
+    z-index: 1;
   }
   .main-banner-texts .main-banner-text.li {
     margin-bottom: 8px;
@@ -354,13 +355,14 @@
         ul {
           display: flex;
           flex-wrap: wrap;
-          letter-spacing: 2px;
+          font-size: 12px;
         }
         ul li {
           line-height: 1.4;
         }
         ul li::after {
           content: ', ';
+          padding-right: 5px;
         }
         ul li:last-child::after {
           content: '';
@@ -618,6 +620,7 @@
               ul {
                 display: flex;
                 flex-wrap: wrap;
+                font-size: 12px;
               }
               ul li {
                 line-height: 1.4;
@@ -633,6 +636,10 @@
 
             .popular-content-item-text-title {
               margin-bottom: 12px;
+            }
+            .popular-content-item-text-intro {
+              color: $grey;
+              line-height: 1.3;
             }
           }
         }
@@ -669,7 +676,9 @@
       .popular-content-newsletter-checkbox-container {
         .popular-content-newsletter-checkbox-contents {
           display: flex;
-          justify-content: center;
+          width: 35%;
+          margin: 0 auto;
+          justify-content: space-around;
         }
       }
     }
