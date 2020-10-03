@@ -10,6 +10,10 @@
   background: $black;
   color: #fff;
 }
+%footer-hover {
+  color: $light-grey;
+  transition: all 0.5s ease;
+}
 %burger-menu-ul-gap {
   margin-bottom: 30px;
   padding-bottom: 30px;
@@ -43,7 +47,7 @@
       .subscribe {
         display: inline-block;
         @extend %btn-design;
-        transition: 0.5s;
+        transition: all 1s ease;
       }
       .subscribe:hover {
         @extend %btn-hover;
@@ -390,14 +394,16 @@
     .latest-stories-contents-btn .all-stories {
       border: 1px solid $black;
       padding: 8px 23px;
-      transition: 0.5s;
+      transition: all 1s ease;
     }
     .latest-stories-contents-btn .all-stories:hover {
-      background: $black;
-      color: $white;
-      transition: 0.5s;
+      @extend %btn-hover;
     }
   }
+}
+.slick-prev.slick-arrow,
+.slick-next.slick-arrow {
+  top: 40%;
 }
 .slick-prev:before {
   left: 0;
@@ -472,6 +478,9 @@
         width: 300px;
         height: 300px;
         display: inline-block;
+        img {
+          height: 100%;
+        }
       }
     }
   }
@@ -489,12 +498,10 @@
     .current-issues-buy .current-issues-buy-btn {
       border: 1px solid #222;
       padding: 8px 23px;
-      transition: 0.5s;
+      transition: all 1s ease;
     }
     .current-issues-buy .current-issues-buy-btn:hover {
-      background: $black;
-      color: $white;
-      transition: 0.5s;
+      @extend %btn-hover;
     }
   }
 }
@@ -663,23 +670,73 @@
         width: 50%;
         margin: 0 auto;
         margin-bottom: 15px;
-
-        input {
+        .popular-content-newletter-input-text {
+          width: 100%;
+          border: 0;
+          background: none;
+        }
+        .popular-content-newletter-input-text::placeholder {
+          text-align: left;
+        }
+        .popular-content-newletter-input-submit {
           border: 0;
           background: none;
           cursor: pointer;
-        }
-        input[type='text']::placeholder {
-          text-align: left;
         }
       }
       .popular-content-newsletter-checkbox-container {
         .popular-content-newsletter-checkbox-contents {
           display: flex;
-          width: 35%;
+          width: 25%;
           margin: 0 auto;
-          justify-content: space-around;
+          justify-content: space-between;
         }
+      }
+    }
+  }
+}
+
+.footer-container {
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin-top: 200px;
+
+  .footer-contents {
+    border-top: 4px solid #222;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    .footer-content-company-info {
+      height: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      span {
+        margin-right: 15px;
+      }
+      .terms {
+        margin-right: 15px;
+      }
+      a:hover {
+        @extend %footer-hover;
+      }
+    }
+    .footer-content-sns {
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        li {
+          margin-right: 15px;
+        }
+        li a:hover {
+          @extend %footer-hover;
+        }
+      }
+    }
+    .footer-content-extra-info {
+      a:hover {
+        @extend %footer-hover;
       }
     }
   }
