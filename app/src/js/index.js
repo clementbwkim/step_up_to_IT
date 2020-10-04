@@ -4,6 +4,10 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+var screenSize = {
+  tablet: 768,
+};
+
 const searchOpenIcon = document.querySelector('.header-icon-item.search');
 const searchContainer = document.querySelector('.search-container');
 const searchCloseIcon = document.querySelector('.search-close-icon');
@@ -49,7 +53,6 @@ searchOpenIcon.addEventListener('click', searchHiddenOff);
 searchCloseIcon.addEventListener('click', searchHiddenAdd);
 burgerMenuOpenIcon.addEventListener('click', burgerHiddenOff);
 burgerMenuCloseIcon.addEventListener('click', burgerHiddenAdd);
-window.addEventListener('scroll', handleLogo);
 
 $(function () {
   $('.current-issues-contents').slick({
@@ -81,3 +84,7 @@ $(function () {
     ],
   });
 });
+
+if (window.innerWidth > screenSize.tablet) {
+  window.addEventListener('scroll', handleLogo);
+}
