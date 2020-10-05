@@ -292,7 +292,7 @@ $media-lists: (
   }
   .main-banner-texts {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -735,7 +735,6 @@ $media-lists: (
 .footer-container {
   padding: 0 40px;
   box-sizing: border-box;
-  margin-top: 200px;
 
   .footer-contents {
     border-top: 4px solid #222;

@@ -83,12 +83,12 @@ $(function () {
       },
     ],
   });
-  if (screenSize.large) {
+  if (window.innerWidth === screenSize.large) {
     $('.selected-stories-content').slick({
       centerMode: true,
       infinite: true,
       centerPadding: '10%',
-      slidesToShow: 2,
+      slidesToShow: 3,
       speed: 500,
       variableWidth: false,
       arrows: false,
