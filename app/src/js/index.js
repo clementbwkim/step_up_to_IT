@@ -5,7 +5,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 var screenSize = {
+  large: 1024,
   tablet: 768,
+  small: 546,
 };
 
 const searchOpenIcon = document.querySelector('.header-icon-item.search');
@@ -39,11 +41,9 @@ function burgerHiddenAdd() {
 
 function handleLogo() {
   if (window.scrollY === 0) {
-    console.log(1111);
-    logo.style.transform = `matrix(3.5,0,0, 3.5, 0, 112)`;
+    logo.style.transform = `matrix(${scaleX},0,0, ${scaleY}, 0, ${translateY})`;
     logo.style.transition = `all .3s ease`;
   } else {
-    console.log(222);
     logo.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
     logo.style.transition = `all .3s ease`;
   }
@@ -58,18 +58,18 @@ $(function () {
   $('.current-issues-contents').slick({
     centerMode: true,
     infinite: true,
-    centerPadding: '20px',
-    slidesToShow: 3,
+    centerPadding: '20%',
+    slidesToShow: 1,
     speed: 500,
     variableWidth: false,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           arrows: false,
+          centerPadding: '10%',
           centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
       {
@@ -83,8 +83,29 @@ $(function () {
       },
     ],
   });
+  if (screenSize.large) {
+    $('.selected-stories-content').slick({
+      centerMode: true,
+      infinite: true,
+      centerPadding: '10%',
+      slidesToShow: 2,
+      speed: 500,
+      variableWidth: false,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 545,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 2,
+          },
+        },
+      ],
+    });
+  }
 });
 
-if (window.innerWidth > screenSize.tablet) {
+if (window.innerWidth > screenSize.large) {
   window.addEventListener('scroll', handleLogo);
 }

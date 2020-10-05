@@ -294,7 +294,7 @@ $media-lists: (
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
     line-height: 1;
@@ -420,17 +420,28 @@ $media-lists: (
     }
   }
 }
+
+.slick-slider,
+.slick-list {
+  height: 100%;
+  min-height: 440px;
+}
+
 .slick-prev.slick-arrow,
 .slick-next.slick-arrow {
-  top: 40%;
+  top: 50%;
+}
+.slick-prev {
+  left: -50px;
 }
 .slick-prev:before {
-  left: 0;
   content: url(../img/left-arrow.png);
   z-index: 1;
 }
+.slick-next {
+  right: -50px;
+}
 .slick-next::before {
-  right: 0;
   content: url(../img/right-arrow.png);
   z-index: 1;
 }
@@ -490,7 +501,6 @@ $media-lists: (
   .current-issues-main {
     .current-issues-contents {
       width: 85%;
-      height: 350px;
       margin: 0 auto;
 
       .current-issues-content {
@@ -498,7 +508,7 @@ $media-lists: (
         height: 300px;
         display: inline-block;
         img {
-          height: 100%;
+          height: auto;
         }
       }
     }
@@ -767,8 +777,7 @@ $media-lists: (
     }
   }
 }
-
-@media all and (min-width: $medium-screen-width) and (max-width: 1023px) {
+@media all and (max-width: 1024px) {
   .header-container {
     .header-navigation {
       .header-navigation-items {
@@ -784,20 +793,34 @@ $media-lists: (
       }
     }
   }
-
   .main-container {
     padding-top: 0;
   }
-
   .main-banner-container {
+    .main-banner-img {
+      position: relative;
+      height: 60vh;
+      img {
+        position: absolute;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
     .main-banner-texts {
-      top: 15%;
+      top: 30%;
+      .main-banner-text.h1 {
+        font-size: 50px;
+      }
     }
   }
   .latest-stories-container {
     .latest-stories-contents {
       display: block;
-
+      .latest-stories-content.cover {
+        .cover-img {
+          padding: 70px;
+        }
+      }
       .latest-stories-content {
         width: 100%;
       }
@@ -807,7 +830,25 @@ $media-lists: (
       }
     }
   }
-
+  .art-and-culture-recommendation-container {
+    .art-and-culture-contents {
+      .art-and-culture-content {
+        .art-and-culture-texts {
+          width: 50%;
+          .title-text {
+            font-size: 70px;
+            height: 85%;
+          }
+          .intro-text {
+            position: relative;
+          }
+        }
+        .art-and-culture-img {
+          width: 50%;
+        }
+      }
+    }
+  }
   .parachute-ad-container {
     padding: 0 40px;
 
@@ -817,15 +858,23 @@ $media-lists: (
       }
     }
   }
-
-  .new-announcement-container {
-    .new-announcement-content-item.texts {
-      .new-announcement-content-item-title {
-        font-size: 50px;
+  .current-issues-container {
+    .current-issues-footer {
+      .current-issues-from {
+        margin: 0 30px 50px;
       }
     }
   }
-
+  .new-announcement-container {
+    .new-announcement-contents {
+      .new-announcement-content-item.texts {
+        top: 40%;
+        .new-announcement-content-item-title {
+          font-size: 70px;
+        }
+      }
+    }
+  }
   .popular-container {
     .popular-contents {
       .popular-content-items {
@@ -841,14 +890,75 @@ $media-lists: (
           }
           .popular-content-newsletter-checkbox-container {
             .popular-content-newsletter-checkbox-contents {
-              width: 55%;
+              width: 50%;
+              justify-content: center;
             }
           }
         }
       }
     }
   }
-
+  .footer-container {
+    margin-top: 0;
+    .footer-contents {
+      flex-wrap: wrap;
+      .footer-content-company-info {
+        width: 50%;
+        justify-content: flex-start;
+      }
+      .footer-content-sns {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .footer-content-extra-info {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+@media all and (max-width: 768px) {
+  .art-and-culture-recommendation-container {
+    .art-and-culture-contents {
+      .art-and-culture-content {
+        .art-and-culture-texts {
+          .title-text {
+            font-size: 50px;
+            height: 75%;
+          }
+        }
+      }
+    }
+  }
+  .new-announcement-container {
+    .new-announcement-contents {
+      .new-announcement-content-items {
+        .new-announcement-content-item.img {
+          height: 60vh;
+          img {
+            height: 100%;
+          }
+        }
+        .new-announcement-content-item.texts {
+          .new-announcement-content-item-title {
+            font-size: 50px;
+          }
+        }
+      }
+    }
+  }
+  .popular-container {
+    .popular-contents {
+      .popular-content-newsletter {
+        .popular-content-newsletter-contents {
+          .popular-content-newsletter-checkbox-container {
+            .popular-content-newsletter-checkbox-contents {
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+  }
   .footer-container {
     margin-top: 0;
     .footer-contents {
@@ -864,12 +974,64 @@ $media-lists: (
       }
       .footer-content-sns {
         width: 50%;
+        justify-content: flex-start;
         ul {
           display: block;
         }
       }
       .footer-content-extra-info {
         margin-top: 20px;
+      }
+    }
+  }
+}
+@media all and (max-width: 546px) {
+  .header-container {
+    .header-navigation {
+      .header-navigation-items {
+        display: none;
+      }
+    }
+    .header-icon {
+      .header-icon-item.search {
+        display: none;
+      }
+    }
+  }
+  .main-banner-container {
+    .main-banner-texts {
+      top: 35%;
+      width: 80%;
+    }
+  }
+  .latest-stories-container {
+    .latest-stories-contents {
+      .latest-stories-content.cover {
+        .cover-img {
+          padding: 0;
+        }
+      }
+      .latest-stories-content.stories {
+        .latest-story-items {
+          width: 50%;
+        }
+      }
+    }
+  }
+  .art-and-culture-recommendation-container {
+    .art-and-culture-contents {
+      .art-and-culture-content {
+        display: block;
+        .art-and-culture-texts {
+          width: 100%;
+          .title-text {
+            font-size: 40px;
+            margin: 20px 0;
+          }
+        }
+        .art-and-culture-img {
+          width: 100%;
+        }
       }
     }
   }
