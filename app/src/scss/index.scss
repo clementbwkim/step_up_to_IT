@@ -327,6 +327,15 @@ $media-lists: (
     .latest-stories-content {
       width: 50%;
     }
+
+    .latest-stories-content.spacing-cover {
+      display: block;
+
+      &.hidden {
+        display: none;
+      }
+    }
+
     .latest-stories-content.cover {
       box-sizing: border-box;
       padding-right: 1.25rem;
@@ -350,7 +359,6 @@ $media-lists: (
       flex-wrap: wrap;
       font-size: 12px;
       height: 950px;
-      overflow-y: scroll;
 
       ::-webkit-scrollbar {
       }

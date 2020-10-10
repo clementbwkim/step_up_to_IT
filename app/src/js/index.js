@@ -20,10 +20,6 @@ const burgerMenuContainer = document.querySelector('.burger-menu-container');
 const burgerMenuCloseIcon = document.querySelector('.burger-menu-close-icon');
 const logo = document.querySelector('.header-logo-items');
 
-const scrollMax = 95;
-let scaleX = 3.5;
-let scaleY = 3.5;
-let translateY = 112;
 
 function searchHiddenOff() {
   searchContainer.classList.remove('hidden');
@@ -39,20 +35,52 @@ function burgerHiddenAdd() {
   burgerMenuContainer.classList.add('hidden');
 }
 
-function handleLogo() {
-  if (window.scrollY === 0) {
-    logo.style.transform = `matrix(${scaleX},0,0, ${scaleY}, 0, ${translateY})`;
-    logo.style.transition = `all .3s ease`;
-  } else {
-    logo.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
-    logo.style.transition = `all .3s ease`;
+
+
+  const handleLogo = () => {
+    const scrollMax = 95;    
+    let scaleX = 3.5;
+    let scaleY = 3.5;
+    let translateY = 112;
+    
+    let calcScaleX = scaleX - (scaleX / scrollMax * window.scrollY);
+    let calcScaleY = scaleY - (scaleY / scrollMax * window.scrollY);
+    let calcTranslateY = translateY - (translateY / scrollMax * window.scrollY);
+    logo.style.transform = `matrix(${calcScaleX > 1 ? calcScaleX : 1}, 0,0,${calcScaleY  > 1 ? calcScaleY : 1},0,${calcTranslateY  > 0 ? calcTranslateY : 0})`;
   }
-}
 
 searchOpenIcon.addEventListener('click', searchHiddenOff);
 searchCloseIcon.addEventListener('click', searchHiddenAdd);
 burgerMenuOpenIcon.addEventListener('click', burgerHiddenOff);
 burgerMenuCloseIcon.addEventListener('click', burgerHiddenAdd);
+window.addEventListener('scroll', handleLogo);
+window.addEventListener('resize', () => {
+  if(window.innerWidth <= screenSize.large) {
+    logo.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
+    logo.style.transition = `all .3s ease`;
+    window.removeEventListener('scroll', handleLogo);
+  }else{
+    window.addEventListener('scroll', handleLogo);
+  }
+});
+// window.addEventListener('resize', () =>{
+//   console.log(111);
+//   if(window.innerWidth <= screenSize.Large){
+//     console.log('if');
+
+//   logo.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
+//       logo.style.transition = `all .3s ease`;
+//   window.removeEventListener('scroll', handleLogo());
+//   }else{
+//     console.log('else');
+
+//   window.addEventListener('scroll', handleLogo);
+//   }
+//   })
+
+
+
+
 
 $(function () {
   $('.current-issues-contents').slick({
@@ -106,6 +134,4 @@ $(function () {
   }
 });
 
-if (window.innerWidth > screenSize.large) {
-  window.addEventListener('scroll', handleLogo);
-}
+
