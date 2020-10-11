@@ -9,7 +9,7 @@ var screenSize = {
   tablet: 768,
   small: 546,
 };
-
+const headerContainer = document.querySelector('.header-container');
 const searchOpenIcon = document.querySelector('.header-icon-item.search');
 const searchContainer = document.querySelector('.search-container');
 const searchCloseIcon = document.querySelector('.search-close-icon');
@@ -35,14 +35,12 @@ function burgerHiddenAdd() {
   burgerMenuContainer.classList.add('hidden');
 }
 
-
-
-  const handleLogo = () => {
     const scrollMax = 95;    
     let scaleX = 3.5;
     let scaleY = 3.5;
     let translateY = 112;
-    
+
+  const handleLogo = () => {  
     let calcScaleX = scaleX - (scaleX / scrollMax * window.scrollY);
     let calcScaleY = scaleY - (scaleY / scrollMax * window.scrollY);
     let calcTranslateY = translateY - (translateY / scrollMax * window.scrollY);
@@ -60,26 +58,47 @@ window.addEventListener('resize', () => {
     logo.style.transition = `all .3s ease`;
     window.removeEventListener('scroll', handleLogo);
   }else{
+    if(scrollY <= scrollMax || pageYOffset <= scrollMax){
+      logo.style.transform = `matrix(${scaleX},0,0,${scaleY},0,${translateY})`;
+    }    
     window.addEventListener('scroll', handleLogo);
   }
 });
-// window.addEventListener('resize', () =>{
-//   console.log(111);
-//   if(window.innerWidth <= screenSize.Large){
-//     console.log('if');
 
-//   logo.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
-//       logo.style.transition = `all .3s ease`;
-//   window.removeEventListener('scroll', handleLogo());
-//   }else{
-//     console.log('else');
+const handleLatestSection = () => {
+  const latestContainer = document.querySelector('.latest-stories-container');
+  const latestContentBox = document.querySelector('.latest-stories-content-box');
+  const latestContentCover = document.querySelector('.latest-stories-content.cover');
+  const latestContentSpacingCover = document.querySelector('.latest-stories-content.spacing-cover');
 
-//   window.addEventListener('scroll', handleLogo);
-//   }
-//   })
+  const enterAt = window.scrollY + window.innerHeight >= latestContainer.offsetTop + latestContentBox.clientHeight;
+  const latestContainerBottomY = latestContainer.offsetTop + latestContainer.clientHeight;
+  const marginBottom = 100;
+  const sidePadding = 40;
+  const latestStoryBottomY = latestContainerBottomY - headerContainer.clientHeight - marginBottom;
+  const afterBottom = window.scrollY + window.innerHeight >= latestStoryBottomY;
 
+  if (enterAt) {
+    if (afterBottom) {
+      latestContentCover.style.position = 'absolute';
+      latestContentCover.style.bottom = `${headerContainer.clientHeight + marginBottom}px`; // 수정 필요
+      latestContentCover.style.width = '50%';
+      latestContentSpacingCover.classList.remove('hidden');
+    } else {
+      latestContentCover.style.position = 'fixed';
+      latestContentCover.style.width = `calc(50% - ${sidePadding}px)`;
+      latestContentCover.style.bottom = 0;
+      latestContentSpacingCover.classList.remove('hidden');      
+    }
+  } else {
+    latestContentCover.style.position = 'static';
+    latestContentCover.style.width = '50%';
+    latestContentSpacingCover.classList.add('hidden');
+  }
 
+}
 
+window.addEventListener('scroll', handleLatestSection);
 
 
 $(function () {

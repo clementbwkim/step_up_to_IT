@@ -320,6 +320,7 @@ $media-lists: (
 
 .latest-stories-container {
   .latest-stories-contents {
+    position: relative;
     display: flex;
     margin: 0 20px 100px;
     flex-wrap: wrap;
@@ -358,7 +359,6 @@ $media-lists: (
       display: flex;
       flex-wrap: wrap;
       font-size: 12px;
-      height: 950px;
 
       ::-webkit-scrollbar {
       }
