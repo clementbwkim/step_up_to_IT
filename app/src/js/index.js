@@ -69,6 +69,7 @@ function resize () {
       }    
       window.addEventListener('scroll', handleLogo);
       window.addEventListener('scroll', handleLatestSection);
+
     }
   });
 }
@@ -130,27 +131,36 @@ function currentIssueSlick () {
   });
 }
   function selectedStorySlick (){
-    if (window.innerWidth === screenSize.large) {
       $('.selected-stories-content').slick({
-        centerMode: true,
-        infinite: true,
-        centerPadding: '10%',
-        slidesToShow: 3,
+        slidesToShow: 6,
+        slidesToScroll: 3,
         speed: 500,
         variableWidth: false,
         arrows: false,
         responsive: [
           {
-            breakpoint: 545,
+            breakpoint: 1025,
             settings: {
               arrows: false,
-              centerMode: true,
+              slidesToShow: 4,
+            },
+          },
+          {
+            breakpoint: 860,
+            settings: {
+              arrows: false,
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
               slidesToShow: 2,
             },
           },
         ],
       });
-    }
   }
   
 

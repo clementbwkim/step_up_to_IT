@@ -19,25 +19,6 @@
   padding-bottom: 30px;
 }
 
-$large-screen-width: 1120px;
-$medium-screen-width: 768px;
-$small-screen-width: 575px;
-
-$media-lists: (
-  'large': (
-    'min-width',
-    $large-screen-width,
-  ),
-  'medium': (
-    'max-width',
-    $medium-screen-width,
-  ),
-  'small': (
-    'max-width',
-    $small-screen-width,
-  ),
-);
-
 .container {
   width: 100%;
   min-height: 100%;
@@ -436,6 +417,10 @@ $media-lists: (
   min-height: 440px;
 }
 
+.selected-stories-content .slick-list {
+  padding: 0;
+}
+
 .slick-prev.slick-arrow,
 .slick-next.slick-arrow {
   top: 50%;
@@ -785,7 +770,7 @@ $media-lists: (
     }
   }
 }
-@media all and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .header-container {
     .header-navigation {
       .header-navigation-items {
@@ -816,7 +801,7 @@ $media-lists: (
     }
     .main-banner-texts {
       .main-banner-text.h1 {
-        font-size: 50px;
+        font-size: 40px;
       }
     }
   }
@@ -924,7 +909,7 @@ $media-lists: (
     }
   }
 }
-@media all and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .art-and-culture-recommendation-container {
     .art-and-culture-contents {
       .art-and-culture-content {
@@ -993,7 +978,22 @@ $media-lists: (
     }
   }
 }
-@media all and (max-width: 546px) {
+
+@media screen and (max-width: 546px) {
+  .header-container {
+    .header-navigation {
+      .header-navigation-items {
+        display: none;
+      }
+    }
+    .header-icon {
+      .header-icon-item.search {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 546px) {
   .header-container {
     .header-navigation {
       .header-navigation-items {
@@ -1008,15 +1008,17 @@ $media-lists: (
   }
   .main-banner-container {
     .main-banner-texts {
-      top: 35%;
-      width: 80%;
+      top: 50%;
+      width: 100%;
     }
   }
   .latest-stories-container {
     .latest-stories-contents {
       .latest-stories-content.cover {
-        .cover-img {
-          padding: 0;
+        .latest-stories-content-box {
+          .cover-img {
+            padding: 0;
+          }
         }
       }
       .latest-stories-content.stories {
@@ -1039,6 +1041,79 @@ $media-lists: (
         }
         .art-and-culture-img {
           width: 100%;
+        }
+      }
+    }
+  }
+
+  .parachute-ad-container {
+    .parachute-ad-contents {
+      margin-bottom: 0;
+      .parachute-ad-content {
+        background-size: 100%;
+        background-attachment: unset;
+      }
+    }
+  }
+
+  .popular-container {
+    .popular-contents {
+      .popular-content-items {
+        .popular-content-item-wrapper {
+          .popular-content-item {
+            .popular-content-item-texts {
+              .popular-content-item-text-intro {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .popular-content-newsletter {
+        .popular-content-newsletter-contents {
+          .popular-content-newsletter-checkbox-container {
+            .popular-content-newsletter-checkbox-contents {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 441px) {
+  .latest-stories-container {
+    .latest-stories-contents {
+      .latest-stories-content.stories {
+        .latest-story-items {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .popular-container {
+    .popular-contents {
+      .popular-content-items {
+        .popular-content-item-wrapper {
+          .popular-content-item {
+            flex-wrap: wrap;
+            .popular-content-item-img {
+              width: 100%;
+            }
+            .popular-content-item-texts {
+              width: 100%;
+              padding: 0;
+            }
+          }
+        }
+      }
+      .popular-content-newsletter {
+        .popular-content-newsletter-contents {
+          .popular-content-newsletter-checkbox-container {
+            .popular-content-newsletter-checkbox-contents {
+              font-size: 12px;
+            }
+          }
         }
       }
     }
