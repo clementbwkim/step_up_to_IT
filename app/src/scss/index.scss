@@ -19,6 +19,20 @@
   padding-bottom: 30px;
 }
 
+@keyframes initImgs {
+  from {
+    opacity: 0;
+    transition: all 2s ease-in;
+  }
+  to {
+    opacity: 1;
+    transition: all 2s ease-in;
+  }
+}
+img {
+  animation-name: initImgs;
+}
+
 $large-screen-width: 1120px;
 $medium-screen-width: 768px;
 $small-screen-width: 575px;
@@ -292,7 +306,7 @@ $media-lists: (
   }
   .main-banner-texts {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
