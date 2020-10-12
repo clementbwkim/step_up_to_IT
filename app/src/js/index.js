@@ -21,6 +21,12 @@ let burgerMenuContainerEl;
 let burgerMenuCloseIconEl;
 let logoEl;
 
+
+let latestContainer;
+let latestContentBox;
+let latestContentCover;
+let latestContentSpacingCover;
+
 let scrollMax = 95;    
 let scaleX = 3.5;
 let scaleY = 3.5;
@@ -53,21 +59,21 @@ function resize () {
       logoEl.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
       logoEl.style.transition = `all .3s ease`;
       window.removeEventListener('scroll', handleLogo);
+      window.removeEventListener('scroll', handleLatestSection);
+      latestContentCover.style.position = 'static';
+      latestContentCover.style.width = '100%';
+
     }else{
       if(scrollY <= scrollMax || pageYOffset <= scrollMax){
         logoEl.style.transform = `matrix(${scaleX},0,0,${scaleY},0,${translateY})`;
       }    
       window.addEventListener('scroll', handleLogo);
+      window.addEventListener('scroll', handleLatestSection);
     }
   });
 }
 
 function handleLatestSection () {
-  const latestContainer = document.querySelector('.latest-stories-container');
-  const latestContentBox = document.querySelector('.latest-stories-content-box');
-  const latestContentCover = document.querySelector('.latest-stories-content.cover');
-  const latestContentSpacingCover = document.querySelector('.latest-stories-content.spacing-cover');
-
   const enterAt = window.pageYOffset + window.innerHeight >= latestContainer.offsetTop + latestContentBox.clientHeight;
   const latestContainerBottomY = latestContainer.offsetTop + latestContainer.clientHeight;
   const marginBottom = 100;
@@ -162,7 +168,6 @@ function initEvents () {
   window.addEventListener('scroll', handleLogo);
   resize();
   handleLatestSection ();
-  window.addEventListener('scroll', handleLatestSection);
 }
 
 function initElements () {
@@ -175,6 +180,10 @@ function initElements () {
   burgerMenuContainerEl = document.querySelector('.burger-menu-container');
   burgerMenuCloseIconEl = document.querySelector('.burger-menu-close-icon');
   logoEl = document.querySelector('.header-logo-items');
+  latestContainer = document.querySelector('.latest-stories-container');
+  latestContentBox = document.querySelector('.latest-stories-content-box');
+  latestContentCover = document.querySelector('.latest-stories-content.cover');
+  latestContentSpacingCover = document.querySelector('.latest-stories-content.spacing-cover');
 }
 
 slickSlides();

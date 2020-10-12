@@ -288,6 +288,7 @@ $media-lists: (
   }
 
   .main-banner-container {
+    position: relative;
     padding-bottom: 70px;
   }
   .main-banner-texts {
@@ -814,7 +815,6 @@ $media-lists: (
       }
     }
     .main-banner-texts {
-      top: 30%;
       .main-banner-text.h1 {
         font-size: 50px;
       }
