@@ -19,20 +19,6 @@
   padding-bottom: 30px;
 }
 
-@keyframes initImgs {
-  from {
-    opacity: 0;
-    transition: all 2s ease-in;
-  }
-  to {
-    opacity: 1;
-    transition: all 2s ease-in;
-  }
-}
-img {
-  animation-name: initImgs;
-}
-
 $large-screen-width: 1120px;
 $medium-screen-width: 768px;
 $small-screen-width: 575px;
@@ -838,6 +824,7 @@ $media-lists: (
     .latest-stories-contents {
       display: block;
       .latest-stories-content.cover {
+        width: 100%;
         .cover-img {
           padding: 70px;
         }
