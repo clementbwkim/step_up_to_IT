@@ -1,8 +1,11 @@
 import $ from 'jquery';
+import 'jquery-lazy';
 
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+
 
 var screenSize = {
   large: 1024,
@@ -168,6 +171,7 @@ init();
 function init () {
   initElements();
   initEvents();
+  imgLazyLoad();
 }
 
 function initEvents () {
@@ -201,6 +205,12 @@ function slickSlides (){
   currentIssueSlick();
   selectedStorySlick();
 }
+
+
+function imgLazyLoad (){
+    $(".lazy").Lazy({effect: 'fadeIn'});
+}
+      
 
 
 

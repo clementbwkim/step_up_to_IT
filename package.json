@@ -20,10 +20,13 @@
   },
   "homepage": "https://github.com/uoon-dev/webpack-boilerplate#readme",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "fullpage.js": "^2.9.7",
     "install": "^0.13.0",
     "jquery": "^3.5.1",
+    "jquery-lazy": "^1.7.11",
     "npm": "^6.13.4",
+    "popper.js": "^1.16.1",
     "reset-css": "^5.0.1",
     "slick-carousel": "^1.8.1"
   },
