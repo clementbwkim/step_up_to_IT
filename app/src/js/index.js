@@ -1,6 +1,4 @@
 import $ from 'jquery';
-import 'jquery-lazy';
-
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -78,6 +76,7 @@ function resize () {
 }
 
 function handleLatestSection () {
+  console.log(123);
   const enterAt = window.pageYOffset + window.innerHeight >= latestContainer.offsetTop + latestContentBox.clientHeight;
   const latestContainerBottomY = latestContainer.offsetTop + latestContainer.clientHeight;
   const marginBottom = 100;
@@ -171,7 +170,6 @@ init();
 function init () {
   initElements();
   initEvents();
-  imgLazyLoad();
 }
 
 function initEvents () {
@@ -180,8 +178,8 @@ function initEvents () {
   burgerMenuOpenIconEl.addEventListener('click', burgerHiddenOff);
   burgerMenuCloseIconEl.addEventListener('click', burgerHiddenAdd);
   window.addEventListener('scroll', handleLogo);
+  window.addEventListener('scroll', handleLatestSection);
   resize();
-  handleLatestSection ();
 }
 
 function initElements () {
@@ -206,11 +204,8 @@ function slickSlides (){
   selectedStorySlick();
 }
 
-
 function imgLazyLoad (){
     $(".lazy").Lazy({effect: 'fadeIn'});
 }
-      
-
 
 

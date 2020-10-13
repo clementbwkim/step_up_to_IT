@@ -64,6 +64,7 @@
       width: 170px;
       max-width: 800px;
       transform: matrix(3.5, 0, 0, 3.5, 0, 112);
+      animation: fadeIn 5s ease;
     }
   }
 
@@ -271,6 +272,7 @@
   .main-banner-container {
     position: relative;
     padding-bottom: 70px;
+    animation: fadeIn 4s ease;
   }
   .main-banner-texts {
     position: absolute;
@@ -423,20 +425,30 @@
 
 .slick-prev.slick-arrow,
 .slick-next.slick-arrow {
-  top: 50%;
+  outline: none;
 }
 .slick-prev {
-  left: -50px;
+  position: absolute;
+  z-index: 10;
+  width: 50%;
+  height: 100%;
+  cursor: url(../img/left-arrow.png), w-resize;
+  left: 0;
 }
 .slick-prev:before {
-  content: url(../img/left-arrow.png);
+  content: none;
   z-index: 1;
 }
 .slick-next {
-  right: -50px;
+  position: absolute;
+  z-index: 10;
+  width: 50%;
+  height: 100%;
+  cursor: url(../img/right-arrow.png), w-resize;
+  right: 0;
 }
 .slick-next::before {
-  content: url(../img/right-arrow.png);
+  content: none;
   z-index: 1;
 }
 
@@ -496,6 +508,7 @@
     .current-issues-contents {
       width: 85%;
       margin: 0 auto;
+      position: relative;
 
       .current-issues-content {
         width: 300px;
