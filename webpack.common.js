@@ -12,9 +12,9 @@ module.exports = {
       path.resolve(srcDir, 'js/index.js'),
       path.resolve(srcDir, 'scss/index.scss'),
     ],
-    about: [
-      path.resolve(srcDir, 'js/about.js'),
-      path.resolve(srcDir, 'scss/about.scss'),
+    kinfork: [
+      path.resolve(srcDir, 'js/kinfork.js'),
+      path.resolve(srcDir, 'scss/kinfork.scss'),
     ],
     test: [
       path.resolve(srcDir, 'js/test.js'),
@@ -95,9 +95,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(srcDir, 'about.html'),
-      filename: 'about.html',
-      chunks: ['about'],
+      template: path.resolve(srcDir, 'kinfork.html'),
+      filename: 'kinfork.html',
+      chunks: ['kinfork'],
     }),
     new HtmlWebpackPlugin({
       inject: true,
