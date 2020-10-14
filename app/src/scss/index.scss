@@ -1060,6 +1060,7 @@
         display: block;
         .art-and-culture-texts {
           width: 100%;
+          margin-bottom: 40px;
           .title-text {
             font-size: 40px;
             margin: 20px 0;
@@ -1108,6 +1109,15 @@
   }
 }
 @media screen and (max-width: 441px) {
+  .burger-menu-container {
+    width: 100%;
+    .burger-menu-btn-items {
+      display: block;
+      .burger-menu-btn-item {
+        margin-bottom: 10px;
+      }
+    }
+  }
   .latest-stories-container {
     .latest-stories-contents {
       .latest-stories-content.stories {

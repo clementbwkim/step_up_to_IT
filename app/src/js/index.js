@@ -23,7 +23,6 @@ let burgerMenuContainerEl;
 let burgerMenuCloseIconEl;
 let logoEl;
 
-let mainContainerEl;
 let latestContainer;
 let latestContentBox;
 let latestContentCover;
