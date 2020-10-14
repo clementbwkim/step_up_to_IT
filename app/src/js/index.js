@@ -12,6 +12,7 @@ var screenSize = {
 };
 
 /*Elemnets */
+let overlayEl;
 let headerContainerEl;
 let searchOpenIconEl;
 let searchContainerEl;
@@ -22,7 +23,7 @@ let burgerMenuContainerEl;
 let burgerMenuCloseIconEl;
 let logoEl;
 
-
+let mainContainerEl;
 let latestContainer;
 let latestContentBox;
 let latestContentCover;
@@ -42,9 +43,11 @@ function searchHiddenAdd () {
   searchContainerEl.classList.add('hidden');
 }
 function burgerHiddenOff () {
+  overlayEl.classList.toggle('hidden');
   burgerMenuContainerEl.classList.remove('hidden');
 }
 function burgerHiddenAdd () {
+  overlayEl.classList.toggle('hidden');
   burgerMenuContainerEl.classList.add('hidden');
 }
 function handleLogo () {  
@@ -68,6 +71,7 @@ function resize () {
       if(scrollY <= scrollMax || pageYOffset <= scrollMax){
         logoEl.style.transform = `matrix(${scaleX},0,0,${scaleY},0,${translateY})`;
       }    
+      latestContentCover.style.width = '50%';
       window.addEventListener('scroll', handleLogo);
       window.addEventListener('scroll', handleLatestSection);
 
@@ -100,6 +104,13 @@ function handleLatestSection () {
     latestContentCover.style.position = 'static';
     latestContentCover.style.width = '50%';
     latestContentSpacingCover.classList.add('hidden');
+  }
+
+  if(window.innerWidth <= screenSize.large) {
+    latestContentCover.style.position = 'static';
+    latestContentCover.style.width = '100%';
+  }else {
+    latestContentCover.style.width = '50%';
   }
 }
 function currentIssueSlick () {
@@ -183,6 +194,7 @@ function initEvents () {
 }
 
 function initElements () {
+  overlayEl = document.querySelector('.overlay');
   headerContainerEl = document.querySelector('.header-container');
   searchOpenIconEl = document.querySelector('.header-icon-item.search');
   searchContainerEl = document.querySelector('.search-container');
