@@ -41,9 +41,6 @@ section:last-child {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  img {
-    width: 100px;
-  }
   .work-title {
     margin-bottom: 50px;
     text-align: center;
@@ -65,19 +62,17 @@ section:last-child {
     .card {
       width: 28%;
       max-width: 300px;
-      height: 210px;
+      height: 250px;
       background: #fff;
       padding: 20px 15px;
       display: flex;
       flex-direction: column;
       box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
       transition: 0.3s ease-in-out;
+      border-radius: 6px;
       .img-box {
         position: relative;
-        width: 260px;
-        height: 260px;
-        top: -60px;
-        left: 20px;
+        top: -50px;
         z-index: 1;
         box-shadow: 0 5px rgba(0, 0, 0, 0.2);
 
@@ -95,10 +90,17 @@ section:last-child {
         visibility: hidden;
         opacity: 0;
         transition: 0.3s ease-in-out;
+        h2 {
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+        p {
+          line-height: 1.5;
+        }
       }
     }
     .card:hover {
-      height: 300px;
+      height: 330px;
       .content {
         visibility: visible;
         opacity: 1;
