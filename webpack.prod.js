@@ -7,6 +7,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const phase1 = merge.smartStrategy({plugins: 'prepend'})(common, {
   mode: 'production',
+  watch: false,
   plugins: [
     new CleanWebpackPlugin(),
     //cheap-module-source-map
