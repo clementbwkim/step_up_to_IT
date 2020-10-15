@@ -27,10 +27,6 @@ section:last-child {
   .intro-img {
     width: 200px;
     animation: fadeIn 5s ease;
-    &.animation-on {
-      animation: bottom-effect 0.8s ease forwards;
-      -webkit-animation: bottom-effect 0.8s ease forwards;
-    }
   }
   .intro-texts {
     font-size: 50px;
@@ -104,10 +100,7 @@ section:last-child {
         z-index: 1;
         box-shadow: 0 5px rgba(0, 0, 0, 0.2);
         animation: fadeIn 5s ease;
-        &.animation-on {
-          animation: bottom-effect 0.8s ease forwards;
-          -webkit-animation: bottom-effect 0.8s ease forwards;
-        }
+
         img {
           max-width: 100%;
           border-radius: 4px;
@@ -136,7 +129,7 @@ section:last-child {
       .content {
         visibility: visible;
         opacity: 1;
-        transform: translateY(-40px);
+        margin-top: -40px;
       }
     }
   }
@@ -171,10 +164,6 @@ section:last-child {
     .contact-logo {
       img {
         width: 300px;
-      }
-      &.animation-on {
-        animation: bottom-effect 0.8s ease forwards;
-        -webkit-animation: bottom-effect 0.8s ease forwards;
       }
     }
   }
