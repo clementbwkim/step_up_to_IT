@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import 'fullpage.js';
+import fullpage from 'fullpage.js';
 
 
 $(function () {

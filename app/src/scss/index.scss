@@ -136,8 +136,7 @@ section:last-child {
       .content {
         visibility: visible;
         opacity: 1;
-        margin-top: -40px;
-        -ms-top: 100%;
+        transform: translateY(-40px);
       }
     }
   }
