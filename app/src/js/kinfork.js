@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 
 
-var screenSize = {
+const screenSize = {
   large: 1024,
   tablet: 768,
   small: 546,

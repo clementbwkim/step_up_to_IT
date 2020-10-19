@@ -1,16 +1,26 @@
 import $ from 'jquery';
-import fullpage from 'fullpage.js';
+
+//elements
+let barEl;
+let navEl;
+
+//functions
+function toggleNav (){
+    barEl.classList.toggle('cross')
+    navEl.classList.toggle('hidden');
+}
 
 
-$(function () {
-  $('.main-container').fullpage({
-    autoScrolling: true,
-    scrollHorizontally: true,
-    slidesNavigation: true,
-    slidesNavPosition: 'bottom',
-    controlArrows: false,
-  });
-});
+init();
+function init() {
+    initElements();
+    initEvents();
+}
 
-
-
+function initEvents(){
+    barEl.addEventListener('click', toggleNav);
+}
+function initElements() {
+    barEl = document.querySelector('.bar');
+    navEl = document.querySelector('.navigation');
+};
