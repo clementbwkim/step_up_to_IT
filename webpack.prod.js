@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 
-const phase1 = merge.smartStrategy({plugins: 'prepend'})(common, {
+const phase1 = merge.smartStrategy({ plugins: 'prepend' })(common, {
   mode: 'production',
   watch: false,
   plugins: [
@@ -62,5 +62,5 @@ module.exports = merge(phase1, {
         }
       })
     ]
-  }  
+  }
 });

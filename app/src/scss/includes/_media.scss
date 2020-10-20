@@ -1,0 +1,55 @@
+$xlarge-screen-width: 1200px;
+$large-screen-width: 1024px;
+$medium-screen-width: 768px;
+$small-screen-width: 575px;
+$xsmall-screen-width: 375px;
+$xxsmall-screen-width: 320px;
+
+$medium-screen-height: 750px;
+$breakpoints: (
+  'xlarge-width': (
+    'max-width',
+    $xlarge-screen-width,
+  ),
+  'large-width': (
+    'max-width',
+    $large-screen-width,
+  ),
+  'medium-width': (
+    'max-width',
+    $medium-screen-width,
+  ),
+  'small-width': (
+    'max-width',
+    $small-screen-width,
+  ),
+  'xsmall-width': (
+    'max-width',
+    $xsmall-screen-width,
+  ),
+  'xxsmall-width': (
+    'max-width',
+    $xxsmall-screen-width,
+  ),
+  'medium-height': (
+    'max-height',
+    $medium-screen-height,
+  ),
+);
+
+@mixin for-size($breakpoints-size) {
+  @if map-has-key($breakpoints, $breakpoints-size) {
+    $selector: map-get($breakpoints, $breakpoints-size);
+    @if length($selector) == 2 {
+      @media only screen and (#{nth($selector,1)}: #{nth($selector,2)}) {
+        @content;
+      }
+    }
+  } @else if length($selector) == 4 {
+    @media only screen and (#{nth($selector,1)}: #{nth($selector,2)}) and (#{nth($selector,3)}: #{nth($selector,4)}) {
+      @content;
+    }
+  } @else {
+    @error "invalid media-query constraint: args #{length($selector)}.";
+  }
+}

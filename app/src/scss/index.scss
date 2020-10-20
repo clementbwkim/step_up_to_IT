@@ -78,6 +78,7 @@
       height: 100%;
 
       .nav-items {
+        min-width: 215px;
         font-size: 2em;
         line-height: 2;
         font-family: $gothic;
@@ -120,6 +121,7 @@
       flex-wrap: wrap;
       .contact-contents {
         width: 70%;
+        min-width: 215px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -139,11 +141,17 @@
             font-size: 1em;
             font-weight: 700;
             color: #44564a;
+            @include for-size(large-width) {
+              font-size: 0.8em;
+            }
           }
           h2 {
             text-align: center;
             font-size: 1.5em;
             font-weight: 600;
+            @include for-size(large-width) {
+              font-size: 1.2em;
+            }
           }
         }
         .contact-items {
@@ -230,166 +238,187 @@
           color: #e5c7b7;
           transition: all 0.3s ease;
         }
-      }
-    }
-  }
 
-  .section-work {
-    height: 100vh;
-
-    .work-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-      width: 80%;
-      margin: 0 auto;
-
-      .work-contents {
-        width: 100%;
-
-        .work-title {
-          font-size: 3em;
-          font-weight: 700;
-          text-align: center;
-          margin-bottom: 100px;
-        }
-        .work-items {
-          display: flex;
-          justify-content: space-between;
-          .work-item {
-            font-family: $gothic;
-            position: relative;
-            overflow: hidden;
-            margin: 10px;
-            min-width: 230px;
-            max-width: 420px;
-            width: 33%;
-            text-align: left;
-            line-height: 1.6em;
-            font-size: 22px;
-            border-radius: 5px;
-            box-shadow: 2px 3px 5px #333;
-
-            img {
-              max-width: 100%;
-              vertical-align: top;
-            }
-            figcaption {
-              position: absolute;
-              top: 83%;
-              width: 100%;
-              background-color: #ffffff;
-              padding: 6px 13px 60px;
-              box-sizing: border-box;
-              transition: all 0.3s ease;
-            }
-            figcaption:before {
-              position: absolute;
-              content: '';
-              z-index: 2;
-              bottom: 100%;
-              left: 0;
-              width: 100%;
-              height: 80px;
-              background: linear-gradient(
-                to bottom,
-                transparent 0%,
-                #ffffff 100%
-              );
-            }
-            h3 {
-              font-size: 1.2em;
-              text-align: center;
-              font-weight: 800;
-              line-height: 1.2em;
-              font-family: $gothic;
-              text-transform: uppercase;
-              margin-bottom: 10px;
-            }
-            p {
-              font-size: 15px;
-              opacity: 0.9;
-              line-height: 1.5;
-              margin-top: 30px;
-            }
-            a {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              z-index: 2;
-            }
-          }
-          .work-item:hover {
-            figcaption {
-              top: 130px;
-            }
-          }
-          .work-item.hover {
-            figcaption {
-              top: 130px;
-            }
-          }
+        @include for-size(medium-width) {
+          margin-bottom: 50px;
         }
       }
     }
   }
+}
 
-  .section-contact {
-    height: 100vh;
+.section-work {
+  height: 100vh;
+  @include for-size(medium-width) {
+    height: auto;
+    margin-top: 5em;
+  }
+
+  .work-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
 
-    .contact-container {
-      width: 50%;
-      display: flex;
-      justify-content: space-between;
+    .work-contents {
+      width: 100%;
 
-      .contact-content {
+      .work-title {
+        font-size: 3em;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 100px;
+      }
+      .work-items {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        .contact-text {
-          h2 {
-            font-size: 6em;
-            font-weight: 600;
-            color: #508164;
+        justify-content: space-between;
+        @include for-size(medium-width) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .work-item {
+          font-family: $gothic;
+          position: relative;
+          overflow: hidden;
+          margin: 10px;
+          min-width: 200px;
+          max-width: 420px;
+          width: 33%;
+          text-align: left;
+          line-height: 1.6em;
+          font-size: 22px;
+          border-radius: 5px;
+          box-shadow: 2px 3px 5px #333;
+          @include for-size(medium-width) {
+            width: 100%;
+          }
+
+          img {
+            max-width: 100%;
+            vertical-align: top;
+          }
+          figcaption {
+            position: absolute;
+            top: 83%;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 6px 13px 60px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+          }
+          figcaption:before {
+            position: absolute;
+            content: '';
+            z-index: 2;
+            bottom: 100%;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(
+              to bottom,
+              transparent 0%,
+              #ffffff 100%
+            );
+          }
+          h3 {
+            font-size: 1.2em;
             text-align: center;
+            font-weight: 800;
+            line-height: 1.2em;
+            font-family: $gothic;
             text-transform: uppercase;
-            letter-spacing: -1px;
-
-            span {
-              color: #44564a;
-              border-bottom: 10px solid #44564a;
-            }
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-top: 30px;
+          }
+          a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
           }
         }
-
-        .contact-sci {
-          width: 100%;
-          margin: 3em auto 0;
-          max-width: 445px;
-          display: flex;
-          justify-content: space-between;
-
-          li {
-            width: 50px;
-            text-align: center;
-
-            &:last-child {
-              border-right: none;
-            }
+        .work-item:hover {
+          figcaption {
+            top: 130px;
+          }
+        }
+        .work-item.hover {
+          figcaption {
+            top: 130px;
           }
         }
       }
-      .contact-img {
-        width: 20%;
-        max-width: 200px;
+    }
+  }
+}
+
+.section-contact {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .contact-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    .contact-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .contact-text {
+        h2 {
+          font-size: 6em;
+          font-weight: 600;
+          color: #508164;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: -1px;
+          @include for-size(medium-width) {
+            font-size: 3em;
+          }
+
+          span {
+            color: #44564a;
+            border-bottom: 10px solid #44564a;
+          }
+        }
       }
+
+      .contact-sci {
+        width: 100%;
+        margin: 3em auto 0;
+        max-width: 445px;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          width: 50px;
+          text-align: center;
+          @include for-size(medium-width) {
+            width: 30px;
+          }
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+    }
+    .contact-img {
+      width: 20%;
+      max-width: 200px;
     }
   }
 }
