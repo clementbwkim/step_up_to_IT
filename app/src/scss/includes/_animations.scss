@@ -6,3 +6,30 @@
     opacity: 1;
   }
 }
+
+@keyframes indexBgColor {
+  0% {
+    background: #8e6d6e;
+  }
+  25% {
+    background: #ebe2de;
+  }
+  50% {
+    background: #e5c7b7;
+  }
+  100% {
+    background: #8e6d6e;
+  }
+}
+
+@keyframes bannerTextColor {
+  0% {
+    color: #8e6d6e;
+  }
+  50% {
+    color: #e5c7b7;
+  }
+  100% {
+    color: #8e6d6e;
+  }
+}

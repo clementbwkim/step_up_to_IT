@@ -1,15 +1,34 @@
 import $ from 'jquery';
 
 //elements
-let barEl;
-let navEl;
+let headerBtn;
+let contactBtn;
+let headerNavigation;
+let contactNavigation;
 
 //functions
-function toggleNav (){
-    barEl.classList.toggle('cross')
-    navEl.classList.toggle('hidden');
+function crossBtn(){
+    headerBtn.click(() => {
+        headerBtn.toggleClass('cross')
+    })
+}
+function rotateBtn(){
+    contactBtn.click(() => {
+        contactBtn.toggleClass('rotate')
+    })
 }
 
+function activeHeaderNav(){
+    headerBtn.click(()=>{
+        headerNavigation.toggleClass('hidden');
+    });
+    
+}
+function activeContactNav(){
+    contactBtn.click(()=>{
+        contactNavigation.toggleClass('hidden');
+    });
+}
 
 init();
 function init() {
@@ -18,9 +37,15 @@ function init() {
 }
 
 function initEvents(){
-    barEl.addEventListener('click', toggleNav);
+    crossBtn();
+    rotateBtn();
+    activeHeaderNav();
+    activeContactNav();
 }
 function initElements() {
-    barEl = document.querySelector('.bar');
-    navEl = document.querySelector('.navigation');
+    headerBtn = $('.header-btn');
+    contactBtn = $('.contact-btn');
+    headerNavigation = $('.header-navigation');
+    contactNavigation = $('.contact-navigation');
 };
+
