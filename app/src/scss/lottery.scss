@@ -1,0 +1,129 @@
+@import './includes/_config.scss';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(135deg, #ffa8a8 10%, #fcff00 100%);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.ball {
+  display: inline-block;
+  border: 1px solid #333333;
+  margin: 0 6px 6px 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  padding: 6px;
+  text-align: center;
+  line-height: 2;
+}
+
+.title-content {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+.title-contents .title {
+  font-size: 40px;
+  font-weight: 600;
+  position: relative;
+  display: inline;
+  margin: 20px 0 0 0;
+}
+.title-contents .title::before {
+  content: '';
+  position: absolute;
+  width: 92%;
+  height: 4px;
+  top: 15px;
+  left: 45px;
+  background-color: #333;
+}
+.title-contents .title .title-point {
+  font-size: 60px;
+}
+
+.title-contents .title .title-point-color {
+  color: #f05f57;
+}
+
+.main-contents {
+  display: flex;
+  justify-content: space-around;
+}
+.user-input-contents,
+.user-lotto-contents,
+.win-check-contents,
+.win-lotto-contents {
+  margin-bottom: 16px;
+}
+.user-input-contents {
+  display: flex;
+  justify-content: space-between;
+}
+.input-price {
+  border: 0;
+  border-bottom: 1px solid #333333;
+  opacity: 0.5;
+  padding: 6px;
+  flex: auto;
+}
+.input-price::placeholder {
+  color: #333333;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.my-lotto .lotto-number {
+  border: 3px solid #333;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 5px;
+  text-align: center;
+  line-height: 2;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.my-lotto .lotto-number.wins {
+  background: linear-gradient(135deg, #92ffc0 10%, #002661 100%);
+  border: 3px solid #92ffc0;
+  color: #ffffff;
+}
+
+.buy-btn,
+.checkout-btn {
+  padding: 6px 20px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #df6c7e;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-dec:hover {
+  color: #e80505;
+  background-color: #f05f57;
+}
+
+.win-check-contents {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.win-check-numbers {
+  display: inline-block;
+  margin: 0;
+}
+.win-lotto-contents {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+.win-lotto-contents .my-lotto .lotto-number {
+  color: #ffffff;
+  border: 3px solid #ff9d6c;
+  background-image: linear-gradient(135deg, #ff9d6c 10%, #bb4e75 100%);
+}

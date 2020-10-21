@@ -20,6 +20,10 @@ module.exports = {
       path.resolve(srcDir, 'js/github.js'),
       path.resolve(srcDir, 'scss/github.scss')
     ],
+    lottery: [
+      path.resolve(srcDir, 'js/lottery.js'),
+      path.resolve(srcDir, 'scss/lottery.scss')
+    ],
   },
   output: {
     path: distDir,
@@ -98,6 +102,12 @@ module.exports = {
       template: path.resolve(srcDir, 'github.html'),
       filename: 'github.html',
       chunks: ['github'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(srcDir, 'lottery.html'),
+      filename: 'lottery.html',
+      chunks: ['lottery'],
     }),
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({

@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css" />
-  <link rel="stylesheet" href="./css/reset.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap" rel="stylesheet" />
-  <title>Lotto</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>github</title>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
-
 <body>
-  <div class="wrap">
-    <div class="title-contents">
-      <div class="title-content">
-        <h1 class="title">
-          <span class="title-point">G</span>et your <span class="title-point-color">Lucky</span> Numbers !!</h1>
+  <header>
+    <div class="header-container">
+      <div class="header-mobile-menu">
+        <button class="mobile-btn-bars">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <a href="" class="header-logo"><i class='fab fa-github'></i></a>
+      <div class="header-nav-wrapper">
+        <div class="header-search">
+          <form action="" class="search-form">
+            <input type="text" class="searh-input" placeholder="Search or jump to..">
+            <img src="./img/search-key-slash.svg" alt="">
+          </form>
+        </div>
+        <nav class="search-nav">
+          <ul class="header-nav-items">
+            <li class="header-nav-item hidden"><a href="">Dashboard</a></li>
+            <li class="header-nav-item"><a href="" class="pull-requests">Pull requests</a>
+            <a href="" class="pulls">Pulls</a></li>
+            <li class="header-nav-item"><a href="">Issues</a></li>
+            <li class="header-nav-item"><a href="">Marketplace</a></li>
+            <li class="header-nav-item"><a href="">Explore</a></li>
+            <li class="header-nav-item hidden"><a href=""><img src="./img/clem.gif" class="clem-img" alt="">clementbwkim</a></li>
+            <li class="header-nav-item hidden"><a href=""><i class="fas fa-sign-out-alt"></i>sign out</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-nav-appended">
+        <span class="appended"><i class="fas fa-bell"></i></span>
+        <span class="appended-plus"><i class="fas fa-plus"></i><i class="fas fa-caret-down"></i></span>
+        <span class="appended-clem"><i class="fas fa-user"></i><i class="fas fa-caret-down"></i></span>
       </div>
     </div>
-  </div>
-  <main>
-    <div class="main-contents">
-      <div class="lotto-contents">
-        <div class="user-input-contents">
-          <input class="input-price" type="text" placeholder="금액을 입력해주세요.." />
-          <button class="buy-btn btn-dec">구입하기</button>
-        </div>
-        <div class="user-lotto-contents">
-          <ul class="my-lottos"></ul>
-        </div>
-        <div class="win-check-contents">
-          <h5 class="win-check-numbers">
-            <i class="fa fa-asterisk"></i> 행운의 번호를 확인하세요 <i class="fa fa-hand-o-right"></i>
-          </h5>
-          <button class="checkout-btn btn-dec">당첨확인</button>
-        </div>
-        <ul class="win-lotto-contents"></ul>
-        <div class="result-display">
-        </div>
-      </div>
-    </div>
-  </main>
-  </div>
-  <script src="./js/lotto_final.js"></script>
+  </header>
 </body>
-
 </html>
