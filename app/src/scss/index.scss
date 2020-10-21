@@ -212,6 +212,7 @@ html {
             color: #44564a;
             border-bottom: 13px solid #44564a;
             animation: fadeIn 3s;
+            display: inline-block;
           }
         }
         .banner-text {
@@ -393,6 +394,7 @@ html {
             opacity: 0.9;
             line-height: 1.5;
             margin-top: 30px;
+            text-align: center;
           }
           a {
             position: absolute;
@@ -534,6 +536,7 @@ html {
       max-width: 200px;
       @include for-size(medium-width) {
         width: 100%;
+        max-width: 100px;
       }
     }
   }

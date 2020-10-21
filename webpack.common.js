@@ -16,6 +16,10 @@ module.exports = {
       path.resolve(srcDir, 'js/kinfork.js'),
       path.resolve(srcDir, 'scss/kinfork.scss')
     ],
+    github: [
+      path.resolve(srcDir, 'js/github.js'),
+      path.resolve(srcDir, 'scss/github.scss')
+    ],
   },
   output: {
     path: distDir,
@@ -88,6 +92,12 @@ module.exports = {
       template: path.resolve(srcDir, 'kinfork.html'),
       filename: 'kinfork.html',
       chunks: ['kinfork'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(srcDir, 'github.html'),
+      filename: 'github.html',
+      chunks: ['github'],
     }),
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
