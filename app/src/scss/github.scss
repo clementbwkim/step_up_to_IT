@@ -13,6 +13,10 @@ i {
   box-sizing: border-box;
   position: fixed;
   background-color: #24292e;
+  @include for-size(medium-width) {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
   .header-mobile-menu {
     display: none;
     @include for-size(medium-width) {
@@ -28,9 +32,16 @@ i {
     margin-left: 20px;
     .hidden {
       display: none;
+      @include for-size(medium-width) {
+        display: inline-block;
+      }
     }
     @include for-size(medium-width) {
-      display: none;
+      order: 1;
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      margin-left: 0;
     }
     .header-search {
       .search-form {
@@ -38,6 +49,10 @@ i {
         border: 1px solid #6a737d;
         padding: 3px 10px;
         border-radius: 5px;
+        @include for-size(medium-width) {
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
         .searh-input {
           border: 0;
           outline: 0;
@@ -59,25 +74,57 @@ i {
 
         display: flex;
         align-items: center;
+        @include for-size(medium-width) {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
 
         .header-nav-item {
           margin-left: 10px;
           a {
             color: #fff;
+            @include for-size(medium-width) {
+              display: flex;
+              align-items: center;
+            }
           }
-        }
-        .pull-requests {
-          @include for-size(large-width) {
+          @include for-size(medium-width) {
+            margin: 8px 0;
+            padding-top: 10px;
+            border-top: 1px solid #ffffff20;
+            width: 100%;
+          }
+          img {
+            @include for-size(medium-width) {
+              width: 30px;
+              border-radius: 30px;
+            }
+          }
+          .pull-requests {
+            @include for-size(large-width) {
+              display: none;
+            }
+            @include for-size(medium-width) {
+              display: inline-block;
+            }
+          }
+          .pulls {
             display: none;
-          }
-        }
-        .pulls {
-          display: none;
-          @include for-size(large-width) {
-            display: inline-block;
+            @include for-size(large-width) {
+              display: inline-block;
+            }
+            @include for-size(medium-width) {
+              display: none;
+            }
           }
         }
       }
+    }
+  }
+  .header-nav-wrapper.hidden {
+    @include for-size(medium-width) {
+      display: none;
     }
   }
 
