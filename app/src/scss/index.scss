@@ -1,5 +1,8 @@
 @import './includes/_config.scss';
 
+html {
+  scroll-behavior: smooth;
+}
 %btn-reset {
   cursor: pointer;
   outline: 0;
@@ -51,6 +54,10 @@
   .header-navigation,
   .contact-navigation {
     position: fixed;
+
+    @include for-size(medium-width) {
+      width: 100%;
+    }
   }
   .header-navigation.hidden {
     width: 0%;
@@ -63,7 +70,7 @@
   }
 
   .header-navigation {
-    width: 30%;
+    width: 50%;
     height: 100vh;
     box-shadow: 4px 0px 5px #8e6d6e;
     background: #e5c7b7;
@@ -78,11 +85,14 @@
       height: 100%;
 
       .nav-items {
-        min-width: 215px;
+        min-width: 300px;
         font-size: 2em;
         line-height: 2;
         font-family: $gothic;
         font-weight: 700;
+        @include for-size(small-width) {
+          text-align: center;
+        }
       }
     }
   }
@@ -120,15 +130,15 @@
       box-shadow: -5px 1px 5px #8e6d6e;
       flex-wrap: wrap;
       .contact-contents {
-        width: 70%;
+        width: 215px;
         min-width: 215px;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-
+        margin: 0 20px;
         .profile-img {
-          width: 70%;
+          width: 100%;
+
           img {
             border-radius: 10px;
             box-shadow: 5px 5px 5px #8e6d6e;
@@ -137,8 +147,10 @@
         .contact-content {
           padding: 10px;
           line-height: 1.5;
+          width: 100%;
+          text-align: center;
           p {
-            font-size: 1em;
+            font-size: 0.8em;
             font-weight: 700;
             color: #44564a;
             @include for-size(large-width) {
@@ -147,7 +159,7 @@
           }
           h2 {
             text-align: center;
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-weight: 600;
             @include for-size(large-width) {
               font-size: 1.2em;
@@ -161,7 +173,7 @@
           width: 100%;
           justify-content: space-between;
           li {
-            width: 50px;
+            width: 20px;
           }
         }
       }
@@ -186,6 +198,15 @@
           font-weight: 600;
           color: #508164;
           text-align: center;
+          @include for-size(large-width) {
+            font-size: 8em;
+          }
+          @include for-size(small-width) {
+            font-size: 6em;
+          }
+          @include for-size(xsmall-width) {
+            font-size: 4em;
+          }
 
           span {
             color: #44564a;
@@ -204,6 +225,18 @@
             letter-spacing: 4px;
             color: #ebe2de;
             animation: bannerTextColor 10s linear infinite;
+            @include for-size(large-width) {
+              font-size: 0.8em;
+            }
+            @include for-size(medium-width) {
+              font-size: 1em;
+            }
+            @include for-size(small-width) {
+              font-size: 0.8em;
+            }
+            @include for-size(xsmall-width) {
+              font-size: 0.6em;
+            }
           }
 
           span {
@@ -226,6 +259,14 @@
         color: #508164;
         display: inline-block;
         width: 180px;
+        margin-bottom: 50px;
+        @include for-size(medium-width) {
+          width: 200px;
+        }
+        @include for-size(small-width) {
+          width: 300px;
+        }
+
         border: {
           color: #508164;
           bottom: 3px solid;
@@ -238,10 +279,6 @@
           color: #e5c7b7;
           transition: all 0.3s ease;
         }
-
-        @include for-size(medium-width) {
-          margin-bottom: 50px;
-        }
       }
     }
   }
@@ -251,7 +288,6 @@
   height: 100vh;
   @include for-size(medium-width) {
     height: auto;
-    margin-top: 5em;
   }
 
   .work-container {
@@ -270,14 +306,30 @@
         font-weight: 700;
         text-align: center;
         margin-bottom: 100px;
+        @include for-size(medium-width) {
+          font-size: 2em;
+          margin-bottom: 80px;
+        }
+        @include for-size(small-width) {
+          margin-bottom: 50px;
+        }
+        @include for-size(xsmall-width) {
+          font-size: 1.5em;
+
+          margin-bottom: 30px;
+        }
       }
       .work-items {
         display: flex;
         justify-content: space-between;
-        @include for-size(medium-width) {
+        @include for-size(large-width) {
           flex-wrap: wrap;
-          justify-content: center;
         }
+        @include for-size(medium-width) {
+          justify-content: center;
+          width: 100%;
+        }
+
         .work-item {
           font-family: $gothic;
           position: relative;
@@ -291,8 +343,13 @@
           font-size: 22px;
           border-radius: 5px;
           box-shadow: 2px 3px 5px #333;
+          @include for-size(large-width) {
+            width: 45%;
+            margin-bottom: 5%;
+          }
           @include for-size(medium-width) {
             width: 100%;
+            margin-bottom: 10%;
           }
 
           img {
@@ -348,12 +405,48 @@
         }
         .work-item:hover {
           figcaption {
-            top: 130px;
+            top: 260px;
+            @include for-size(xlarge-width) {
+              top: 170px;
+            }
+            @include for-size(large-width) {
+              top: 210px;
+            }
+            @include for-size(medium-width) {
+              top: 260px;
+            }
+            @include for-size(small-width) {
+              top: 295px;
+            }
+            @include for-size(xsmall-width) {
+              top: 150px;
+            }
+            @include for-size(xxsmall-width) {
+              top: 80px;
+            }
           }
         }
         .work-item.hover {
           figcaption {
-            top: 130px;
+            top: 260px;
+            @include for-size(xlarge-width) {
+              top: 170px;
+            }
+            @include for-size(large-width) {
+              top: 210px;
+            }
+            @include for-size(medium-width) {
+              top: 260px;
+            }
+            @include for-size(small-width) {
+              top: 295px;
+            }
+            @include for-size(xsmall-width) {
+              top: 150px;
+            }
+            @include for-size(xxsmall-width) {
+              top: 80px;
+            }
           }
         }
       }
@@ -371,12 +464,21 @@
     width: 50%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    @include for-size(medium-width) {
+      width: 70%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     .contact-content {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
+      @include for-size(medium-width) {
+        width: 100%;
+        order: 1;
+      }
       .contact-text {
         h2 {
           font-size: 6em;
@@ -385,8 +487,12 @@
           text-align: center;
           text-transform: uppercase;
           letter-spacing: -1px;
-          @include for-size(medium-width) {
-            font-size: 3em;
+          @include for-size(large-width) {
+            font-size: 4.5em;
+          }
+
+          @include for-size(small-width) {
+            font-size: 3.5em;
           }
 
           span {
@@ -397,16 +503,20 @@
       }
 
       .contact-sci {
-        width: 100%;
+        width: 80%;
         margin: 3em auto 0;
         max-width: 445px;
         display: flex;
         justify-content: space-between;
 
         li {
-          width: 50px;
+          width: 20px;
           text-align: center;
-          @include for-size(medium-width) {
+          @include for-size(large-width) {
+            width: 40px;
+          }
+
+          @include for-size(small-width) {
             width: 30px;
           }
 
@@ -419,6 +529,9 @@
     .contact-img {
       width: 20%;
       max-width: 200px;
+      @include for-size(medium-width) {
+        width: 100%;
+      }
     }
   }
 }
