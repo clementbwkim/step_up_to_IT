@@ -214,7 +214,4 @@ function slickSlides (){
   selectedStorySlick();
 }
 
-function imgLazyLoad (){
-    $(".lazy").Lazy({effect: 'fadeIn'});
-}
 
