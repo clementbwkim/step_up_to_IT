@@ -163,11 +163,27 @@ img {
     .nav-container {
       display: flex;
       margin: 0 130px;
+      @include for-size(medium-width) {
+        margin: 0;
+        padding: 0 40px;
+      }
+      @include for-size(small-width) {
+        padding: 0 20px;
+        justify-content: center;
+      }
       .empty-box {
         width: 25%;
+        @include for-size(medium-width) {
+          display: none;
+        }
       }
       .local-nav-items {
         display: flex;
+        @include for-size(small-width) {
+          width: 100%;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
 
         .local-nav-item {
           padding: 16px 0;
@@ -175,9 +191,18 @@ img {
           a {
             color: #6a737d;
           }
+          @include for-size(small-width) {
+            margin-right: 13px;
+            font-size: 12px;
+          }
         }
         .local-nav-item:first-child {
           border-bottom: 2px solid #0366d6;
+          @include for-size(small-width) {
+            border-bottom: 0;
+            width: 100%;
+            text-align: center;
+          }
           a {
             color: #222222;
             font-weight: 600;
@@ -187,6 +212,10 @@ img {
       .email-btn {
         flex: auto;
         white-space: nowrap;
+
+        @include for-size(small-width) {
+          display: none;
+        }
 
         a {
           padding: 10px 16px;
@@ -201,18 +230,31 @@ img {
   }
   .main-contents {
     display: flex;
+    @include for-size(medium-width) {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 40px;
+    }
+    @include for-size(small-width) {
+      padding: 0;
+    }
     i {
       color: #222222;
     }
     .user {
       width: 25%;
       padding: 0 20px;
+      @include for-size(medium-width) {
+        width: 100%;
+        margin-top: 50px;
+      }
       .profile-container {
         border: 1px solid #e1e4e8;
         border-radius: 6px;
         margin-top: -30px;
         background: #fff;
         position: relative;
+
         a {
           color: #2188ff;
           font-weight: 500;
@@ -253,6 +295,12 @@ img {
 
     .interests {
       width: 50%;
+      @include for-size(medium-width) {
+        width: 60%;
+      }
+      @include for-size(medium-width) {
+        width: 100%;
+      }
       .interests-container {
         padding: 24px 16px;
 
@@ -265,11 +313,14 @@ img {
           border-radius: 5px;
           .base {
             padding: 16px;
+            background-color: #f6f8fa;
           }
           .person {
             display: flex;
             justify-content: space-between;
             padding: 16px;
+            background-color: #f6f8fa;
+            font-size: 14px;
             a {
               color: #0366d6;
             }
@@ -290,6 +341,7 @@ img {
           }
           .interest {
             padding: 0 16px;
+            background-color: #f6f8fa;
             ul {
               display: flex;
               align-items: center;
@@ -304,6 +356,7 @@ img {
                 border-radius: 5px 5px 0 0;
                 white-space: nowrap;
                 margin-bottom: -2px;
+                background-color: #fff;
               }
             }
           }
@@ -332,6 +385,12 @@ img {
     .trending {
       width: 25%;
       padding: 16px;
+      @include for-size(medium-width) {
+        width: 35%;
+      }
+      @include for-size(small-width) {
+        width: 100%;
+      }
       .trending-container {
         border: 1px solid#e1e4e8;
         border-radius: 6px;
@@ -387,6 +446,108 @@ img {
           padding: 16px;
           font-size: 14px;
         }
+      }
+    }
+  }
+}
+.footer-container {
+  .footer-contents {
+    display: flex;
+    border-top: 1px solid #d1d5da;
+    padding: 70px 16px;
+    margin-bottom: 32px;
+    @include for-size(medium-width) {
+      flex-wrap: wrap;
+    }
+    .footer-title {
+      width: 33%;
+      @include for-size(medium-width) {
+        width: 100%;
+        margin-bottom: 32px;
+      }
+      .logo {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      .sub-info {
+        margin: 16px 0;
+      }
+      .sub-btn {
+        border: 1px solid #2188ff;
+        padding: 10px;
+        border-radius: 6px;
+        a {
+          color: #2188ff;
+        }
+      }
+    }
+
+    ul {
+      width: 16%;
+      padding-left: 24px;
+      margin-bottom: 8px;
+      @include for-size(small-width) {
+        width: 40%;
+        margin-bottom: 40px;
+      }
+
+      h3 {
+        margin-bottom: 16px;
+        color: #6a737d;
+        font-size: 14px;
+      }
+      li {
+        margin-bottom: 16px;
+        line-height: 1.25;
+
+        a {
+          color: #6a737d;
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    display: flex;
+    padding: 24px 16px;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    @include for-size(medium-width) {
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    @include for-size(small-width) {
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    i {
+      color: #222222;
+    }
+    ul {
+      display: flex;
+
+      li {
+        margin-right: 16px;
+        font-size: 12px;
+        @include for-size(small-width) {
+          font-size: 10px;
+        }
+      }
+    }
+    .git-company {
+      @include for-size(small-width) {
+        order: 2;
+      }
+    }
+    .git-sci {
+      @include for-size(small-width) {
+        order: 1;
+        margin-bottom: 10px;
+      }
+
+      li {
+        font-size: 20px;
       }
     }
   }
