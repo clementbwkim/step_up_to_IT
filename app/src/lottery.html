@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap" rel="stylesheet" />
-  <title>Lottery</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
-
 <body>
   <div class="wrap">
-    <div class="title-contents">
-      <div class="title-content">
-        <h1 class="title">
-          <span class="title-point">G</span>et your <span class="title-point-color">Lucky</span> Numbers !!</h1>
+    <div class="container">
+      <div class="lotto-title">
+        <h2 class="title"><spand class="point-letter">G</spand>et your <span class="point-word">lucky</span> Numbers!</h2>
       </div>
     </div>
-  </div>
-  <main>
-    <div class="main-contents">
-      <div class="lotto-contents">
-        <div class="user-input-contents">
-          <input class="input-price" type="text" placeholder="금액을 입력해주세요.." />
-          <button class="buy-btn btn-dec">구입하기</button>
-        </div>
-        <div class="user-lotto-contents">
-          <ul class="my-lottos"></ul>
-        </div>
-        <div class="win-check-contents">
-          <h5 class="win-check-numbers">
-            <i class="fa fa-asterisk"></i> 행운의 번호를 확인하세요 <i class="fa fa-hand-o-right"></i>
-          </h5>
-          <button class="checkout-btn btn-dec">당첨확인</button>
-        </div>
-        <ul class="win-lotto-contents"></ul>
-        <div class="result-display">
-        </div>
+    <main class="main">
+      <div class="main-container">
+       <div class="user-input-contents">
+        <form action="" class="input-form">
+          <input type="text" class="input-price">원
+        </form>
+        <button class="buy-btn deco">구입하기</button>
+        <button class="reset-btn">RESET</button>
+       </div>
+       <div class="user-lotto-contents">
+         <ul class="my-lottos"></ul>
+       </div>
+       <div class="win-check-contents">
+         <h3 class="win-check-numbers">
+          <i class="fas fa-check"></i>
+          행운의 번호를 확인하세요 
+          <i class="far fa-thumbs-up"></i>
+         </h3>
+         <button class="check-btn deco">당첨확인</button>
+       </div>
+       <ul class="win-lotto-contents">
+         <li class="my-lotto"></li>
+       </ul>
+       <div class="result-display"></div>
       </div>
-    </div>
-  </main>
+    </main>
   </div>
 </body>
-
 </html>

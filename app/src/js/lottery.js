@@ -6,9 +6,10 @@ import $ from 'jquery';
     const inputPrice = document.querySelector('.input-price');
     const buyBtn = document.querySelector('.buy-btn');
     const myLottosBox = document.querySelector('.my-lottos');
-    const compareBtn = document.querySelector('.checkout-btn');
+    const compareBtn = document.querySelector('.check-btn');
     const winLottoBox = document.querySelector('.win-lotto-contents');
     const resultDisplayBox = document.querySelector('.result-display');
+    const resetbtn = document.querySelector('.reset-btn');
 
     //일치하는 숫자 갯수에 따른 prize를 각 변수에 초기화하여 객체로 만들어줌
     const winningAmount = {
@@ -130,5 +131,12 @@ import $ from 'jquery';
         6개 일치 (${winningAmount.win6}원)- ${result[6]}개 <br>
       `;
     };
+
+    resetbtn.addEventListener('click', () =>{
+      inputPrice.value = '';
+      myLottosBox.innerHTML = '';
+      resultDisplayBox.innerHTML = '';
+      winLottoBox.innerHTML = '';
+    })
   })();
   
