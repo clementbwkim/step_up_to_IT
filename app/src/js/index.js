@@ -1,51 +1,27 @@
 import $ from 'jquery';
 
 //elements
-let headerBtn;
-let contactBtn;
-let headerNavigation;
-let contactNavigation;
-
+let headerBtnEl;
+let headerNavEl;
 //functions
-function crossBtn(){
-    headerBtn.click(() => {
-        headerBtn.toggleClass('cross')
-    })
+function toggleHeaderNav(){
+    headerNavEl.classList.toggle('hidden');
 }
-function rotateBtn(){
-    contactBtn.click(() => {
-        contactBtn.toggleClass('rotate')
-    })
+function crossBar(){
+    headerBtnEl.classList.toggle('cross');
 }
-
-function activeHeaderNav(){
-    headerBtn.click(()=>{
-        headerNavigation.toggleClass('hidden');
-    });
-    
-}
-function activeContactNav(){
-    contactBtn.click(()=>{
-        contactNavigation.toggleClass('hidden');
-    });
-}
-
 init();
 function init() {
-    initElements();
+    initElements(); 
     initEvents();
 }
 
 function initEvents(){
-    crossBtn();
-    rotateBtn();
-    activeHeaderNav();
-    activeContactNav();
+    headerBtnEl.addEventListener('click', toggleHeaderNav);
+    headerBtnEl.addEventListener('click', crossBar);
 }
 function initElements() {
-    headerBtn = $('.header-btn');
-    contactBtn = $('.contact-btn');
-    headerNavigation = $('.header-navigation');
-    contactNavigation = $('.contact-navigation');
+    headerBtnEl = document.querySelector('.header-btn');
+    headerNavEl = document.querySelector('.header-navigation');
 };
 
