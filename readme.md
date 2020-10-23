@@ -65,7 +65,7 @@ slick-slider.js를 사용하여 슬라이드 형식을 구현하였습니다.
 ### :memo: Skills
 
 - HTML `HTML5`
-- Experience up to ES6
+- JavaScript + ECMA6 
 - CSS preprocessor `SCSS`
 - jQuery
 
@@ -77,7 +77,7 @@ slick-slider.js를 사용하여 슬라이드 형식을 구현하였습니다.
 ---
 
 ### :memo: Ecosystem
--  Webpack
+-  Webpack4
 -  Package manager `npm`
 -  Version Control `git`
 -  Hosting `netlify`
