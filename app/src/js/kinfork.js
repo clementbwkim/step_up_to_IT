@@ -66,25 +66,27 @@ function resize () {
       latestContentCover.style.position = 'static';
       latestContentCover.style.width = '100%';
 
-    }else{
+    } else {
       if(scrollY <= scrollMax || pageYOffset <= scrollMax){
         logoEl.style.transform = `matrix(${scaleX},0,0,${scaleY},0,${translateY})`;
-      }    
-      latestContentCover.style.width = '50%';
+      }
       window.addEventListener('scroll', handleLogo);
       window.addEventListener('scroll', handleLatestSection);
-
+      latestContentCover.style.position = 'fixed';
+      handleLatestSection();
+      handleLogo();
     }
   });
 }
 
-function handleLatestSection () {
-  const enterAt = window.pageYOffset + window.innerHeight >= latestContainer.offsetTop + latestContentBox.clientHeight;
+function handleLatestSection (a) {
+  const offsetBottomY = window.pageYOffset + window.innerHeight;
+  const enterAt = offsetBottomY >= latestContainer.offsetTop + latestContentBox.clientHeight;
   const latestContainerBottomY = latestContainer.offsetTop + latestContainer.clientHeight;
   const marginBottom = 100;
-  const sidePadding = 40;
+  const sidePadding = 40 + latestContainer.offsetLeft;
   const latestStoryBottomY = latestContainerBottomY - headerContainerEl.clientHeight - marginBottom;
-  const afterBottom = window.pageYOffset + window.innerHeight >= latestStoryBottomY;
+  const afterBottom = offsetBottomY >= latestStoryBottomY;
 
   if (enterAt) {
     if (afterBottom) {
@@ -102,13 +104,6 @@ function handleLatestSection () {
     latestContentCover.style.position = 'static';
     latestContentCover.style.width = '50%';
     latestContentSpacingCover.classList.add('hidden');
-  }
-
-  if(window.innerWidth <= screenSize.large) {
-    latestContentCover.style.position = 'static';
-    latestContentCover.style.width = '100%';
-  }else {
-    latestContentCover.style.width = '50%';
   }
 }
 function currentIssueSlick () {
@@ -186,8 +181,10 @@ function initEvents () {
   searchCloseIconEl.addEventListener('click', searchHiddenAdd);
   burgerMenuOpenIconEl.addEventListener('click', burgerHiddenOff);
   burgerMenuCloseIconEl.addEventListener('click', burgerHiddenAdd);
-  window.addEventListener('scroll', handleLogo);
-  window.addEventListener('scroll', handleLatestSection);
+  if (window.innerWidth > screenSize.large) {
+    window.addEventListener('scroll', handleLogo);
+    window.addEventListener('scroll', handleLatestSection);
+  }
   resize();
 }
 
