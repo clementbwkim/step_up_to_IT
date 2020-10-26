@@ -174,7 +174,6 @@ html {
     }
   }
   .work-section {
-    background: linear-gradient(#ebe2de, #e5c7b7, #8e6d6e);
     width: 100%;
     position: absolute;
     min-height: 50vh;
@@ -191,6 +190,8 @@ html {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      background: linear-gradient(#ebe2de, #e5c7b7, #8e6d6e);
+
       h2 {
         width: 100%;
         text-align: center;
