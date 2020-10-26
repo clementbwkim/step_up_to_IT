@@ -125,11 +125,12 @@ html {
 
         .banner-info-content {
           margin-right: 50px;
+
+          @include for-size(small-width) {
+            font-size: 0.8em;
+          }
           @include for-size(xsmall-width) {
             margin-right: 0;
-          }
-          @include for-size(xxsmall-width) {
-            font-size: 0.8em;
           }
 
           .info-words {
