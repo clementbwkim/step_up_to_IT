@@ -72,7 +72,7 @@ html {
         z-index: 2;
         .items-container {
           width: 50%;
-          @include for-size(xsmall-width) {
+          @include for-size(small-width) {
             width: 80%;
           }
           .navigation-items {
@@ -117,21 +117,22 @@ html {
             transform: translateX(-10%);
           }
           @include for-size(small-width) {
-            transform: translateX(-15%);
+            font-size: 0.8em;
+            transform: translateX(0%);
           }
           @include for-size(xsmall-width) {
-            font-size: 0.8em;
-            transform: translateX(-2%);
+            font-size: 0.7em;
           }
-          @include for-size(xxsmall-width) {
-            transform: translateX(-3%);
-          }
+
           .info-words {
             display: flex;
             justify-content: flex-end;
             .word {
               margin-left: 20px;
               font-size: 14px;
+              @include for-size(xsmall-width) {
+                font-size: 1em;
+              }
 
               .c-letter {
                 font-size: 1.5em;
@@ -203,11 +204,8 @@ html {
           margin: 20px auto;
         }
         @include for-size(xsmall-width) {
-          max-width: 330px;
+          max-width: 250px;
           margin-bottom: 50px;
-        }
-        @include for-size(xxsmall-width) {
-          max-width: 300px;
         }
 
         img {
