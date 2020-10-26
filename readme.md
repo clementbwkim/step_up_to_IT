@@ -4,7 +4,7 @@
 
 ## :heavy_check_mark: Introduction
 
->**Step up to IT**는 개인적으로 진행한 첫 프로젝트로 **퍼블리셔로 시작하여 개발자까지** 성장하기 위해 노력한다는 의미를 가지고 있습니다.
+> **Step up to IT**는 개인적으로 진행한 첫 프로젝트로 **퍼블리셔로 시작하여 개발자까지** 성장하기 위해 노력한다는 의미를 가지고 있습니다.
 
 ### - UI Design
 
@@ -12,25 +12,21 @@
 
 점차 진해지는 톤온톤 그라데이션으로 노력하는만큼 열정이 진해진다는 것을 표현하였고, 배경과 어우러지고 성장을 뜻하는 초록색을 포인트 컬러로 사용하여 전체적으로 편안한 색감을 주려고 했습니다. 또한 컨텐츠들은 최대한 한눈에 볼 수 있도록 심플하게 구성하였습니다.
 
-
-
 ## :heavy_check_mark: Demo
 
 > :link: Project : [step up to IT](https://stepupbk.netlify.app/)
 
 ## :heavy_check_mark: Contents
 
-|  Page Link  | Description   |
-| :---------------------: | ---------------------------------------- |
-| [:star: Kinfork Clone](https://stepupbk.netlify.app/kinfork.html)  | 프로젝트의 **메인 컨텐츠**로 Kinfork.com 메인 레이아웃 및 이벤트 효과 클론                                                                                                |
-|   [Github Clone](https://stepupbk.netlify.app/github.html)   | github.com/explore 레이아웃 및 이벤트 효과 클론  |
-| [Lottery program](https://stepupbk.netlify.app/lottery.html) | html, scss를 사용하여 UI를 구현하였고, Vanilla JS로 기능 구현하였고 금액을 입력하면 해당 갯수만큼의 번호들을 추출하고 당첨 번호와 비교하여 수익률을 알 수 있도록 제작 |
+|                             Page Link                             | Description                                                                                                                                                           |
+| :---------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [:star: Kinfork Clone](https://stepupbk.netlify.app/kinfork.html) | 프로젝트의 **메인 컨텐츠**로 Kinfork.com 메인 레이아웃 및 이벤트 효과 클론                                                                                            |
+|     [Github Clone](https://stepupbk.netlify.app/github.html)      | github.com/explore 레이아웃 및 이벤트 효과 클론                                                                                                                       |
+|   [Lottery program](https://stepupbk.netlify.app/lottery.html)    | html, scss를 사용하여 UI를 구현하였고, Vanilla JS로 기능 구현하였고 금액을 입력하면 해당 갯수만큼의 번호들을 추출하고 당첨 번호와 비교하여 수익률을 알 수 있도록 제작 |
 
 <br>
 
 ### # Main Contents Kinfork Page Description
-
-
 
 #### :memo: Scroll Event (Logo)
 
@@ -65,38 +61,41 @@ slick-slider.js를 사용하여 슬라이드 형식을 구현하였습니다.
 ### :memo: Skills
 
 - HTML `HTML5`
-- JavaScript + ECMA6 
+- JavaScript + ECMA6
 - CSS preprocessor `SCSS`
 - jQuery
 
 ---
 
 ### :memo: UI-libs
--  slick-slider.js
+
+- slick-slider.js
 
 ---
 
 ### :memo: Ecosystem
--  Webpack4
--  Package manager `npm`
--  Version Control `git`
--  Hosting `netlify`
+
+- Webpack4
+- Package manager `npm`
+- Version Control `git`
+- Hosting `netlify`
 
 ---
 
 ### :memo: Tools
--  Code Editor `Visual Studio code`
+
+- Code Editor `Visual Studio code`
 
 ## :heavy_check_mark: Installation
 
 - npm 기반으로 작업이 되었고 최초 실행 할 때 설치해야 합니다.<br>
-　`npm install 또는 npm i`
+  　`npm install 또는 npm i`
 
 - 작업을 진행하는 대로 로컬에서 실행 할 경우 반영이 됩니다.<br>
-　`npm run dev` | `http://localhost:9000`
+  　`npm run dev` | `http://localhost:9000`
 
 - 배포 할 때는 해당 명령어를 사용합니다.<br>
-　`npm run build`
+  　`npm run build`
 
 ## :heavy_check_mark: License
 

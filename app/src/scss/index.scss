@@ -14,21 +14,16 @@ html {
   }
 
   .banner-section {
-    width: 60%;
-    position: relative;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #ebe2de;
     @include for-size(medium-width) {
       width: 100%;
     }
 
     .banner-container {
-      position: fixed;
-      width: 60%;
-      height: 100vh;
-      background: #ebe2de;
-      @include for-size(medium-width) {
-        width: 100%;
-        position: relative;
-      }
+      width: 100%;
 
       .burger-btn-wrapper {
         padding: 20px;
@@ -115,30 +110,37 @@ html {
         }
       }
       .banner-contents {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
+        @include for-size(xlarge-width) {
+          width: 100%;
+          max-width: 510px;
+        }
+
         .banner-info-content {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          @include for-size(medium-width) {
-            transform: translateX(-10%);
-          }
-          @include for-size(small-width) {
-            font-size: 0.8em;
-            transform: translateX(0%);
-          }
+          margin-right: 50px;
           @include for-size(xsmall-width) {
-            font-size: 0.7em;
+            margin-right: 0;
+          }
+          @include for-size(xxsmall-width) {
+            font-size: 0.8em;
           }
 
           .info-words {
-            display: flex;
-            justify-content: flex-end;
             .word {
-              margin-left: 20px;
-              font-size: 14px;
+              font-family: $gothic;
+              font-size: 2em;
+              opacity: 0.3;
+              text-transform: uppercase;
+              font-weight: 800;
+              letter-spacing: -1px;
+
               @include for-size(xsmall-width) {
                 font-size: 1em;
               }
@@ -162,17 +164,9 @@ html {
           }
         }
         .banner-img-content {
-          position: absolute;
-          left: 70%;
-          top: 50%;
-          transform: translateY(-50%);
           width: 150px;
-          z-index: -1;
-          @include for-size(medium-width) {
-            z-index: 0;
-          }
-          @include for-size(xsmall-width) {
-            display: none;
+          @include for-size(xlarge-width) {
+            width: 110px;
           }
         }
       }
@@ -180,21 +174,36 @@ html {
   }
   .work-section {
     background: linear-gradient(#ebe2de, #e5c7b7, #8e6d6e);
-    width: 40%;
-    min-height: 100vh;
-    position: relative;
-    @include for-size(medium-width) {
-      width: 100%;
+    width: 100%;
+    position: absolute;
+    min-height: 50vh;
+    top: 100vh;
+    box-shadow: 0px 0px 9px #555;
+    box-sizing: border-box;
+    @include for-size(xsmall-width) {
+      height: 100vh;
     }
 
     .work-container {
       position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 2em;
+        font-family: $gothic;
+        padding-top: 40px;
+      }
       .work-contents {
         position: relative;
         overflow: hidden;
-        min-width: 230px;
-        max-width: 350px;
-        width: 50%;
+        width: 33%;
+        max-width: 300px;
+        min-height: 200px;
+        max-height: 280px;
         color: #ffffff;
         text-align: center;
         font-size: 16px;
@@ -204,18 +213,8 @@ html {
         margin: 40px auto;
         border-radius: 10px;
         box-sizing: border-box;
-        @include for-size(medium-width) {
-          max-width: 650px;
-          margin: 50px auto;
+        @include for-size(xlarge-width) {
           width: 100%;
-        }
-        @include for-size(small-width) {
-          max-width: 520px;
-          margin: 20px auto;
-        }
-        @include for-size(xsmall-width) {
-          max-width: 320px;
-          margin-bottom: 50px;
         }
 
         img {
