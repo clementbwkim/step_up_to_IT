@@ -9,21 +9,31 @@ html {
 
 .main-container {
   display: flex;
-  background: linear-gradient(#ebe2de, #e5c7b7, #8e6d6e);
+  @include for-size(medium-width) {
+    flex-wrap: wrap;
+  }
 
   .banner-section {
     width: 60%;
     position: relative;
+    @include for-size(medium-width) {
+      width: 100%;
+    }
 
     .banner-container {
       position: fixed;
       width: 60%;
       height: 100vh;
+      background: #ebe2de;
+      @include for-size(medium-width) {
+        width: 100%;
+        position: relative;
+      }
 
       .burger-btn-wrapper {
         padding: 20px;
         position: relative;
-        z-index: 1;
+        z-index: 3;
         .burger-btn {
           width: 50px;
           height: auto;
@@ -53,18 +63,42 @@ html {
         top: 0;
         left: 0;
         height: 100vh;
-        background: skyblue;
+        background: #e5c7b7;
         display: flex;
         justify-content: center;
+        width: 100%;
         align-items: center;
         transition: all 0.5s ease;
-        .navigation-items {
-          min-width: 250px;
-          line-height: 2;
-          text-align: center;
-          font-size: 2em;
+        z-index: 2;
+        .items-container {
+          width: 50%;
+          @include for-size(xsmall-width) {
+            width: 80%;
+          }
+          .navigation-items {
+            min-width: 255px;
+            line-height: 2;
+            text-align: center;
+            font-size: 2em;
+            font-weight: 600;
+          }
+          .sci-items {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            border-top: 3px solid #508164;
+            padding : {
+              top: 50px;
+              left: 15px;
+              right: 15px;
+            }
+
+            i {
+              font-size: 20px;
+            }
+          }
         }
-        width: 100%;
+
         &.hidden {
           width: 0%;
           overflow: hidden;
@@ -76,6 +110,22 @@ html {
         flex-wrap: wrap;
         justify-content: center;
         .banner-info-content {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          @include for-size(medium-width) {
+            transform: translateX(-10%);
+          }
+          @include for-size(small-width) {
+            transform: translateX(-15%);
+          }
+          @include for-size(xsmall-width) {
+            font-size: 0.8em;
+            transform: translateX(-2%);
+          }
+          @include for-size(xxsmall-width) {
+            transform: translateX(-3%);
+          }
           .info-words {
             display: flex;
             justify-content: flex-end;
@@ -102,50 +152,76 @@ html {
         }
         .banner-img-content {
           position: absolute;
-          right: 40px;
+          left: 70%;
           top: 50%;
           transform: translateY(-50%);
           width: 150px;
           z-index: -1;
-        }
-        .banner-sci-content {
-          width: 50%;
-          margin-top: 50px;
-          .sci-items {
-            display: flex;
-            justify-content: space-between;
+          @include for-size(medium-width) {
+            z-index: 0;
+          }
+          @include for-size(xsmall-width) {
+            display: none;
           }
         }
       }
     }
   }
   .work-section {
+    background: linear-gradient(#ebe2de, #e5c7b7, #8e6d6e);
     width: 40%;
-    background: #ebe2de;
+    min-height: 100vh;
+    position: relative;
+    @include for-size(medium-width) {
+      width: 100%;
+    }
+
     .work-container {
+      position: relative;
       .work-contents {
         position: relative;
         overflow: hidden;
         min-width: 230px;
-        max-width: 315px;
-        max-height: 230px;
-        width: 100%;
+        max-width: 350px;
+        width: 50%;
         color: #ffffff;
-        text-align: right;
+        text-align: center;
         font-size: 16px;
         background-color: #000000;
         text-transform: uppercase;
         transition: all 0.35s ease;
         margin: 40px auto;
-        a {
-          display: block;
+        border-radius: 10px;
+        box-sizing: border-box;
+        @include for-size(medium-width) {
+          max-width: 650px;
+          margin: 50px auto;
+          width: 100%;
         }
+        @include for-size(small-width) {
+          max-width: 520px;
+          margin: 20px auto;
+        }
+        @include for-size(xsmall-width) {
+          max-width: 330px;
+          margin-bottom: 50px;
+        }
+        @include for-size(xxsmall-width) {
+          max-width: 300px;
+        }
+
+        img {
+          transform: scale(1);
+          transition: all 0.35s ease;
+        }
+
         .description {
           position: absolute;
-          top: 0;
-          right: 0;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 70%;
           z-index: 1;
-          padding: 20px;
           transition: all 0.35s ease;
           h3,
           .text {
@@ -167,7 +243,7 @@ html {
             font-size: 1em;
             margin: 0;
             padding: 0;
-            transform: translateX(40px);
+            transform: translateY(40px);
             opacity: 0;
             margin-top: 10px;
             line-height: 1.5;
@@ -177,10 +253,12 @@ html {
         &:hover {
           img {
             opacity: 0.5;
+            transform: scale(1.1);
+            transition: all 0.35s ease;
           }
           .text {
             opacity: 1;
-            transform: translateX(0px);
+            transform: translateY(0px);
           }
         }
       }
