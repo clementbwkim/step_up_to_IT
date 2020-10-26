@@ -81,6 +81,11 @@ html {
             text-align: center;
             font-size: 2em;
             font-weight: 600;
+            .navigation-item {
+              &:hover {
+                opacity: 0.8;
+              }
+            }
           }
           .sci-items {
             display: flex;
@@ -92,9 +97,13 @@ html {
               left: 15px;
               right: 15px;
             }
-
             i {
               font-size: 20px;
+            }
+            .sci-item {
+              &:hover {
+                opacity: 0.8;
+              }
             }
           }
         }
@@ -148,6 +157,7 @@ html {
             .point {
               color: #44564a;
               border-bottom: 13px solid #44564a;
+              animation: fadeIn 3s;
             }
           }
         }
@@ -204,7 +214,7 @@ html {
           margin: 20px auto;
         }
         @include for-size(xsmall-width) {
-          max-width: 250px;
+          max-width: 320px;
           margin-bottom: 50px;
         }
 
