@@ -1,276 +1,378 @@
 @import './includes/_config.scss';
-//main background background: #ebe2de
-//right section background: linear-gradient(#ebe2de, #e5c7b7, #8e6d6e);
-//kim bw #508164; color: #44564a; border-bottom: 13px solid #44564a;
 
-html {
-  scroll-behavior: smooth;
+$landing-dark: #9ab4d4;
+$landing-medium: #b9cde3;
+$landing-light: #dce3ef;
+
+%contents-title {
+  position: relative;
+  font-size: 5em;
+  color: $landing-dark;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 1.8em;
+
+  &:after {
+    content: '';
+    width: 200px;
+    height: 5px;
+    background: $landing-dark;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+
+    @include for-size(small-width) {
+      width: 80px;
+      height: 3px;
+    }
+  }
+
+  @include for-size(small-width) {
+    font-size: 3em;
+  }
 }
 
-.main-container {
-  display: flex;
-  @include for-size(medium-width) {
-    flex-wrap: wrap;
-  }
-
-  .banner-section {
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    background: #ebe2de;
-    @include for-size(medium-width) {
-      width: 100%;
-    }
-
-    .banner-container {
-      width: 100%;
-
-      .burger-btn-wrapper {
-        padding: 20px;
-        position: relative;
-        z-index: 3;
-        .burger-btn {
-          width: 50px;
-          height: auto;
-          outline: 0;
-          cursor: pointer;
-          .line {
-            width: 100%;
-            height: 2px;
-            display: inline-block;
-            background: #222222;
-          }
-        }
-        .burger-btn.cross {
-          .line:first-child {
-            transform: rotate(45deg);
-            transform-origin: 5px 1px;
-          }
-          .line:last-child {
-            transform: rotate(-45deg);
-            transform-origin: 9px 3px;
-          }
-        }
-      }
-
-      .navigation-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        background: #e5c7b7;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        align-items: center;
-        transition: all 0.5s ease;
-        z-index: 2;
-        .items-container {
-          width: 50%;
-          @include for-size(small-width) {
-            width: 80%;
-          }
-          .navigation-items {
-            min-width: 255px;
-            line-height: 2;
-            text-align: center;
-            font-size: 2em;
-            font-weight: 600;
-            .navigation-item {
-              &:hover {
-                opacity: 0.8;
-              }
-            }
-          }
-          .sci-items {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-            border-top: 3px solid #508164;
-            padding : {
-              top: 50px;
-              left: 15px;
-              right: 15px;
-            }
-            i {
-              font-size: 20px;
-            }
-            .sci-item {
-              &:hover {
-                opacity: 0.8;
-              }
-            }
-          }
-        }
-
-        &.hidden {
-          width: 0%;
-          overflow: hidden;
-          transition: all 0.5s ease;
-        }
-      }
-      .banner-contents {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        @include for-size(xlarge-width) {
+.wrap {
+  overflow: hidden;
+  .header-container {
+    font-family: $gothic;
+    position: relative;
+    .btn-wrapper {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      .bars {
+        width: 50px;
+        height: auto;
+        outline: 0;
+        cursor: pointer;
+        .bar {
           width: 100%;
-          max-width: 510px;
-        }
-
-        .banner-info-content {
-          margin-right: 50px;
-
-          @include for-size(small-width) {
-            font-size: 0.8em;
-          }
-          @include for-size(xsmall-width) {
-            margin-right: 0;
-          }
-
-          .info-words {
-            .info-word {
-              font-family: $gothic;
-              font-size: 2em;
-              opacity: 0.3;
-              text-transform: uppercase;
-              font-weight: 800;
-              letter-spacing: -1px;
-
-              @include for-size(xsmall-width) {
-                font-size: 1em;
-              }
-
-              .c-letter {
-                font-size: 1.5em;
-                color: #8e6d6e;
-              }
-            }
-          }
-          .info-title {
-            font-family: $gothic;
-            font-weight: 600;
-            font-size: 6em;
-            color: #508164;
-            .point {
-              color: #44564a;
-              border-bottom: 13px solid #44564a;
-              animation: fadeIn 3s;
-            }
-          }
-        }
-        .banner-img-content {
-          width: 150px;
-          @include for-size(xlarge-width) {
-            width: 110px;
-          }
+          height: 2px;
+          display: inline-block;
+          background: #222222;
         }
       }
     }
-  }
-  .work-section {
-    width: 100%;
-    position: absolute;
-    min-height: 50vh;
-    top: 100vh;
-    box-shadow: 0px 0px 9px #555;
-    box-sizing: border-box;
-    @include for-size(xsmall-width) {
+    .header-contents {
+      position: fixed;
+      width: 50%;
       height: 100vh;
-    }
-
-    .work-container {
-      position: relative;
-      min-height: 50vh;
+      z-index: 1;
+      top: 0;
+      right: -100%;
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      background: linear-gradient(#ebe2de, #e5c7b7, #8e6d6e);
+      justify-content: center;
+      text-align: center;
+      background: $landing-dark;
+      line-height: 1.5;
+      transition: right 0.3s ease-in-out;
+      overflow: hidden;
+
+      @include for-size(medium-width) {
+        width: 100%;
+      }
+
+      &.header-slide {
+        right: 0;
+        transition: right 0.3s ease-in-out;
+      }
+
+      .header-profile {
+        margin-bottom: 2em;
+        border-bottom: 2px solid $landing-medium;
+        padding-bottom: 2em;
+        .header-profile-img {
+          width: 150px;
+          height: 150px;
+          overflow: hidden;
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+
+        .header-title {
+          font-size: 1.5em;
+          margin-top: 0.8em;
+        }
+        .header-words {
+          display: flex;
+          font-size: 0.8em;
+          .header-word::after {
+            content: '/';
+            padding: 10px 3px;
+          }
+          .header-word:last-child::after {
+            content: '';
+          }
+        }
+      }
+
+      .nav-item a {
+        font-size: 1.5em;
+        line-height: 2;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+      }
+    }
+  }
+
+  .main {
+    font-family: $gothic;
+    background: #f2f2f2;
+
+    section {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .banner-section {
+      width: 100%;
+      min-height: 70vh;
+      background: $landing-medium;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      @include for-size(xsmall-width) {
+        height: 100vh;
+      }
 
       h2 {
-        width: 100%;
-        text-align: center;
-        font-size: 2em;
-        font-family: $gothic;
-        padding-top: 40px;
-      }
-      .work-contents {
-        position: relative;
-        overflow: hidden;
-        width: 33%;
-        max-width: 300px;
-        min-height: 200px;
-        max-height: 280px;
-        color: #ffffff;
-        text-align: center;
-        font-size: 16px;
-        background-color: #000000;
+        font-size: 6em;
         text-transform: uppercase;
-        transition: all 0.35s ease;
-        margin: 40px auto;
-        border-radius: 10px;
+        font-weight: 800;
+        color: #566e92;
+
+        @include for-size(small-width) {
+          font-size: 5em;
+        }
+
+        span {
+          color: #222;
+        }
+      }
+
+      p {
+        font-size: 1em;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        margin-top: 1em;
+        color: $landing-dark;
+        background: #f2e3ea;
+        padding: 1em;
+        @include for-size(small-width) {
+          font-size: 0.6em;
+        }
+      }
+    }
+
+    .profile-section {
+      margin-top: 8em;
+      .profile-title {
+        @extend %contents-title;
+      }
+      .profile-container {
+        background: #fff;
+        text-align: center;
+        padding: 3em 0;
+        margin: 5em auto;
         box-sizing: border-box;
-        @include for-size(xlarge-width) {
-          width: 100%;
+        box-shadow: 0px 3px 5px #ddd;
+        border-radius: 3px;
+
+        .profile-img {
+          width: 200px;
+          height: 200px;
+          overflow: hidden;
+          border-radius: 50%;
+          background: $landing-light;
+          margin: 0 auto;
         }
 
-        img {
-          transform: scale(1);
-          transition: all 0.35s ease;
-        }
+        .profile-text {
+          margin-top: 3em;
+          padding: 0 3em;
 
-        .description {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 70%;
-          z-index: 1;
-          transition: all 0.35s ease;
-          h3,
-          .text {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            transition: all 0.35s ease;
-          }
-          h3 {
-            line-height: 1.3em;
-            font-weight: 900;
-            font-size: 1.3em;
-            color: #fff;
-            background: #222;
-            text-align: center;
-            padding: 4px;
-          }
-          .text {
-            font-size: 1em;
-            margin: 0;
-            padding: 0;
-            transform: translateY(40px);
-            opacity: 0;
-            margin-top: 10px;
+          p {
             line-height: 1.5;
-            color: #ffff;
-          }
-        }
-        &:hover {
-          img {
-            opacity: 0.5;
-            transform: scale(1.1);
-            transition: all 0.35s ease;
-          }
-          .text {
-            opacity: 1;
-            transform: translateY(0px);
+            font-size: 1em;
+            font-family: $gothic;
+
+            @include for-size(xsmall-width) {
+              font-size: 0.9em;
+            }
+
+            &.profile-text-en {
+              color: #666;
+              font-size: 0.8em;
+
+              @include for-size(xsmall-width) {
+                margin-top: 1em;
+              }
+            }
           }
         }
       }
     }
+
+    .portfolio-section {
+      margin: 8em auto;
+      .portfolio-title {
+        @extend %contents-title;
+      }
+
+      .portfolio-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 8em;
+
+        .portfolio-item {
+          width: 33%;
+          max-width: 450px;
+          background: #fff;
+          border-radius: 3px;
+          box-shadow: 1px 5px 3px #ddd;
+
+          @include for-size(medium-width) {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 3em;
+          }
+
+          @include for-size(xsmall-width) {
+            font-size: 0.9em;
+          }
+
+          .portfolio-item-img {
+            width: 100%;
+            max-height: 300px;
+            overflow: hidden;
+            position: relative;
+
+            .overlay {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background: $landing-medium;
+              font-size: 1.3em;
+              top: -100%;
+              left: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              text-transform: uppercase;
+              transition: top 0.3s ease-in-out;
+            }
+          }
+
+          .portfolio-desc {
+            padding: 2em 1em;
+            text-align: center;
+
+            p {
+              line-height: 1.5;
+
+              span {
+                color: $landing-dark;
+                display: block;
+                font-size: 0.8em;
+                margin-bottom: 1em;
+              }
+            }
+
+            .git-link {
+              display: inline-block;
+              margin-top: 2em;
+              border: 1px solid $landing-dark;
+              color: $landing-dark;
+              padding: 1em;
+              border-radius: 3px;
+              transition: all 0.3s ease;
+
+              &:hover {
+                background: $landing-dark;
+                color: $landing-light;
+                transition: all 0.3s ease;
+              }
+            }
+          }
+
+          &:hover .overlay {
+            top: 0;
+            transition: top 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    .contact-section {
+      .contact-title {
+        @extend %contents-title;
+      }
+
+      .sci-items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 60%;
+        margin: 0 auto 8em;
+        @include for-size(medium-width) {
+          width: 100%;
+        }
+
+        .sci-item {
+          font-size: 1em;
+          width: 25%;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+
+          @include for-size(xsmall-width) {
+            width: 50%;
+          }
+
+          &.git,
+          &.mail {
+            background: $landing-light;
+          }
+
+          &.velog {
+            background: $landing-medium;
+          }
+
+          &.tel {
+            background: $landing-dark;
+          }
+
+          a {
+            display: block;
+          }
+
+          &:hover {
+            background: #566e92;
+            transition: all 0.3s ease;
+
+            a {
+              color: $landing-light;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 2em;
+    text-align: center;
+    color: #888;
   }
 }

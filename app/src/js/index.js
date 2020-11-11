@@ -1,30 +1,21 @@
+import $ from 'jquery';
 
-//elements
-let burgerBtnEl;
-let navEl;
+let headerBtnEl;
+let headerContentsEl;
 
 init();
-
 function init() {
-    initElements(); 
-    initEvents();
+    initElements();
+    showNavigation();
 }
 
 function initElements() {
-    burgerBtnEl = document.querySelector('.burger-btn');
-    navEl = document.querySelector('.navigation-wrapper');
-};
-
-function initEvents(){
-    burgerBtnEl.addEventListener('click', toggleHeaderNav);
-    burgerBtnEl.addEventListener('click', crossBar);
+    headerBtnEl = $('.btn-wrapper');
+    headerContentsEl = $('.header-contents');
 }
 
-//functions
-function toggleHeaderNav(){
-    navEl.classList.toggle('hidden');
+function showNavigation(){
+    headerBtnEl.click(()=>{
+        headerContentsEl.toggleClass('header-slide');
+    });
 }
-function crossBar(){
-    burgerBtnEl.classList.toggle('cross');
-}
-

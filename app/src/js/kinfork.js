@@ -91,7 +91,7 @@ function handleLatestSection (a) {
   if (enterAt) {
     if (afterBottom) {
       latestContentCover.style.position = 'absolute';
-      latestContentCover.style.bottom = `${headerContainerEl.clientHeight + marginBottom}px`; // 수정 필요
+      latestContentCover.style.bottom = `${headerContainerEl.clientHeight + marginBottom}px`;
       latestContentCover.style.width = '50%';
       latestContentSpacingCover.classList.remove('hidden');
     } else {
