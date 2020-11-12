@@ -56,6 +56,19 @@ $landing-light: #dce3ef;
           height: 2px;
           display: inline-block;
           background: #222222;
+          transition: all 0.3s ease;
+        }
+        &.cross {
+          .bar:first-child {
+            transform: rotate(45deg);
+            transform-origin: 12px -3px;
+            transition: all 0.3s ease;
+          }
+          .bar:last-child {
+            transform: rotate(-45deg);
+            transform-origin: 1px 2px;
+            transition: all 0.3s ease;
+          }
         }
       }
     }
