@@ -24,6 +24,10 @@ module.exports = {
       path.resolve(srcDir, 'js/lottery.js'),
       path.resolve(srcDir, 'scss/lottery.scss')
     ],
+    landing: [
+      path.resolve(srcDir, 'js/landing.js'),
+      path.resolve(srcDir, 'scss/landing.scss')
+    ],
   },
   output: {
     path: distDir,
@@ -108,6 +112,12 @@ module.exports = {
       template: path.resolve(srcDir, 'lottery.html'),
       filename: 'lottery.html',
       chunks: ['lottery','common'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(srcDir, 'landing.html'),
+      filename: 'landing.html',
+      chunks: ['landing','common'],
     }),
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
