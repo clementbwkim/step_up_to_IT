@@ -162,6 +162,15 @@ $landing-light: #dce3ef;
         text-transform: uppercase;
         font-weight: 800;
         color: #566e92;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: 0.6s ease-in;
+
+        &.on {
+          transform: translateY(0);
+          opacity: 1;
+          transition-delay: 0.5s;
+        }
 
         @include for-size(small-width) {
           font-size: 5em;
@@ -180,6 +189,16 @@ $landing-light: #dce3ef;
         color: $landing-dark;
         background: #f2e3ea;
         padding: 1em;
+        transform: translateX(-30px);
+        opacity: 0;
+        transition: 0.6s ease-in;
+
+        &.on {
+          transition-delay: 0.9s;
+          transform: translateX(0);
+          opacity: 1;
+          width: auto;
+        }
         @include for-size(small-width) {
           font-size: 0.6em;
         }
