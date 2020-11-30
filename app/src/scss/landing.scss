@@ -1,15 +1,281 @@
 @import './includes/_config.scss';
 
-header{
+%guide-Btn {
+    color: #fff;
+    background: #222;
+    font-size: 20px;
+    padding: 16px;
+    border-radius: 6px;
+    font-weight: 600;
+}
 
+.wrap{
+    overflow: hidden;
+}
+
+header{
+    padding: 2em 0;
+    .header-container{
+        position: fixed;
+        width: 100%;
+        display: flex;
+        padding: 0 2em;
+        justify-content: space-between;
+        box-sizing: border-box;
+        z-index: 2;
+        .logo-box{
+            font-size: 40px;
+        }
+    
+        .burger-menu{
+            display: flex;
+            z-index: 3;
+            .bar-wrapper{
+                width: 50px;
+                outline: none;
+                cursor: pointer;
+                
+                .bar{
+                    width: 100%;
+                    height: 3px;
+                    background: black;
+                    display: inline-block;
+                    transition: all 0.3s ease;
+                }
+                &.cross{
+                    .bar:first-child{
+                        transform: rotate(45deg);
+                    }
+                    .bar:last-child{
+                        transform: rotate(-45deg) translate3d(12px, -11px, 0);
+                    }
+                }
+            }
+        }
+    
+        .nav-wrapper{
+            font-size: 3em;
+            position: fixed;
+            right: -100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            top: 0;
+            height: 100vh;
+            line-height: 1.5;
+            text-align: center;
+            z-index: 1;
+            transition: all 0.3s ease;
+            background: #fff;
+
+            &.header-slide{
+                right: 0;
+                transition: all 0.3s ease;
+
+            }
+        }
+
+        
+    }
 }
 
 main{
-  
-    
-    .banner-section{
-        .banner-container{
-      
+    .banner-container{
+        .banner-items{
+            .slick-slide{
+                .banner-item{
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    height: 80vh;
+                    .banner-item-content{
+                        line-height: 1.5;
+                        h3{
+                            opacity: 0;
+                            transform: translateY(30px);
+                            font-size: 2em;
+                            letter-spacing: .5em;
+                            transition: all .3s ease-in-out;
+                        }
+                        p{
+                            opacity: 0;
+                            transform: translateY(30px);
+                            font-size: 3em;
+                            letter-spacing: .1em;
+                            transition: all .3s ease-in-out;
+                        }
+                        .guide-btn{
+                            @extend %guide-Btn;
+                            cursor: pointer;
+                            margin-top: 16px;
+                            opacity: 0;
+                            transform: translateY(30px);
+                            transition: all .3s ease-in-out;
+        
+                        }
+                    }
+                    
+                }
+
+                &.slick-current {
+                    .banner-item {
+                        .banner-item-content {
+                            h3 {
+                                opacity: 1;
+                                transform: translateY(0);
+                                transition: all .3s ease-in-out;
+                                transition-delay: .2s;
+                            }
+
+                            p {
+                            
+                                opacity: 1;
+                                transform: translateY(0);
+                                transition: all .3s ease-in-out;
+                                transition-delay: .4s;
+                            }
+                            .guide-btn{
+                                opacity: 1;
+                                transform: translateY(0);
+                                transition: all .3s ease-in-out;
+                                transition-delay: .6s;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content-section{
+        padding: 8em 0;
+        .content-container{
+            width: 90%;
+            margin: 0 auto;
+
+            .title-wrapper{
+                text-align: center;
+                margin-bottom: 3em;
+                line-height: 1.5;
+
+                .title{
+                    font-size: 3em;
+                    font-weight: 600;
+                }
+            }
+            .content-items{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                text-align: center;
+                margin-top: 5rem;
+
+                .content-item{
+                    width: 33%;
+                    max-width: 500px;
+                    padding: 0 2em 2em;
+                    box-sizing: border-box;
+                    margin: 3em 0;
+
+                    .item-img{
+                        display: inline-block;
+                        width: 100px;
+                        height: 100px;
+                        margin-top: -30px;
+                        background: linear-gradient(45deg, skyblue, transparent);
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .bg-section{
+        .bg-container{
+            position: relative;
+            width: 100%;
+            height: 450px;
+            background: url(../img/railroad.png) no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    }
+
+    .card-section{
+        padding: 8em 0;
+
+        .card-container{
+            width: 90%;
+            margin: 0 auto;
+            .title-wrapper{
+                text-align: center;
+                margin-bottom: 3em;
+                line-height: 1.5;
+
+                .title{
+                    font-size: 3em;
+                    font-weight: 600;
+                }
+            }
+            .card-item-wrapper{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 5em;
+
+                .card-items{
+                    width: 33%;
+                    max-width: 500px;      
+                    
+                    .card-thumb{
+                        background: #c14566;
+                        min-height: 400px;
+                        overflow: hidden;
+                        position: relative;
+                        .card-img{
+                            position: absolute;
+                        }
+                        .card-overlay{
+                            
+                            width: 100%;
+                            height: 100%;
+                            padding: 2em;
+                            box-sizing: border-box;
+                            z-index: 1;
+                            position: absolute;
+                            display: flex;
+                            align-items: center;
+                            text-align: center;
+                            justify-content: center;
+
+                            .card-overlay-container{
+                                line-height: 1.5;
+
+                                h3{
+                                    font-size: 2em;
+                                    font-weight: 600;
+                                }
+                                p{
+
+                                }
+                                .card-sci{
+                                    ul{
+                                        display: flex;
+                                        width: 80%;
+                                        margin: 0 auto;
+                                        justify-content: space-between;
+                                    }
+                                }
+                            }
+
+                            
+                        }
+                    }
+                }
+            }
         }
     }
 }
