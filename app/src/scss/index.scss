@@ -267,11 +267,16 @@ $landing-light: #dce3ef;
         margin-top: 8em;
 
         .portfolio-item {
-          width: 33%;
-          max-width: 450px;
+          width: 23%;
+          margin: 1%;
           background: #fff;
           border-radius: 3px;
           box-shadow: 1px 5px 3px #ddd;
+          
+          @include for-size(xlarge-width) {
+            width: 48%;
+            margin: 1%;
+          }
 
           @include for-size(medium-width) {
             width: 100%;
@@ -283,9 +288,10 @@ $landing-light: #dce3ef;
             font-size: 0.9em;
           }
 
+
           .portfolio-item-img {
             width: 100%;
-            max-height: 300px;
+            max-height: 380px;
             overflow: hidden;
             position: relative;
 
