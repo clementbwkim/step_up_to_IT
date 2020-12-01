@@ -3,19 +3,34 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+
+let headerEl;
 let burgerBtnEl;
 let navEl;
+
 
 init();
 function init() {
     initElements();
     showHideNav();
     btnCross()
+    changeBgColor();
 }
 
 function initElements() {
+  headerEl = $('.header-container');
   burgerBtnEl = $('.bar-wrapper');
   navEl = $('.nav-wrapper');
+}
+
+function changeBgColor() {
+  $(window).scroll(() => {
+    if (0 < pageYOffset) {
+      headerEl.addClass('header-bg-on');
+    } else {
+      headerEl.removeClass('header-bg-on');
+    }
+  });
 }
 
 function btnCross() {
@@ -35,11 +50,11 @@ function showHideNav() {
 $('.banner-items').slick({
   autoplay : true,
   dots: true,
-  speed : 300,
+  speed : 2000,
   infinite: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 2000,
   arrows: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  fade: false
+  fade: true
 });

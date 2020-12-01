@@ -1,8 +1,10 @@
 @import './includes/_config.scss';
 
+$custom-white : #F3F3ED;
+
 %guide-Btn {
-    color: #fff;
-    background: #222;
+    color: #47564F;
+    background: #D5DBDB;
     font-size: 20px;
     padding: 16px;
     border-radius: 6px;
@@ -14,17 +16,21 @@
 }
 
 header{
-    padding: 2em 0;
     .header-container{
         position: fixed;
         width: 100%;
         display: flex;
-        padding: 0 2em;
+        padding: 2em;
         justify-content: space-between;
         box-sizing: border-box;
         z-index: 2;
+        transition: all .3s ease-in-out;
+
         .logo-box{
             font-size: 40px;
+            a{
+                color: $custom-white;
+            }
         }
     
         .burger-menu{
@@ -38,11 +44,14 @@ header{
                 .bar{
                     width: 100%;
                     height: 3px;
-                    background: black;
+                    background: $custom-white;
                     display: inline-block;
                     transition: all 0.3s ease;
                 }
                 &.cross{
+                    span{
+                        background: #222;
+                    }
                     .bar:first-child{
                         transform: rotate(45deg);
                     }
@@ -72,11 +81,25 @@ header{
             &.header-slide{
                 right: 0;
                 transition: all 0.3s ease;
+                @include for-size(medium-width) {
+                    width: 100%;
+                }
+
+                .nav-items{
+                    @include for-size(xsmall-width) {
+                        font-size: .6em;
+                        line-height: 2;
+                    }
+                }
+            
 
             }
         }
 
-        
+        &.header-bg-on{
+            background: #222222;
+            transition: all .3s ease-in-out;
+        }
     }
 }
 
@@ -84,19 +107,37 @@ main{
     .banner-container{
         .banner-items{
             .slick-slide{
+                &:nth-child(1){
+                    background: url(../img/slide_01.jpg) no-repeat center center;
+                }
+                &:nth-child(2){
+                    background: url(../img/slide_02.jpg) no-repeat center center;
+                }
+                &:nth-child(3){
+                    background: url(../img/slide_03.jpg) no-repeat center center;
+                }
                 .banner-item{
                     display: flex !important;
                     justify-content: center;
                     align-items: center;
-                    height: 80vh;
+                    height: 100vh;
                     .banner-item-content{
                         line-height: 1.5;
+                        color: $custom-white;
                         h3{
                             opacity: 0;
                             transform: translateY(30px);
                             font-size: 2em;
                             letter-spacing: .5em;
                             transition: all .3s ease-in-out;
+                            color: #D5DBDB;
+                            @include for-size(medium-width) {
+                                font-size: 1.3em;
+                            }
+                            @include for-size(xsmall-width) {
+                                font-size: .8em;
+                                margin-bottom: 1em;
+                            }
                         }
                         p{
                             opacity: 0;
@@ -104,6 +145,12 @@ main{
                             font-size: 3em;
                             letter-spacing: .1em;
                             transition: all .3s ease-in-out;
+                            @include for-size(medium-width) {
+                                font-size: 2em;
+                            }
+                            @include for-size(xsmall-width) {
+                                font-size: 1.2em;
+                            }
                         }
                         .guide-btn{
                             @extend %guide-Btn;
@@ -112,6 +159,9 @@ main{
                             opacity: 0;
                             transform: translateY(30px);
                             transition: all .3s ease-in-out;
+                            @include for-size(xsmall-width) {
+                                width: 100%;
+                            }
         
                         }
                     }
@@ -120,6 +170,7 @@ main{
 
                 &.slick-current {
                     .banner-item {
+                        
                         .banner-item-content {
                             h3 {
                                 opacity: 1;
@@ -159,10 +210,24 @@ main{
                 text-align: center;
                 margin-bottom: 3em;
                 line-height: 1.5;
+                @include for-size(medium-width){
+                    margin-bottom: 9em;
+
+                }
+                @include for-size(xsmall-width){
+                    font-size: .8em;
+
+                }
 
                 .title{
                     font-size: 3em;
                     font-weight: 600;
+                }
+                p{
+                    @include for-size(xsmall-width){
+                        padding: 0 3em;
+    
+                    }
                 }
             }
             .content-items{
@@ -178,14 +243,28 @@ main{
                     padding: 0 2em 2em;
                     box-sizing: border-box;
                     margin: 3em 0;
+                    border: 1px solid #222;
+
+                    @include for-size(medium-width){
+                        width: 100%;
+                        margin: 0 auto;
+                        margin-bottom: 5em;
+                    }
+                    @include for-size(xsmall-width){
+                        width: 90%;
+                        line-height: 1.2;
+                    }
 
                     .item-img{
                         display: inline-block;
                         width: 100px;
                         height: 100px;
-                        margin-top: -30px;
-                        background: linear-gradient(45deg, skyblue, transparent);
+                        margin-top: -40px;
+                        background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
                         border-radius: 50%;
+                    }
+                    .item-description{
+                        margin-top: 2em;
                     }
                 }
             }
@@ -197,9 +276,12 @@ main{
             position: relative;
             width: 100%;
             height: 450px;
-            background: url(../img/railroad.png) no-repeat;
+            background: url(../img/slide_03.jpg) no-repeat;
             background-size: cover;
             background-attachment: fixed;
+            @include for-size(medium-width){
+               background-position: center;
+            }
         }
     }
 
@@ -213,10 +295,20 @@ main{
                 text-align: center;
                 margin-bottom: 3em;
                 line-height: 1.5;
-
+                @include for-size(medium-width){
+                    margin-bottom: 9em;
+                }   
+                @include for-size(xsmall-width){
+                    font-size: .8em;
+                }   
                 .title{
                     font-size: 3em;
                     font-weight: 600;
+                }
+                p{
+                @include for-size(xsmall-width){
+                    padding: 0 3em;
+                }   
                 }
             }
             .card-item-wrapper{
@@ -228,15 +320,24 @@ main{
 
                 .card-items{
                     width: 33%;
-                    max-width: 500px;      
+                    max-width: 500px;   
+                    @include for-size(medium-width){
+                        width: 100%;
+                        margin: 0 auto;
+                        margin-bottom: 5em;
+                    }   
                     
                     .card-thumb{
-                        background: #c14566;
-                        min-height: 400px;
+                        min-height: 345px;
                         overflow: hidden;
                         position: relative;
+                        box-sizing: border-box;
+                        background: lightgray;
+
                         .card-img{
                             position: absolute;
+                            top: 30px;
+                            left: 0;
                         }
                         .card-overlay{
                             
@@ -250,6 +351,9 @@ main{
                             align-items: center;
                             text-align: center;
                             justify-content: center;
+                            top: -100%;
+                            transition: all .2s ease-in-out;
+
 
                             .card-overlay-container{
                                 line-height: 1.5;
@@ -267,6 +371,28 @@ main{
                                         width: 80%;
                                         margin: 0 auto;
                                         justify-content: space-between;
+
+                                        li{
+                                            color: #fff;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;
+                                            line-height: 30px;
+                                            margin-top: 5px;
+                                            a{
+                                                color: #fff;
+
+                                            }
+                                            &.twitter{
+                                                background: #00b6f1;
+                                            }
+                                            &.facebook{
+                                                background: #3b5998;
+                                            }
+                                            &.instagram{
+                                                background: #cd486b;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -274,8 +400,76 @@ main{
                             
                         }
                     }
+                    .card-info{
+                        text-align: center;
+                        line-height: 1.5;
+                        background: #95AB99;
+                        padding: 1em 0;
+
+                        h3{
+                            font-size: 1.5em;
+                            font-weight: 600;
+                            color: #47564F;
+                        }
+                        span{
+                            font-size: 1em;
+                        }
+                    }
+                    
+                    &:hover{
+                        .card-overlay{
+                            top: 0;
+                            background: #95AB99;
+                            transition: all .2s ease-in-out;
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+footer{
+    padding: 1.5em;
+    background: lightgray;
+    .footer-container{
+        text-align: center;
+        font-size: 1em;
+        font-weight: 500;
+      
+    }
+}
+
+
+.slick-dots {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    
+    li {
+        list-style: none;
+        margin: 10px;
+        width: 100%;
+
+      &.slick-active button {
+        background: #eee !important;
+      }
+    }
+    button {
+      border-radius: 50%;
+      width: 10px !important;
+      height: 10px !important;
+      border: none;
+      background: #555 !important;
+      text-indent: -9999px;
+      outline: 0;
+      &:hover {
+        background: #eee !important;
+      }
+    }
+  }
