@@ -147,11 +147,13 @@ $landing-light: #dce3ef;
     .banner-section {
       width: 100%;
       min-height: 70vh;
+      height: 70vh;
       background: $landing-medium;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      -ms-flex-align: center;
 
       @include for-size(xsmall-width) {
         height: 100vh;
