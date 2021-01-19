@@ -3,16 +3,27 @@ import Swiper from 'swiper/bundle';
 
 let mobileMenuEl;
 let navItemsEl; 
+let profileSection;
+let winH;
+let scrollY;
+let posFromTop;
+let absolutePos;
 
 init();
 function init() {
     initElements();
-    showNavigation();
+		showNavigation();
 }
 
 function initElements() {
     mobileMenuEl = $(".mobile-menu"); 
-    navItemsEl = $(".header-nav");
+		navItemsEl = $(".header-nav");
+		profileSection = $(".profile-section");
+		winH = window.innerHeight;
+		scrollY = window.pageYOffset;
+		posFromTop = profileSection.getBoundingClientRect().top;
+		absolutePos = pageYOffset + posFromTop;
+		console.log(posFromTop);
 }
 
 function showNavigation(){
@@ -45,7 +56,7 @@ const slideSetting = {
 			// when window width is >= 640px
 			640: {
 			}
-		}
+		},
 }
 
 var swiper = new Swiper('.swiper-container', slideSetting);

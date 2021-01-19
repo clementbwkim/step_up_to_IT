@@ -20,6 +20,10 @@ header{
   box-sizing: border-box;
   z-index: 2;
 
+  &.header-color{
+    background:  rgba(255, 255, 255, 0.1);
+  }
+
   .header-container{
     display: flex;
     justify-content: space-between;  
@@ -128,7 +132,6 @@ header{
 
 main{
   .main-container{
-
 
     .banner-section-container{
       .swiper-container{
@@ -254,6 +257,89 @@ main{
         }
       }
     }
+
+    .portfolio-section{
+      background: $landing-dark;
+      .portfolio-container{
+        text-transform: uppercase;
+        padding: 4em 0;
+        .portfolio-title{
+          font-size: 2em;
+          font-weight: 600;
+          border-bottom: 4px solid #222;
+          padding: 10px;
+          width: 15%;
+          margin: 0 auto;
+        }
+        .portfolio-contents{
+          display: flex;
+          padding: 4em 0;
+          .portfolio-content{
+            position: relative;
+            margin-right: 16px;
+            .portfolio-text{
+              position: absolute;
+              top: 50%;
+              left: 30%;
+              font-size: 2em;
+              font-weight: 600;
+            }
+          }
+          .portfolio-content:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .contact-container{
+        text-transform: uppercase;
+        padding: 4em 0;
+      .contact-title{
+        font-size: 2em;
+        font-weight: 600;
+        border-bottom: 4px solid #222;
+        padding: 10px;
+        width: 13%;
+        margin: 0 auto;
+      }
+      .contact-content:first-child{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 3em;
+        line-height: 2;
+        .contact-name{
+          font-size: 2em;
+          font-weight: 500;
+        }
+        .contact-intro{
+          font-size: 1.5em;
+        }
+      }
+      .contact-content:last-child{
+        .contact-sci{
+          display: flex;
+          justify-content: center;
+          font-weight: 600;
+          .contact-sci-item{
+            margin-right: 16px;
+          }
+          .contact-sci-item:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+.footer{
+  background: $landing-dark;
+  .footer-container{
+    padding: 2em;
+    text-align: center;
   }
 }
 
