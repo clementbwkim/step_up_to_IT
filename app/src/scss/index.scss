@@ -4,415 +4,114 @@ $landing-dark: #9ab4d4;
 $landing-medium: #b9cde3;
 $landing-light: #dce3ef;
 
-%contents-title {
-  position: relative;
-  font-size: 5em;
-  color: $landing-dark;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  margin-bottom: 1.8em;
-
-  &:after {
-    content: '';
-    width: 200px;
-    height: 5px;
-    background: $landing-dark;
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    bottom: -20px;
-    transform: translateX(-50%);
-    border-radius: 3px;
-
-    @include for-size(small-width) {
-      width: 80px;
-      height: 3px;
-    }
-  }
-
-  @include for-size(small-width) {
-    font-size: 3em;
-  }
+.sub-wrap{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.wrap {
-  overflow: hidden;
-  .header-container {
-    font-family: $gothic;
-    position: relative;
-    .btn-wrapper {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      .bars {
-        width: 50px;
-        height: auto;
-        outline: 0;
-        cursor: pointer;
-        .bar {
-          width: 100%;
-          height: 2px;
-          display: inline-block;
-          background: #222222;
-          transition: all 0.3s ease;
-        }
-        &.cross {
-          .bar:first-child {
-            transform: rotate(45deg);
-            transform-origin: 12px -3px;
-            transition: all 0.3s ease;
-          }
-          .bar:last-child {
-            transform: rotate(-45deg);
-            transform-origin: 1px 2px;
-            transition: all 0.3s ease;
-          }
-        }
-      }
+header{
+  position: fixed;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  .header-container{
+    display: flex;
+    justify-content: space-between;  
+
+    .header-logo{
+      font-size: 2rem;
+      font-weight: bold;
     }
-    .header-contents {
-      position: fixed;
-      width: 50%;
-      height: 100vh;
-      z-index: 1;
-      top: 0;
-      right: -100%;
+
+    .header-nav{
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: $landing-dark;
-      line-height: 1.5;
-      transition: right 0.3s ease-in-out;
-      overflow: hidden;
 
-      @include for-size(medium-width) {
-        width: 100%;
-      }
-
-      &.header-slide {
-        right: 0;
-        transition: right 0.3s ease-in-out;
-      }
-
-      .header-profile {
-        margin-bottom: 2em;
-        border-bottom: 2px solid $landing-medium;
-        padding-bottom: 2em;
-        .header-profile-img {
-          width: 150px;
-          height: 150px;
-          overflow: hidden;
-          border-radius: 50%;
-          margin: 0 auto;
-        }
-
-        .header-title {
-          font-size: 1.5em;
-          margin-top: 0.8em;
-        }
-        .header-words {
-          display: flex;
-          font-size: 0.8em;
-          .header-word::after {
-            content: '/';
-            padding: 10px 3px;
-          }
-          .header-word:last-child::after {
-            content: '';
+        &.show {
+          @include for-size(medium-width) {
+          .header-nav-items{
+            visibility: visible;
+            opacity: 1;
           }
         }
       }
 
-      .nav-item a {
-        font-size: 1.5em;
-        line-height: 2;
-        text-transform: uppercase;
-        letter-spacing: -1px;
-      }
-    }
-  }
-
-  .main {
-    font-family: $gothic;
-    background: #f2f2f2;
-
-    section {
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .banner-section {
-      width: 100%;
-      min-height: 70vh;
-      height: 70vh;
-      background: $landing-medium;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      -ms-flex-align: center;
-
-      @include for-size(xsmall-width) {
-        height: 100vh;
-      }
-
-      h2 {
-        font-size: 6em;
-        text-transform: uppercase;
-        font-weight: 800;
-        color: #566e92;
-        transform: translateY(20px);
-        opacity: 0;
-        transition: 0.6s ease-in;
-
-        &.on {
-          transform: translateY(0);
-          opacity: 1;
-          transition-delay: 0.5s;
-        }
-
-        @include for-size(small-width) {
-          font-size: 5em;
-        }
-
-        span {
-          color: #222;
-        }
-      }
-
-      p {
-        font-size: 1em;
-        letter-spacing: 3.5px;
-        text-transform: uppercase;
-        margin-top: 1em;
-        color: $landing-dark;
-        background: #f2e3ea;
-        padding: 1em;
-        transform: translateX(-30px);
-        opacity: 0;
-        transition: 0.6s ease-in;
-
-        &.on {
-          transition-delay: 0.9s;
-          transform: translateX(0);
-          opacity: 1;
-          width: auto;
-        }
-        @include for-size(small-width) {
-          font-size: 0.6em;
-        }
-      }
-    }
-
-    .profile-section {
-      margin-top: 8em;
-      .profile-title {
-        @extend %contents-title;
-      }
-      .profile-container {
-        background: #fff;
-        text-align: center;
-        padding: 3em 0;
-        margin: 5em auto;
-        box-sizing: border-box;
-        box-shadow: 0px 3px 5px #ddd;
-        border-radius: 3px;
-
-        .profile-img {
-          width: 200px;
-          height: 200px;
-          overflow: hidden;
-          border-radius: 50%;
-          background: $landing-light;
-          margin: 0 auto;
-        }
-
-        .profile-text {
-          margin-top: 3em;
-          padding: 0 3em;
-
-          p {
-            line-height: 1.5;
-            font-size: 1em;
-            font-family: $gothic;
-
-            @include for-size(xsmall-width) {
-              font-size: 0.9em;
-            }
-
-            &.profile-text-en {
-              color: #666;
-              font-size: 0.8em;
-
-              @include for-size(xsmall-width) {
-                margin-top: 1em;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .portfolio-section {
-      margin: 8em auto;
-      .portfolio-title {
-        @extend %contents-title;
-      }
-
-      .portfolio-items {
+      .header-nav-items{
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        margin-top: 8em;
+        align-items: center;
+        flex-wrap: wrap;
 
-        .portfolio-item {
-          width: 23%;
-          margin: 1%;
-          background: #fff;
-          border-radius: 3px;
-          box-shadow: 1px 5px 3px #ddd;
+        @include for-size(medium-width) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          align-content: center;
+          text-align: center;
+          background: $landing-dark;
+          visibility: hidden;
+          opacity: 0;
+
+        }
+        
+        .header-nav-item{
+          margin: 0 1em;
+          text-transform: uppercase;
+          font-size: 1.5em;
           
-          @include for-size(xlarge-width) {
-            width: 48%;
-            margin: 1%;
-          }
-
           @include for-size(medium-width) {
             width: 100%;
-            max-width: 100%;
-            margin-bottom: 3em;
+            margin: 1rem;
           }
+        }
+      }
 
-          @include for-size(xsmall-width) {
-            font-size: 0.9em;
+      &.show {
+        .header-nav-items {
+          @include for-size(medium-width) {
+            visibility: visible;
+            opacity: 1;
           }
-
-
-          .portfolio-item-img {
-            width: 100%;
-            max-height: 380px;
-            overflow: hidden;
-            position: relative;
-
-            .overlay {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background: $landing-medium;
-              font-size: 1.3em;
-              top: -100%;
-              left: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: #fff;
-              text-transform: uppercase;
-              transition: top 0.3s ease-in-out;
-            }
-          }
-
-          .portfolio-desc {
-            padding: 2em 1em;
-            text-align: center;
-
-            p {
-              line-height: 1.5;
-
-              span {
-                color: $landing-dark;
-                display: block;
-                font-size: 0.8em;
-                margin-bottom: 1em;
-              }
-            }
-
-            .git-link {
-              display: inline-block;
-              margin-top: 2em;
-              border: 1px solid $landing-dark;
-              color: $landing-dark;
-              padding: 1em;
-              border-radius: 3px;
-              transition: all 0.3s ease;
-
-              &:hover {
-                background: $landing-dark;
-                color: $landing-light;
-                transition: all 0.3s ease;
-              }
-            }
-          }
-
-          &:hover .overlay {
-            top: 0;
-            transition: top 0.3s ease-in-out;
-          }
+        }
+       
+        .bar:first-child{
+          transform: rotate(45deg) translate(6px, 10px);
+        }
+        .bar:nth-child(2){
+          visibility: hidden;
+          opacity: 0;
+        }
+        .bar:last-child{
+          transform: rotate(-45deg) translate(6px, -10px);
         }
       }
     }
 
-    .contact-section {
-      .contact-title {
-        @extend %contents-title;
-      }
+    .mobile-menu{
+      width: 30px;
+      line-height: 10px;
+      cursor: pointer;
+      z-index: 10;
 
-      .sci-items {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        width: 60%;
-        margin: 0 auto 8em;
+      &.hide{
+        display: none;
         @include for-size(medium-width) {
-          width: 100%;
-        }
-
-        .sci-item {
-          font-size: 1em;
-          width: 25%;
-          height: 50px;
-          line-height: 50px;
-          text-align: center;
-
-          @include for-size(xsmall-width) {
-            width: 50%;
-          }
-
-          &.git,
-          &.mail {
-            background: $landing-light;
-          }
-
-          &.velog {
-            background: $landing-medium;
-          }
-
-          &.tel {
-            background: $landing-dark;
-          }
-
-          a {
-            display: block;
-          }
-
-          &:hover {
-            background: #566e92;
-            transition: all 0.3s ease;
-
-            a {
-              color: $landing-light;
-            }
-          }
+          display: block;
         }
       }
-    }
-  }
 
-  .footer {
-    padding: 2em;
-    text-align: center;
-    color: #E7E6E5;
+      .bar{
+        display: inline-block;
+        width: 100%;
+        height: 3px;
+        background-color: #222222;
+        transition: all 0.3s ease;
+      }
+    }
   }
 }
+
+

@@ -1,11 +1,7 @@
 import $ from 'jquery';
 
-let headerBtnEl;
-let headerContentsEl;
-let barsEl;
-let bannerTextEl;
-let bannerTextSpanEl;
-let bannerKeywordEl;
+let mobileMenuEl;
+let navItemsEl; 
 
 init();
 function init() {
@@ -16,28 +12,13 @@ function init() {
 }
 
 function initElements() {
-    headerBtnEl = $('.btn-wrapper');
-    headerContentsEl = $('.header-contents');
-    barsEl = $('.bars');
-    bannerTextEl = $('.banner-text h2');
-    bannerTextSpanEl = $('.banner-text h2 span')
-    bannerKeywordEl = $('.banner-text p');
+    mobileMenuEl = $(".mobile-menu"); 
+    navItemsEl = $(".header-nav");
 }
 
 function showNavigation(){
-    headerBtnEl.click(()=>{
-        headerContentsEl.toggleClass('header-slide');
+    mobileMenuEl.click(()=>{
+        navItemsEl.toggleClass('show');
     });
 }
 
-function barsCross(){
-    barsEl.click(() => {
-        barsEl.toggleClass('cross');
-    })
-}
-
-function addClassOn() {
-    bannerTextEl.addClass('on');
-    bannerTextSpanEl.addClass('on');
-    bannerKeywordEl.addClass('on');
-}

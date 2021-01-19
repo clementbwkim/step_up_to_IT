@@ -13,190 +13,25 @@
   <div class="wrap">
     <div class="container">
       <header class="header">
-        <div class="header-container">
-          <div class="btn-wrapper">
-            <button class="bars">
+        <div class="header-container sub-wrap">
+          <div class="header-logo">
+            <h1>Clem</h1>
+          </div>
+          <nav class="header-nav">
+            <ul class="header-nav-items">
+              <li class="header-nav-item"><a href="#">home</a></li>
+              <li class="header-nav-item"><a href="#">about</a></li>
+              <li class="header-nav-item"><a href="#">portfolio</a></li>
+              <li class="header-nav-item"><a href="#">contact</a></li>
+            </ul>
+            <div class="mobile-menu hide">
               <span class="bar"></span>
               <span class="bar"></span>
-            </button>
+              <span class="bar"></span>
           </div>
-          <div class="header-contents">
-            <div class="header-box">
-              <div class="header-profile">
-                <div class="header-profile-img">
-                  <img src="img/clem-character.jpg" alt="프로필 이미지">
-                </div>
-                <h2 class="header-title">Kim ByeongWook</h2>
-                <ul class="header-words">
-                  <li class="header-word">Ambitious</li>
-                  <li class="header-word">Challenging</li>
-                  <li class="header-word">Flexible</li>
-                </ul>
-              </div>
-              <nav class="header-nav">
-                <ul class="nav-items">
-                  <li class="nav-item">
-                    <a href="./kinfork.html" title="kinfork">Kinfork Clone</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./github.html" title="github">github Clone</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./landing.html" title="github">landing Page</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./lottery.html" title="lottery">Lottery game</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
+          </nav>
         </div>
       </header>
-      <main class="main">
-        <div class="main-container">
-          <section class="banner-section">
-            <div class="banner-container">
-              <div class="banner-text">
-                <h2>
-                  Kim<span>bw</span>
-                </h2>
-                <p>
-                  Ambitious / Challenging / Flexible
-                </p>
-              </div>
-            </div>
-          </section>
-          <section class="profile-section">
-            <h2 class="profile-title">About</h2>
-            <div class="profile-container">
-              <div class="profile-img">
-                <img src="./img/landing_main_img.png" alt="프로필 이미지">
-              </div>
-              <div class="profile-text">
-                <p class="profile-text-ko">
-                  사용자 친화적인 UI구현과 시맨틱한 레이아웃 설계를 하기 위해 노력하는 퍼블리셔 김병욱입니다.
-                </p>
-                <p class="profile-text-en">
-                  I focus on making user friendly UI and semantic layout architecture.
-                </p>
-              </div>
-            </div>
-          </section>
-          <section class="portfolio-section">
-            <div class="portfolio-container">
-              <h2 class="portfolio-title">Portfolio</h2>
-              <div class="portfolio-items">
-                <article class="portfolio-item">
-                  <a href="./kinfork.html" class="portfolio-link">
-                    <div class="portfolio-item-img">
-                      <img src="./img/kinfork_thumb.png" alt="kinfork thumb">
-                      <div class="overlay">
-                        <span class="thumb-title">Kinfork Clone</span>
-                      </div>
-                    </div>
-                    <div class="portfolio-desc">
-                      <p>
-                        <span>HTML / SCSS / JavaScript + jQuery</span>
-                        패션 라이프 스타일 매거진<br>Kinfork clone 코딩
-                      </p>
-                      <a class="git-link" href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/kinfork.html" target="_blank" title="src code">Source View</a>
-                    </div>
-                  </a>
-                </article>
-
-                <article class="portfolio-item">
-                  <a href="./github.html" class="portfolio-link">
-                    <div class="portfolio-item-img">
-                      <img src="./img/git_explore_thumb.png" alt="git explore thumb">
-                      <div class="overlay">
-                        <span class="thumb-title">git layout Clone</span>
-                      </div>
-                    </div>
-                    <div class="portfolio-desc">
-                      <p>
-                        <span>HTML / SCSS / JavaScript</span>
-                        Github.com explore 페이지<br>clone 코딩
-                      </p>
-                      <a class="git-link" href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/github.html" target="_blank" title="src code">Source View</a>
-                    </div>
-                  </a>
-                </article>
-
-                <article class="portfolio-item">
-                  <a href="./landing.html" class="portfolio-link">
-                    <div class="portfolio-item-img">
-                      <img src="./img/landing_thumb.png" alt="landing page thumb">
-                      <div class="overlay">
-                        <span class="thumb-title">landing page layout</span>
-                      </div>
-                    </div>
-                    <div class="portfolio-desc">
-                      <p>
-                        <span>HTML / SCSS / jQuery</span>
-                        slick-slide를 이용한 <br>Landing Page layout
-                      </p>
-                      <a class="git-link" href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/landing.html" target="_blank" title="src code">Source View</a>
-                    </div>
-                  </a>
-                </article>
-
-                <article class="portfolio-item">
-                  <a href="./lottery.html" class="portfolio-link">
-                    <div class="portfolio-item-img">
-                      <img src="./img/lo_thumb.png" alt="lottery thumb">
-                      <div class="overlay">
-                        <span class="thumb-title">Lottery game</span>
-                      </div>
-                    </div>
-                    <div class="portfolio-desc">
-                      <p>
-                        <span>HTML / SCSS / JavaScript</span>
-                        금액 입력시 로또 번호 추출 후<br>당첨번호 비교
-                      </p>
-                      <a class="git-link" href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/lottery.html" target="_blank" title="src code">Source View</a>
-                    </div>
-                  </a>
-                </article>
-              </div>
-            </div>
-          </section>
-          <section class="contact-section">
-            <div class="contact-container">
-              <h2 class="contact-title">Contact</h2>
-              <ul class="sci-items">
-                <li class="sci-item git">
-                  <a href="https://github.com/clementbwkim" target="_blank">
-                    Github
-                  </a>
-                </li>
-                <li class="sci-item velog">
-                  <a href="https://velog.io/@clementbwkim" target="_blank">
-                    Velog
-                  </a>
-                </li>
-                <li class="sci-item tel">
-                  <a href="tel:+82-10-9205-9186">
-                    Phone
-                  </a>
-                </li>
-                <li class="sci-item mail">
-                  <a href="mailto:cbwkim@gmail.com">
-                    E-mail
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <footer class="footer">
-            <div class="footer-container">
-              <p>
-                Copyright ⓒ 2020 Clement_bw_Kim
-              </p>
-            </div>
-          </footer>
-        </div>
-      </main>
     </div>
   </div>
 </body>
