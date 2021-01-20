@@ -21,9 +21,7 @@ function initElements() {
 		profileSection = $(".profile-section");
 		winH = window.innerHeight;
 		scrollY = window.pageYOffset;
-		posFromTop = profileSection.getBoundingClientRect().top;
-		absolutePos = pageYOffset + posFromTop;
-		console.log(posFromTop);
+	
 }
 
 function showNavigation(){
@@ -33,17 +31,13 @@ function showNavigation(){
 }
 
 const slideSetting = {
-    slidePerView: 'auto',
-		spacebetween: 5,
+		slidePerView: 1,
 		loop: true,
-		speed: 800,
-    autoplay: {
-			delay: 3000,
-		},
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-		},
+		speed: 1500,
+    // autoplay: {
+		// 	delay: 3000,
+		// },
+		effect: 'fade',
 
 		// Responsive breakpoints
 		breakpoints: {

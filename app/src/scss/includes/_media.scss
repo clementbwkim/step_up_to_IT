@@ -1,12 +1,17 @@
+$xxlarge-screen-width: 1250px;
 $xlarge-screen-width: 1200px;
 $large-screen-width: 1024px;
 $medium-screen-width: 768px;
-$small-screen-width: 576px;
-$xsmall-screen-width: 376px;
+$small-screen-width: 575px;
+$xsmall-screen-width: 375px;
 $xxsmall-screen-width: 320px;
 
 $medium-screen-height: 750px;
 $breakpoints: (
+  'xxlarge-width': (
+    'max-width',
+    $xxlarge-screen-width,
+  ),
   'xlarge-width': (
     'max-width',
     $xlarge-screen-width,
