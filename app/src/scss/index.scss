@@ -14,13 +14,26 @@ $landing-light: #dce3ef;
 }
 .scrl-item{
   opacity: 0;
-  transition: 3s ease;
-  transform: translateY(100px);
+  // transition: 3s ease;
+  transform: translateY(30px);
+
+  &.title {
+    transform: translateX(-30px)
+  }
 
   &.active{
     opacity: 1;
-    transition: 5s ease;
-    transform: translateY(0px);
+    transform: translateY(0);
+    transition: all 2s ease;
+
+    &.scrl-delay {
+      transition-delay: 0.5s;
+    }
+    
+
+    &.title {
+      transform: translateX(0);
+    }
   }
 }
 .sub-wrap{
@@ -58,9 +71,17 @@ header{
   z-index: 2;
   left: 50%;
   transform: translateX(-50%);
+  transition: all .3s ease-in-out;
+  top: 0;
 
-  &.header-color{
-    background:  rgba(255, 255, 255, 0.1);
+  &.on{
+    background:  rgba(0, 0, 0, 0.5);
+    transition: all .3s ease-in-out;
+  }
+
+  &.hidden {
+    top: -100%;
+    transition: all .3s ease-in-out;
   }
 
   .header-container{
