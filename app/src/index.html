@@ -21,10 +21,10 @@
           </div>
           <nav class="header-nav">
             <ul class="header-nav-items">
-              <li class="header-nav-item"><a href="#">home</a></li>
-              <li class="header-nav-item"><a href="#">about</a></li>
-              <li class="header-nav-item"><a href="#">portfolio</a></li>
-              <li class="header-nav-item"><a href="#">contact</a></li>
+              <li class="header-nav-item"><a href="#banner">home</a></li>
+              <li class="header-nav-item"><a href="#about">about</a></li>
+              <li class="header-nav-item"><a href="#portfolio">portfolio</a></li>
+              <li class="header-nav-item"><a href="#contact">contact</a></li>
             </ul>
             <div class="mobile-menu hide">
               <span class="bar"></span>
@@ -37,7 +37,7 @@
       <main class="main">
         <div class="main-container">
 
-          <section class="banner-section">
+          <section class="banner-section" id="banner">
             <div class="banner-section-container">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
@@ -76,19 +76,19 @@
             </div>
           </section>
 
-          <section class="profile-section wrapper-pd">
+          <section class="profile-section wrapper-pd" id="about">
             <div class="profile-container sub-wrap">
               <div class="profile-contents">
                 <div class="profile-content about">
                   <h2 class="title">about</h2>
-                  <p>
+                  <p class="scrl-item">
                     사용자 친화적인 UI구현과 시맨틱한 레이아웃 설계를 하기 위해 노력하는 퍼블리셔 김병욱입니다.
                     <span>I focus on making user friendly User Interface and semantic layout architecture.</span>
                   </p>
                 </div>
                 <div class="profile-content skill">
                   <h2 class="title">What I can do</h2>
-                  <div class="skill-wrapper">
+                  <div class="skill-wrapper scrl-item">
                     <div class="stack">
                       <h4 class="stack-title">Stacks</h4>
                       <ul class="stack-items">
@@ -121,50 +121,62 @@
             </div>
           </section>
 
-          <section class="portfolio-section wrapper-pd">
+          <section class="portfolio-section wrapper-pd" id="portfolio">
             <div class="portfolio-container sub-wrap">
               <h2 class="title">portfolio</h2>
-              <div class="portfolio-contents">
+              <div class="portfolio-contents scrl-item">
                 <div class="portfolio-content">
                   <div class="portfolio-img">
-                    <a href=""><img src="./img/kinfork_thumb.png" alt=""></a>
+                    <img src="./img/kinfork_thumb.png" alt="">
                   </div>
                   <div class="portfolio-text">
-                    <h4>kinfork</h4>
+                    <ul class="sources">
+                      <li class="git"><a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/kinfork.html" target="_blank">source code</a></li>
+                      <li class="url"><a href="kinfork.html" target="_blank">바로가기</a></li>
+                    </ul>
                   </div>
                 </div>
                 <div class="portfolio-content">
                   <div class="portfolio-img">
-                    <a href=""><img src="./img/kinfork_thumb.png" alt=""></a>
+                    <a href="./kinfork.html"><img src="./img/kinfork_thumb.png" alt=""></a>
                   </div>
                   <div class="portfolio-text">
-                    <h4>movie</h4>
+                    <ul class="sources">
+                      <li class="git"><a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/kinfork.html" target="_blank">source code</a></li>
+                      <li class="url"><a href="kinfork.html" target="_blank">바로가기</a></li>
+                    </ul>
                   </div>
                 </div>
                 <div class="portfolio-content">
                   <div class="portfolio-img">
-                    <a href=""><img src="./img/landing_thumb.png" alt=""></a>
+                    <a href="./landing.html"><img src="./img/landing_thumb.png" alt=""></a>
                   </div>
                   <div class="portfolio-text">
-                    <h4>landing</h4>
+                    <ul class="sources">
+                      <li class="git"><a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/landing.html" target="_blank">source code</a></li>
+                      <li class="url"><a href="landing.html" target="_blank">바로가기</a></li>
+                    </ul>
                   </div>
                 </div>
                 <div class="portfolio-content">
                   <div class="portfolio-img">
-                    <a href=""><img src="./img/git_explore_thumb.png" alt=""></a>
+                    <a href="./github.html"><img src="./img/git_explore_thumb.png" alt=""></a>
                   </div>
                   <div class="portfolio-text">
-                    <h4>github</h4>
+                    <ul class="sources">
+                      <li class="git"><a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/github.html" target="_blank">source code</a></li>
+                      <li class="url"><a href="github.html" target="_blank">바로가기</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <section class="contact-section wrapper-pd">
+          <section class="contact-section wrapper-pd" id="contact">
             <div class="contact-container sub-wrap">
               <h2 class="title">contact</h2>
-              <div class="contact-contents">
+              <div class="contact-contents scrl-item">
                 <div class="contact-content img">
                   <img src="./img/about-img.png" alt="">
                 </div>
@@ -174,10 +186,10 @@
                 </div>
                 <div class="contact-content link">
                   <ul class="contact-sci">
-                    <li class="contact-sci-item"><a href="">github</a></li>
-                    <li class="contact-sci-item"><a href="">velog</a></li>
-                    <li class="contact-sci-item"><a href="">phone</a></li>
-                    <li class="contact-sci-item"><a href="">email</a></li>
+                    <li class="contact-sci-item"><a href="https://github.com/clementbwkim" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="contact-sci-item"><a href="https://velog.io/@clementbwkim" target="_blank"><i class="fas fa-blog"></i></a></li>
+                    <li class="contact-sci-item"><a href="tel:010-9205-9186" target="_blank"><i class="fas fa-phone-alt"></i></a></li>
+                    <li class="contact-sci-item"><a href="mailto:cbwkim@gmail.com" target="_blank"><i class="far fa-envelope"></i></a></li>
                   </ul>
                 </div>
               </div>

@@ -1,33 +1,42 @@
 import $ from 'jquery';
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper/dist/js/swiper.js';
 
 let mobileMenuEl;
 let navItemsEl; 
-let profileSection;
-let winH;
-let scrollY;
-let posFromTop;
-let absolutePos;
+let scrlItems;
+var winH;
 
+
+window.addEventListener('resize', init);
 init();
 function init() {
     initElements();
 		showNavigation();
+		chkPosTop();
+		window.addEventListener('scroll', chkPosTop);
+		window.addEventListener('load', chkPosTop);
 }
 
 function initElements() {
     mobileMenuEl = $(".mobile-menu"); 
 		navItemsEl = $(".header-nav");
-		profileSection = $(".profile-section");
+		scrlItems = document.querySelectorAll(".scrl-item");	
 		winH = window.innerHeight;
-		scrollY = window.pageYOffset;
-	
 }
 
 function showNavigation(){
     mobileMenuEl.click(()=>{
         navItemsEl.toggleClass('show');
     });
+}
+
+function chkPosTop() {
+	for(let i = 0; i < scrlItems.length; i++){
+		let posTop = scrlItems[i].getBoundingClientRect().top;
+		if(winH > posTop) {
+			scrlItems[i].classList.add('active');
+		}
+	}
 }
 
 const slideSetting = {
