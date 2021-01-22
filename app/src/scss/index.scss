@@ -296,6 +296,9 @@ main{
             @include for-size(small-width){
               font-size: 2em;
             }
+            @include for-size(xsmall-width){
+              font-size: 1.8em;
+            }
           }
 
           &.swiper-slide-active{

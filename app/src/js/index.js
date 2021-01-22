@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import lazyload from 'lazyload';
 import Swiper from 'swiper/dist/js/swiper.js';
 
 let headerEl;
@@ -11,7 +12,7 @@ window.addEventListener('resize', init);
 init();
 function init() {
 		initElements();
-		showNavigation();
+		showNavigation(navItemsEl);
 		scrollEvent(headerEl);
 		window.addEventListener('scroll', chkPosTop);
 		window.addEventListener('load', chkPosTop);
@@ -26,9 +27,9 @@ function initElements() {
 
 }
 
-function showNavigation(){
+function showNavigation(el){
     mobileMenuEl.click(()=>{
-        navItemsEl.toggleClass('show');
+        el.toggleClass('show');
     });
 }
 
@@ -42,18 +43,17 @@ function chkPosTop() {
 }
 
 function scrollEvent(el) {
-	let prevPos = 0;
+	let prevPos = 0; //default 
 	$(window).scroll(()=>{
 		let currentScrlPos = $(window).scrollTop();
 		let profileSecEl = $('.profile-section').offset().top;
-
-		if(currentScrlPos > profileSecEl){
+		if(currentScrlPos > profileSecEl){ //bg color
 			el.addClass('on');
 		}else {
 			el.removeClass('on');
 		}
 
-		el.toggleClass('hidden', currentScrlPos > prevPos);
+		el.toggleClass('hidden', currentScrlPos > prevPos); //showin nav 
 		prevPos = currentScrlPos;
 	});
 }
