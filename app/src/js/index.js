@@ -7,30 +7,35 @@ let mobileMenuEl;
 let navItemsEl; 
 let scrlItems;
 let winH;
+let currentScrlPos;
+let $window
 
 window.addEventListener('resize', init);
 init();
 function init() {
-		initElements();
-		showNavigation(navItemsEl);
-		scrollEvent(headerEl);
-		window.addEventListener('scroll', chkPosTop);
-		window.addEventListener('load', chkPosTop);
+	initElements();
+	showNavigation(mobileMenuEl,navItemsEl);
+	scrollEvent(headerEl);
+	scrollShowNav(headerEl);
+	window.addEventListener('scroll', chkPosTop);
+	window.addEventListener('load', chkPosTop);
 }
 
 function initElements() {
-		headerEl = $(".header");
-    mobileMenuEl = $(".mobile-menu"); 
-		navItemsEl = $(".header-nav");
-		scrlItems = $(".scrl-item");	
-		winH = $(window).height();
-
+	headerEl = $(".header");
+	mobileMenuEl = $(".mobile-menu"); 
+	navItemsEl = $(".header-nav");
+	scrlItems = $(".scrl-item");	
+	winH = $(window).height();
+	$window = $(window);
 }
 
-function showNavigation(el){
-    mobileMenuEl.click(()=>{
-        el.toggleClass('show');
-    });
+function showNavigation(el, elm){
+	el.off().on('click',()=>{ //when clicked one time, react one time
+		console.log(123);
+		elm.toggleClass('show')
+	});
+    
 }
 
 function chkPosTop() {
@@ -43,19 +48,30 @@ function chkPosTop() {
 }
 
 function scrollEvent(el) {
-	let prevPos = 0; //default 
-	$(window).scroll(()=>{
-		let currentScrlPos = $(window).scrollTop();
+	$window.scroll(()=>{
+		currentScrlPos = $window.scrollTop(); //scrollY top
 		let profileSecEl = $('.profile-section').offset().top;
 		if(currentScrlPos > profileSecEl){ //bg color
 			el.addClass('on');
 		}else {
 			el.removeClass('on');
 		}
-
-		el.toggleClass('hidden', currentScrlPos > prevPos); //showin nav 
-		prevPos = currentScrlPos;
 	});
+}
+
+function scrollShowNav(el){ //
+	let prevPos = 0; //default
+	if($window.width() > 768){ //if more than width: 768px
+		$window.scroll(()=>{
+			currentScrlPos = $window.scrollTop();
+			el.toggleClass('hidden', currentScrlPos > prevPos); //showin nav 
+			prevPos = currentScrlPos;
+		});
+	}else{
+		$window.scroll(()=>{ //if less than width: 768px
+				el.removeClass('hidden');
+		});
+	}; 
 }
 
 const slideSetting = {
