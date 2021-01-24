@@ -525,23 +525,18 @@ main{
               background: #fff;
               border-radius: 0 0 5px 5px;
               background: $landing-light;
-              button{
-                display: inline-block;
-                border: 1px solid #222;
-                border-radius: 5px;
                 
                 a{
                   display: block;
                   padding: 1em;
+                  border: 1px solid #222;
+                  border-radius: 5px;
                 }
                 transition: all .5s ease;
-              }
-              button:hover{
+              a:hover{
                 background: $grey;
                 border: 0;
-                a{
-                  color: $font-white;
-                }
+                color: $font-white;
                 transition: all .5s ease;
               }
             }
