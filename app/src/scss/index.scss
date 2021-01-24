@@ -483,11 +483,14 @@ main{
         .portfolio-contents{
           display: flex;
           display: -ms-flexbox;
-          flex-wrap: wrap;
           -ms-flex-wrap: wrap;
           justify-content: space-between;
           -ms-flex-pack: justify;
           padding: 4em 0;    
+
+          @include for-size(large-width){
+            flex-wrap: wrap;
+          }
 
           @include for-size(medium-width){
             flex-wrap: wrap;
@@ -499,15 +502,22 @@ main{
 
           .portfolio-content{
             position: relative;
-            width: 25%;
-            padding: 0 5px;
             box-sizing: border-box;
-            max-height: 220px;
-            overflow: hidden;
-            .portfolio-text{
+            margin-right: 16px;
+
+            .portfolio-img{
+              max-height: 220px;
+              overflow: hidden;
+
+              @include for-size(large-width){
+                max-height: 445px;
+              }
+            }
+            .portfolio-title{
               position: absolute;
               width: 100%;
               height: 100%;
+              max-height: 220px;
               top: 0;
               left: 0;
               display: flex;
@@ -518,7 +528,7 @@ main{
               transform: translateY(-30px);
               transition: all .2s ease-in-out;
               
-              .sources{
+              .portfolio-name{
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
@@ -527,25 +537,58 @@ main{
                 opacity: 0;
               }
             }
-            .portfolio-text:hover{
+            .portfolio-title:hover{
                 background: $landing-light;
                 transform: translateY(0);
                 transition: all .2s ease-in-out;
-              .sources{
+              .portfolio-name{
                 opacity: 1;
               }
             }
             @include for-size(large-width){
-              width: 50%;
-              margin-bottom: 5px;
+              width: 48%;
+              margin-bottom: 16px;
+              margin-right: 0px;
             }
             @include for-size(medium-width){
               width: 100%;
               margin-bottom: 24px;
             }
+
+            .portfolio-sources{
+              margin: 0 auto;
+              display: flex;
+              justify-content: space-between;
+              padding: 1em;
+              background: #fff;
+              border-radius: 0 0 5px 5px;
+              background: $landing-light;
+
+              button{
+                display: inline-block;
+                border: 1px solid #222;
+                border-radius: 5px;
+                
+                a{
+                  display: block;
+                  padding: 1em;
+                }
+                transition: all .5s ease;
+              }
+              button:hover{
+                background: $grey;
+                border: 0;
+                a{
+                  color: $font-white;
+                }
+                transition: all .5s ease;
+              }
+              
+            }
           }
           .portfolio-content:last-child{
             margin-bottom: 0;
+            margin-right: 0;
           }
         }
       }
