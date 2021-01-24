@@ -11,6 +11,10 @@ $landing-light: #dce3ef;
 }
 .wrapper-pd {
   padding: 2em;
+
+  @include for-size(small-width){
+    padding: 1em 2em;
+  }
 }
 .scrl-item{
   opacity: 0;
@@ -51,6 +55,10 @@ $landing-light: #dce3ef;
     position: relative;
     color: #9ab4d4;
 
+    @include for-size(small-width) {
+      font-size: 1.5em;
+    }
+
     &::after {
       content: '';
       display: inline-block;
@@ -60,6 +68,10 @@ $landing-light: #dce3ef;
       background: #9ab4d4;
       left: 0;
       bottom: -15px;
+
+      @include for-size(small-width) {
+        width: 70px;
+      }
     }
   }
 }
@@ -74,16 +86,6 @@ header{
   transition: all .3s ease-in-out;
   top: 0;
 
-  &.on{
-    background:  rgba(0, 0, 0, 0.5);
-    transition: all .3s ease-in-out;
-  }
-
-  &.hidden {
-    top: -100%;
-    transition: all .3s ease-in-out;
-  }
-
   .header-container{
     display: flex;
     display: -ms-flexbox;
@@ -91,6 +93,9 @@ header{
     -ms-flex-pack: justify;
     max-width: 1200px;
     margin: 0 auto;
+    @include for-size(small-width) {
+      justify-content: flex-end;
+    }
 
     .header-logo{
       font-size: 2rem;
@@ -98,6 +103,10 @@ header{
       color: $font-white;
       text-transform: uppercase;
       letter-spacing: 2px;
+      
+      @include for-size(small-width) {
+        display: none;
+      }
     }
 
     .header-nav{
@@ -160,6 +169,8 @@ header{
           @include for-size(medium-width) {
             visibility: visible;
             opacity: 1;
+            font-size: 1.5em;
+            font-weight: 400;
           }
         }
 
@@ -199,6 +210,26 @@ header{
       }
     }
   }
+
+  &.on{
+    background:  rgba(0, 0, 0, 0.5);
+    transition: all .3s ease-in-out;
+
+    @include for-size(small-width) {
+      background: rgba(255,255,255,0.6);
+    }
+
+    .mobile-menu .bar {
+      @include for-size(small-width) {
+        background: #000;
+      }
+    }
+  }
+
+  &.hidden {
+    top: -100%;
+    transition: all .3s ease-in-out;
+  }
 }
 
 main{
@@ -206,6 +237,9 @@ main{
 
     .banner-section-container{
       height: 80vh;
+      @include for-size(small-width) {
+        height: 100vh;
+      } 
       .swiper-container{
         height: 100%;
         .swiper-slide{
@@ -272,12 +306,18 @@ main{
             line-height: 1.5;
             text-transform: uppercase;
             font-weight: 500;
+            padding: 1em;
+            box-sizing: border-box;
 
             p{
               text-transform: capitalize;
               transform: translateY(30px);
               opacity: 0;
               transition: all 0.3s ease;
+
+              @include for-size(small-width){
+                font-size: 1.3em;
+              }
               em {
                 font-style: italic;
                 margin-left: 7px;
@@ -291,13 +331,10 @@ main{
               transform: translateY(30px);
               opacity: 0;
               transition: all 0.3s ease;
-            }
-            
-            @include for-size(small-width){
-              font-size: 2em;
-            }
-            @include for-size(xsmall-width){
-              font-size: 1.8em;
+
+              @include for-size(small-width){
+                font-size: 0.6em;
+              }
             }
           }
 
@@ -450,7 +487,7 @@ main{
           -ms-flex-wrap: wrap;
           justify-content: space-between;
           -ms-flex-pack: justify;
-          padding: 4em 0;
+          padding: 4em 0;    
 
           @include for-size(medium-width){
             flex-wrap: wrap;
@@ -465,6 +502,8 @@ main{
             width: 25%;
             padding: 0 5px;
             box-sizing: border-box;
+            max-height: 220px;
+            overflow: hidden;
             .portfolio-text{
               position: absolute;
               width: 100%;
@@ -516,6 +555,10 @@ main{
       
       .contact-contents{
         font-size: 1em;
+
+        @include for-size(small-width){
+          margin-top: 2em;
+        }
         
         .contact-content{
           &.img{
@@ -548,11 +591,25 @@ main{
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
+
+            @include for-size(small-width) {
+              max-width: 280px;
+            }
             .contact-sci{
               display: flex;
               justify-content: space-between;
               display: -ms-flexbox;
               -ms-flex-pack: justify;
+
+              li {
+                background: #dce3ef;
+                border-radius: 50%;
+
+                a {
+                  display: block;
+                  padding: 1em;
+                }
+              }
             }
           }
         }
