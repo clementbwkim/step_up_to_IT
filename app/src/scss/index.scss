@@ -451,6 +451,14 @@ main{
             position: relative;
             box-sizing: border-box;
             margin-right: 16px;
+            .portfolio-mo-title{
+              display: none;
+              padding: 1em;
+              font-size: 1.5em;
+              @include for-size(large-width){
+                display: inline-block
+              }
+            }
             .portfolio-img{
               max-height: 220px;
               overflow: hidden;
@@ -476,8 +484,9 @@ main{
               transform: translateY(-30px);
               transition: all .2s ease-in-out;
               @include for-size(large-width){
-                max-height: 445px;
+                display: none;
               }
+              
               .portfolio-name{
                 display: flex;
                 justify-content: space-between;
