@@ -20,21 +20,16 @@ $landing-light: #dce3ef;
   opacity: 0;
   // transition: 3s ease;
   transform: translateY(30px);
-
   &.title {
     transform: translateX(-30px)
   }
-
   &.active{
     opacity: 1;
     transform: translateY(0);
     transition: all 2s ease;
-
     &.scrl-delay {
       transition-delay: 0.5s;
     }
-    
-
     &.title {
       transform: translateX(0);
     }
@@ -47,18 +42,15 @@ $landing-light: #dce3ef;
   padding: 5em 0;
   text-transform: capitalize;
   font-family: 'Noto Sans KR', sans-serif;
-
   .title {
     display: inline-block;
     font-size: 2em;
     font-weight: 500;
     position: relative;
     color: #9ab4d4;
-
     @include for-size(small-width) {
       font-size: 1.5em;
     }
-
     &::after {
       content: '';
       display: inline-block;
@@ -85,7 +77,6 @@ header{
   transform: translateX(-50%);
   transition: all .3s ease-in-out;
   top: 0;
-
   .header-container{
     display: flex;
     display: -ms-flexbox;
@@ -97,23 +88,19 @@ header{
       justify-content: flex-end;
       -ms-flex-pack: end;
     }
-
     .header-logo{
       font-size: 2rem;
       font-weight: bold;
       color: $font-white;
       text-transform: uppercase;
       letter-spacing: 2px;
-      
       @include for-size(small-width) {
         display: none;
       }
     }
-
     .header-nav{
       display: flex;
       display: -ms-flexbox;
-
         &.show {
           @include for-size(medium-width) {
           .header-nav-items{
@@ -125,7 +112,6 @@ header{
           }
         }
       }
-
       .header-nav-items{
         display: flex;
         justify-content: space-between;
@@ -135,7 +121,6 @@ header{
         -ms-flex-pack: justify;
         -ms-flex-align: center;
         transition: all 0.3s ease;
-
         @include for-size(medium-width) {
           position: absolute;
           top: 0;
@@ -147,9 +132,7 @@ header{
           background: $landing-dark;
           visibility: hidden;
           opacity: 0;
-
         }
-        
         .header-nav-item{
           margin-left: 1.5em;
           text-transform: uppercase;
@@ -164,7 +147,6 @@ header{
           }
         }
       }
-
       &.show {
         .header-nav-items {
           @include for-size(medium-width) {
@@ -174,7 +156,6 @@ header{
             font-weight: 400;
           }
         }
-
         .bar:first-child{
           transform: rotate(45deg) translate(6px, 10px);
         }
@@ -187,20 +168,17 @@ header{
         }
       }
     }
-
     .mobile-menu{
       width: 30px;
       line-height: 10px;
       cursor: pointer;
       z-index: 10;
-
       &.hide{
         display: none;
         @include for-size(medium-width) {
           display: block;
         }
       }
-
       .bar{
         display: inline-block;
         width: 100%;
@@ -211,22 +189,18 @@ header{
       }
     }
   }
-
   &.on{
     background:  rgba(0, 0, 0, 0.5);
     transition: all .3s ease-in-out;
-
     @include for-size(small-width) {
       background: rgba(255,255,255,0.6);
     }
-
     .mobile-menu .bar {
       @include for-size(small-width) {
         background: #000;
       }
     }
   }
-
   &.hidden {
     top: -100%;
     transition: all .3s ease-in-out;
@@ -235,7 +209,6 @@ header{
 
 main{
   .main-container{
-
     .banner-section-container{
       height: 80vh;
       @include for-size(small-width) {
@@ -247,7 +220,6 @@ main{
           width: 100%;
           position: relative;
           overflow: hidden;
-
           .slide-overlay{
             display: flex;
             display: -ms-flexbox;
@@ -255,13 +227,11 @@ main{
             height: 100%;
             position: absolute;
             z-index: 3;
-
             .overlay-el{
               width: 25%;
               box-sizing: border-box;
               height: 100%;
               border-left: 1px solid rgba(255, 255, 255, 0.1);
-              
               .overlay-hidden{
                 width: 100%;
                 height: 100%;
@@ -283,7 +253,6 @@ main{
               }
             }
           }
-
           .slide-img {
             height: 100%;
             
@@ -293,7 +262,6 @@ main{
               transition: all 6s ease-in-out;
             }
           }
-
           .slide-text{
             position: absolute;
             color: #ffffff;
@@ -309,13 +277,11 @@ main{
             font-weight: 500;
             padding: 1em;
             box-sizing: border-box;
-
             p{
               text-transform: capitalize;
               transform: translateY(30px);
               opacity: 0;
               transition: all 0.3s ease;
-
               @include for-size(small-width){
                 font-size: 1.3em;
               }
@@ -324,7 +290,6 @@ main{
                 margin-left: 7px;
               }
             }
-            
             span {
               text-transform: capitalize;
               display: block;
@@ -332,13 +297,11 @@ main{
               transform: translateY(30px);
               opacity: 0;
               transition: all 0.3s ease;
-
               @include for-size(small-width){
                 font-size: 0.6em;
               }
             }
           }
-
           &.swiper-slide-active{
             .overlay-el{
               .overlay-hidden{
@@ -369,9 +332,8 @@ main{
           }
         }
       }
-      
     }
-    
+
     .profile-container{
       .profile-contents{
         .profile-content{
@@ -381,23 +343,19 @@ main{
           -ms-flex-pack: justify;
           align-items: flex-start;
           -ms-flex-align: baseline;
-
           @include for-size(large-width){
             display: block;
             text-align: center;
           }
-
           &.about{
             line-height: 1.5;
             p{
               width: 100%;
               max-width: 700px;
-
               @include for-size(large-width){
                 max-width: 100%;
                 margin-top: 2em;
               }
-
               span {
                 display: block;
                 font-size: 0.9em;
@@ -406,15 +364,11 @@ main{
               }
             }
           }
-
           &.skill{
             margin-top: 8em;
-
-            
             @include for-size(large-width){
               margin-top: 5em;
             }
-          
             .skill-wrapper{
               display: flex;
               justify-content: space-between;
@@ -425,20 +379,17 @@ main{
               max-width: 700px;
               flex-wrap: wrap;
               -ms-flex-wrap: wrap;
-
               @include for-size(large-width){
                 max-width: 100%;
                 margin-top: 2em;
                 text-align: left;
               }
-
               div {
                 font-size: 1em;
                 @include for-size(medium-width) {
                   width: 100%;
                   margin-bottom: 2em;
                 }
-
                 h4 {
                   font-size: 1.2em;
                   font-weight: 500;
@@ -458,7 +409,6 @@ main{
                   }
                 }
               }
-
               .sub-word{
                 font-size: 12px;
                 color: $light-grey;
@@ -468,16 +418,13 @@ main{
           }
         }
       }
-
     }
 
     .portfolio-section{
       background: $landing-dark;
       .portfolio-container{
-        
         .title {
           color: #fff;
-
           &::after {
             background: #fff;
           }
@@ -493,7 +440,6 @@ main{
             flex-wrap: wrap;
             -ms-flex-wrap: wrap;
           }
-
           @include for-size(medium-width){
             flex-wrap: wrap;
             justify-content: center;
@@ -501,16 +447,13 @@ main{
             -ms-flex-pack: center;
             -ms-flex-wrap: wrap;
           }
-
           .portfolio-content{
             position: relative;
             box-sizing: border-box;
             margin-right: 16px;
-
             .portfolio-img{
               max-height: 220px;
               overflow: hidden;
-
               @include for-size(large-width){
                 max-height: 445px;
               }
@@ -532,7 +475,9 @@ main{
               font-weight: 600;
               transform: translateY(-30px);
               transition: all .2s ease-in-out;
-              
+              @include for-size(large-width){
+                max-height: 445px;
+              }
               .portfolio-name{
                 display: flex;
                 justify-content: space-between;
@@ -561,7 +506,6 @@ main{
               width: 100%;
               margin-bottom: 24px;
             }
-
             .portfolio-sources{
               margin: 0 auto;
               display: flex;
@@ -572,7 +516,6 @@ main{
               background: #fff;
               border-radius: 0 0 5px 5px;
               background: $landing-light;
-
               button{
                 display: inline-block;
                 border: 1px solid #222;
@@ -592,7 +535,6 @@ main{
                 }
                 transition: all .5s ease;
               }
-              
             }
           }
           .portfolio-content:last-child{
@@ -604,14 +546,11 @@ main{
     }
 
     .contact-container{
-      
       .contact-contents{
         font-size: 1em;
-
         @include for-size(small-width){
           margin-top: 2em;
         }
-        
         .contact-content{
           &.img{
             overflow: hidden;
@@ -627,13 +566,11 @@ main{
             padding: 2em 0;
             line-height: 1.5;
             font-size: 1.2em;
-
             h3 {
               font-weight: 500;
               text-transform: uppercase;
               letter-spacing: 2px;
             }
-
             span {
               font-size: 0.8em;
               color: #888;
@@ -643,7 +580,6 @@ main{
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
-
             @include for-size(small-width) {
               max-width: 280px;
             }
@@ -652,11 +588,9 @@ main{
               justify-content: space-between;
               display: -ms-flexbox;
               -ms-flex-pack: justify;
-
               li {
                 background: #dce3ef;
                 border-radius: 50%;
-
                 a {
                   display: block;
                   padding: 1em;
