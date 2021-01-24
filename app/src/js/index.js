@@ -78,9 +78,9 @@ const slideSetting = {
 		slidePerView: 1,
 		loop: true,
 		speed: 1500,
-    autoplay: {
-			delay: 3000,
-		},
+    // autoplay: {
+		// 	delay: 3000,
+		// },
 		effect: 'fade',
 
 		// Responsive breakpoints
