@@ -109,6 +109,11 @@ header{
             transition: all 0.3s ease;
             font-size: 2em;
             font-weight: 600;
+            line-height: 1.5;
+            .pf-title{
+              font-size: 1.5em;
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -121,6 +126,7 @@ header{
         -ms-flex-pack: justify;
         -ms-flex-align: center;
         transition: all 0.3s ease;
+
         @include for-size(medium-width) {
           position: absolute;
           top: 0;
@@ -143,7 +149,17 @@ header{
           
           @include for-size(medium-width) {
             width: 100%;
-            margin: 1rem;
+          }
+          .mo-remove{
+            @include for-size(medium-width) {
+              display: none;
+            }
+          }
+          .mo-only{
+            display: none;
+            @include for-size(medium-width) {
+              display: block;
+            }
           }
         }
       }
@@ -474,6 +490,7 @@ main{
               top: 0;
               left: 0;
               display: flex;
+              flex-wrap: wrap;
               justify-content: space-between;
               align-items: center;
               display: -ms-flexbox;
@@ -489,12 +506,16 @@ main{
               
               .portfolio-name{
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 display: -ms-flexbox;
                 -ms-flex-pack: justify;
                 width: 100%;
                 max-width: 200px;
                 margin: 0 auto;
+                font-size: 1.8em;
+                opacity: 0;
+              }
+              .pf-skill-items{
                 opacity: 0;
               }
             }
@@ -504,6 +525,23 @@ main{
                 transition: all .2s ease-in-out;
               .portfolio-name{
                 opacity: 1;
+              }
+              .pf-skill-items{
+                display: inline-block;
+                max-width: 240px;
+                margin: 0 auto;
+                font-size: 0.7em;
+                opacity: 1;
+                .pf-skill-item{
+                  margin-bottom: 3px;
+                }
+                .pf-skill-item::after{
+                  content: '/';
+                  padding: 1px;
+                }
+                .pf-skill-item:last-child::after{
+                  content: '';
+                }
               }
             }
             @include for-size(large-width){
