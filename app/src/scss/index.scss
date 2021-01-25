@@ -111,8 +111,7 @@ header{
             font-weight: 600;
             line-height: 1.5;
             .pf-title{
-              font-size: 1.5em;
-              text-decoration: underline;
+              font-size: 0;
             }
           }
         }
@@ -160,6 +159,12 @@ header{
             display: none;
             @include for-size(medium-width) {
               display: block;
+              text-transform: capitalize;
+              font-size: 0.8em;
+              line-height: 2;
+            }
+            .mo-home{
+              border-bottom: 2px solid #fff; 
             }
           }
         }
@@ -175,6 +180,10 @@ header{
         }
         .bar:first-child{
           transform: rotate(45deg) translate(6px, 10px);
+            @include for-size(small-width) {
+              transform: rotate(45deg) translate(6px, 10px);
+              background: #fff;
+            }
         }
         .bar:nth-child(2){
           visibility: hidden;
@@ -182,6 +191,10 @@ header{
         }
         .bar:last-child{
           transform: rotate(-45deg) translate(6px, -10px);
+          @include for-size(small-width) {
+            transform: rotate(-45deg) translate(6px, -10px);
+            background: #fff;
+          }
         }
       }
     }
