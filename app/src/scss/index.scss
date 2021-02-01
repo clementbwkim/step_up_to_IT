@@ -518,7 +518,8 @@ main{
             .portfolio-img{
               max-height: 220px;
               overflow: hidden;
-             
+              position: relative;
+              text-align: center;
             }
             .portfolio-title{
               position: absolute;
@@ -527,13 +528,7 @@ main{
               max-height: 220px;
               top: 0;
               left: 0;
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-between;
-              align-items: center;
-              display: -ms-flexbox;
-              -ms-flex-pack: justify;
-              -ms-flex-align: center;
+              padding-top: 3em;
               font-size: 1em;
               font-weight: 600;
               transform: translateY(-30px);
@@ -543,13 +538,7 @@ main{
               }
               
               .portfolio-name{
-                display: flex;
-                justify-content: center;
-                display: -ms-flexbox;
-                -ms-flex-pack: justify;
-                width: 100%;
-                max-width: 200px;
-                margin: 0 auto;
+                padding-bottom: 1em;
                 font-size: 1.8em;
                 opacity: 0;
               }
