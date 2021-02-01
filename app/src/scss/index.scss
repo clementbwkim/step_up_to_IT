@@ -465,6 +465,7 @@ main{
           justify-content: space-between;
           -ms-flex-pack: justify;
           padding: 4em 0;    
+          flex-wrap: wrap;
 
           @include for-size(large-width){
             flex-wrap: wrap;
@@ -478,12 +479,24 @@ main{
             -ms-flex-wrap: wrap;
           }
           .portfolio-content{
+            width: 33.333%;
             position: relative;
             box-sizing: border-box;
-            margin-right: 16px;
+            padding: 1em;
+            border-radius: 20px;
+
+            @include for-size(large-width){
+              width: 50%;
+            }
+           
+            @include for-size(small-width){
+              width: 100%;
+              margin-bottom: 24px;
+            }
+
             .portfolio-mo-title{
               display: none;
-              padding: 1em;
+              padding: 1em 0;
               font-size: 1.5em;
               @include for-size(large-width){
                 display: inline-block
@@ -492,9 +505,7 @@ main{
             .portfolio-img{
               max-height: 220px;
               overflow: hidden;
-              @include for-size(large-width){
-                max-height: 445px;
-              }
+             
             }
             .portfolio-title{
               position: absolute;
@@ -558,15 +569,6 @@ main{
                 }
               }
             }
-            @include for-size(large-width){
-              width: 48%;
-              margin-bottom: 16px;
-              margin-right: 0px;
-            }
-            @include for-size(medium-width){
-              width: 100%;
-              margin-bottom: 24px;
-            }
             .portfolio-sources{
               margin: 0 auto;
               display: flex;
@@ -577,6 +579,7 @@ main{
               background: #fff;
               border-radius: 0 0 5px 5px;
               background: $landing-light;
+              white-space: nowrap;
                 
                 a{
                   display: block;
