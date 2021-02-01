@@ -11,16 +11,10 @@
 
 @keyframes indexBgColor {
   0% {
-    background: #8e6d6e;
-  }
-  25% {
-    background: #ebe2de;
-  }
-  50% {
-    background: #e5c7b7;
+    background-position: 0% 50%;
   }
   100% {
-    background: #8e6d6e;
+    background-position: 100% 50%;
   }
 }
 
