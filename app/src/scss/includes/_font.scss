@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Lora&family=Sawarabi+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Raleway:wght@400;500;600;700&display=swap');
 
 $info-title-size: 20px;
 $info-des-size: 15px;
@@ -10,10 +11,6 @@ $fs-16: 16px;
 $fs-30: 30px;
 $fs-burger: 3vh;
 
-$white: #ffffff;
-$link-color: #0366d6;
-$grey: #6a737d;
-$black: #222;
 $fs-14: 14px;
 $header-icon-size: 32px;
 $mobile-icon-size: 25px;
@@ -27,3 +24,8 @@ $gothic: 'Sawarabi Gothic', sans-serif;
 
 $nanum: 'Nanum Brush Script', cursive;
 $dohyeon: 'Do Hyeon', sans-serif;
+
+//index variables
+$custom-ko-font: 'Noto Sans KR', sans-serif;
+$custom-en-font: 'Raleway', sans-serif;
+

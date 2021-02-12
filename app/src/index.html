@@ -14,286 +14,204 @@
 <body>
   <div class="wrap">
     <div class="container">
-      <header class="header wrapper-pd">
+      <header class="header">
         <div class="header-container">
-          <div class="header-logo">
-            <h1>Clem</h1>
+          <button class="menu-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <div class="logo">
+            <img src="./img/clem-logo.png" alt="로고">
           </div>
-          <nav class="header-nav">
-            <ul class="header-nav-items">
-              <li class="header-nav-item">
-                <a href="#banner" class="mo-remove">home</a>
-                <ul class="mo-only">
-                  <li><a href="index.html" class="mo-home">home</a></li>
-                </ul>
-              </li>
-              <li class="header-nav-item"><a href="#about" class="mo-remove">about</a></li>
-              <li class="header-nav-item">
-                <a href="#portfolio" class="pf-title">portfolio</a>
-                <ul class="mo-only">
-                  <li><a href="kinfork.html" target="_blank">kinfork clone</a></li>
-                  <li><a href="https://clementbwkim.github.io/movie_app_2019/#/" target="_blank">movie app by react</a></li>
-                  <li><a href="landing.html" target="_blank">landing page</a></li>
-                  <li><a href="github.html" target="_blank">github clone</a></li>
-                </ul>
-              </li>
-              <li class="header-nav-item"><a href="#contact" class="mo-remove">contact</a></li>
-            </ul>
-            <div class="mobile-menu hide">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-          </div>
-          </nav>
         </div>
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a href="">
+                <span class="item-txt">home</span>
+                <span class="item-hover-line"></span>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="">
+                <span class="item-txt">about</span>
+                <span class="item-hover-line"></span>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="">
+                <span class="item-txt">work</span>
+                <span class="item-hover-line"></span>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="">
+                <span class="item-txt">contact</span>
+                <span class="item-hover-line"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </header>
+      
       <main class="main">
         <div class="main-container">
-
-          <section class="banner-section" id="banner">
-            <div class="banner-section-container">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="slide-overlay">
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                    </div>
-                    <div class="slide-img">
-                      <!-- <img src="./img/main-slide-1.jpg" alt="main-slide-1"> -->
-                      <div class="slide-bg slide-bg-1"></div>
-                    </div>
-                    <div class="slide-text">
-                      <p>hello<em>!</em></p>
-                      <span>my name is byeong-wook kim</span> 
-                      <span>I am Web Publisher.</span>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="slide-overlay">
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                      <div class="overlay-el"><div class="overlay-hidden"></div></div>
-                    </div>
-                    <div class="slide-img">
-                      <!-- <img src="./img/main-slide-2.jpg" alt="main-slide-2"> -->
-                      <div class="slide-bg slide-bg-2"></div>
-                    </div>
-                    <div class="slide-text">
-                      <p>on my way</p><span>to be a frontend developer</span>
-                    </div>
-                  </div>
-                </div>
+          
+          <section class="banner-section">
+            <div class="banner-container">
+              <div class="banner-email">
+                <span class="email-addr">cbwkim@gmail.com</span>
+              </div>
+              <div class="banner-txt-wrapper">
+                <span class="txt-greeting">hello, my name is byeong-wook kim</span>
+                <h3 class="txt-position">i am web publisher</h3>
+                <h4 class="txt-intro">on my way <br> to be a frontend developer</h4>
               </div>
             </div>
           </section>
 
-          <section class="profile-section wrapper-pd" id="about">
+          <section class="profile-section section-gap">
             <div class="profile-container sub-wrap">
-              <div class="profile-contents">
-                <div class="profile-content about">
-                  <h2 class="title scrl-item">about</h2>
-                  <p class="scrl-item scrl-delay">
-                    사용자 친화적인 UI구현과 시맨틱한 레이아웃 설계를 하기 위해 노력하는 퍼블리셔 김병욱입니다.
-                    <span>I focus on making user friendly User Interface and semantic layout architecture.</span>
-                  </p>
-                </div>
-                <div class="profile-content skill">
-                  <h2 class="title scrl-item">What I can do</h2>
-                  <div class="skill-wrapper">
-                    <div class="stack scrl-item">
-                      <h4 class="stack-title">Stacks</h4>
-                      <ul class="stack-items scrl-delay">
-                        <li>html <span class="sub-word">+html5</span></li>
-                        <li>css <span class="sub-word">+css3</span></li>
-                        <li>css preprocessor <span class="sub-word">+scss</spa></li>
-                        <li>javascript <span class="sub-word">+ecma6</span></li>
-                        <li>React <span class="sub-word">+beginning level</span></li>
-                      </ul>
-                    </div>
-                    <div class="tools scrl-item scrl-delay">
-                      <h4 class="stack-title">Ecosystem &amp; Tools</h4>
-                      <ul class="tool-items">
-                        <li class="tool-item">package manager <span class="sub-word">+npm</span></li>
-                        <li class="tool-item">version control <span class="sub-word">+git</span></li>
-                        <li class="tool-item">code editor <span class="sub-word">+visual studio</span></li>
-                        <li class="tool-item">webpack4</li>
-                        <li class="tool-item">hosting <span class="sub-word">+netlify</span></li>
-                      </ul>
-                    </div>
-                    <div class="lang scrl-item scrl-delay">
-                      <h4 class="stack-title">Language</h4>
-                      <ul class="lang-items">
-                        <li class="lang-item">ielts6.0(academic) <span class="sub-word">english</span></li>
-                        <li class="lang-item">fce <span class="sub-word">english</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="portfolio-section wrapper-pd" id="portfolio">
-            <div class="portfolio-container sub-wrap">
-              <h2 class="title scrl-item">portfolio</h2>
-              <div class="portfolio-contents scrl-item scrl-delay">
-                <div class="portfolio-content">
-                  <div class="portfolio-mo-title">
-                    <h3>Kinfork Clone</h3>
-                  </div>
-                  <div class="portfolio-img">
-                    <div class="portfolio-title">
-                      <h2 class="portfolio-name">kinfork Clone</h2>
-                      <div class="pf-skill-items">
-                        <span class="pf-skill-item">html5</span>
-                        <span class="pf-skill-item">scss</span>
-                        <span class="pf-skill-item">javascript</span>
-                        <span class="pf-skill-item">slick</span>
-                      </div>
-                    </div>
-                    <img src="./img/kinfork_thumb.png" alt="kinfork">
-                  </div>
-                  
-                  <div class="portfolio-sources">
-                    <a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/kinfork.html" target="_blank">Source code</a></span>
-                    <a href="kinfork.html" target="_blank">view</a></span>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-mo-title">
-                    <h3>Moive App by React</h3>
-                  </div>
-                  <div class="portfolio-img">
-                    <div class="portfolio-title">
-                      <h2 class="portfolio-name">Moive App</h2>
-                      <div class="pf-skill-items">
-                        <span class="pf-skill-item">html5</span>
-                        <span class="pf-skill-item">css3</span>
-                        <span class="pf-skill-item">javascript</span>
-                        <span class="pf-skill-item">reactJS</span>
-                      </div>
-                    </div>
-                    <img src="./img/movie_thumb.jpg" alt="Movie">
-                  </div>
-                 
-                  <div class="portfolio-sources">
-                    <a href="https://github.com/clementbwkim/movie_app_2019" target="_blank">Source code</a></span>
-                    <a href="https://clementbwkim.github.io/movie_app_2019/#/" target="_blank">view</a></span>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-mo-title">
-                    <h3>Landing Page</h3>
-                  </div>
-                  <div class="portfolio-img">
-                    <div class="portfolio-title">
-                      <h2 class="portfolio-name">Landing Page</h2>
-                      <div class="pf-skill-items">
-                        <span class="pf-skill-item">html5</span>
-                        <span class="pf-skill-item">scss</span>
-                        <span class="pf-skill-item">javascript</span>
-                        <span class="pf-skill-item">swiper</span>
-                      </div>
-                    </div>
-                    <img src="./img/landing_thumb.png" alt="landing">
-                  </div>
-                  
-                  <div class="portfolio-sources">
-                    <a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/landing.html" target="_blank">Source code</a></span>
-                    <a href="landing.html" target="_blank">view</a></span>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-mo-title">
-                    <h3>Github Clone</h3>
-                  </div>
-                  <div class="portfolio-img">
-                    <div class="portfolio-title">
-                      <h2 class="portfolio-name">Github Clone</h2>
-                      <div class="pf-skill-items">
-                        <span class="pf-skill-item">html5</span>
-                        <span class="pf-skill-item">scss</span>
-                        <span class="pf-skill-item">javascript</span>
-                        <span class="pf-skill-item">jquery</span>
-                      </div>
-                    </div>
-                    <img src="./img/git_explore_thumb.png" alt="git">
-                  </div>
-                  
-                  <div class="portfolio-sources">
-                    <a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/github.html" target="_blank">Source code</a></span>
-                    <a href="github.html" target="_blank">view</a></span>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-mo-title">
-                    <h3>Lottery game</h3>
-                  </div>
-                  <div class="portfolio-img">
-                    <div class="portfolio-title">
-                      <h2 class="portfolio-name">Lottery game</h2>
-                      <div class="pf-skill-items">
-                        <span class="pf-skill-item">html5</span>
-                        <span class="pf-skill-item">scss</span>
-                        <span class="pf-skill-item">javascript</span>
-                      </div>
-                    </div>
-                    <img src="./img/lo_thumb.png" alt="lottery">
-                  </div>
-                  
-                  <div class="portfolio-sources">
-                    <a href="https://github.com/clementbwkim/step_up_to_IT/blob/master/app/src/lottery.html" target="_blank">Source code</a></span>
-                    <a href="lottery.html" target="_blank">view</a></span>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-mo-title">
-                    <h3>Oiaskin clone</h3>
-                  </div>
-                  <div class="portfolio-img">
-                    <div class="portfolio-title">
-                      <h2 class="portfolio-name">Oiaskin Clone</h2>
-                      <div class="pf-skill-items">
-                        <span class="pf-skill-item">html5</span>
-                        <span class="pf-skill-item">css</span>
-                        <span class="pf-skill-item">javascript</span>
-                        <span class="pf-skill-item">jquery</span>
-                      </div>
-                    </div>
-                    <img src="./img/oiaskin_thumb.png" alt="oiaskin">
-                  </div>
-                 
-                  <div class="portfolio-sources">
-                    <a href="https://github.com/clementbwkim/oiaskin_clone" target="_blank">Source code</a></span>
-                    <a href="http://clem.dothome.co.kr/oiaskin.html" target="_blank">view</a></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="contact-section wrapper-pd" id="contact">
-            <div class="contact-container sub-wrap">
-              <h2 class="title scrl-item">contact</h2>
-              <div class="contact-contents scrl-item scrl-delay">
-                <div class="contact-content img">
-                  <img src="./img/about-img.png" alt="">
-                </div>
-                <div class="contact-content text">
-                  <h3 class="contact-name">kim byeong wook </h3>
-                  <span class="contact-intro">"항상 맡은 자리에서 책임감을 가지겠습니다."</span>
-                </div>
-                <div class="contact-content link">
-                  <ul class="contact-sci">
-                    <li class="contact-sci-item"><a href="https://github.com/clementbwkim" target="_blank"><i class="fab fa-github"></i></a></li>
-                    <li class="contact-sci-item"><a href="https://velog.io/@clementbwkim" target="_blank"><i class="fas fa-blog"></i></a></li>
-                    <li class="contact-sci-item"><a href="tel:010-9205-9186" target="_blank"><i class="fas fa-phone-alt"></i></a></li>
-                    <li class="contact-sci-item"><a href="mailto:cbwkim@gmail.com" target="_blank"><i class="far fa-envelope"></i></a></li>
+              <div class="profile-title"><span class="empty-word">byeong</span><span class="underline-word">wook</span></div>
+              <div class="profile-txt-wrapper">
+                <div class="profile-txt-en">
+                  <ul class="en-item-wrapper">
+                    <li class="en-items">
+                      <span class="en-item">I focus on making</span>
+                      <span class="item-cover"></span>
+                    </li>
+                    <li class="en-items">
+                      <span class="en-item point-word">user friendly user interface</span>
+                      <span class="item-cover"></span>
+                    </li>
+                    <li class="en-items">
+                      <span class="en-item">and <span class="point-word">semantic layout</span> architecture.</span>
+                      <span class="item-cover"></span>
+                    </li>
                   </ul>
+                </div>
+                <div class="profile-line-box"></div>
+                <div class="profile-txt-ko">
+                  <ul class="ko-item-wrapper">
+                    <li class="ko-items">
+                      <span class="ko-item"><span class="point-word">사용자 친화적인 UI구현</span>과</span>
+                      <span class="item-cover"></span>
+                    </li>
+                    <li class="ko-items">
+                      <span class="ko-item"><span class="point-word">시맨틱한 레이아웃 설계</span>를 하기 위해</span>
+                      <span class="item-cover"></span>
+                    </li>
+                    <li class="ko-items">
+                      <span class="ko-item">노력하는 퍼블리셔 김병욱입니다.</span>
+                      <span class="item-cover"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="skill-section section-gap">
+            <div class="skill-container sub-wrap">
+              <div class="contents-title"><span>what</span> i can do</div>
+              <div class="skill-contents">
+                <div class="skill-items">
+                  <span class="skill-title">stack</span>
+                  <ul class="skill-item">
+                    <li>html<em>html5</em></li>
+                    <li>css<em>css3</em></li>
+                    <li>css preprocessor<em>scss</em></li>
+                    <li>javascript<em>ecma6</em></li>
+                    <li>react<em>beginning level</em></li>
+                  </ul>
+                </div>
+                <div class="skill-items">
+                  <span class="skill-title">ecosystem&tools</span>
+                  <ul class="skill-item">
+                    <li>packgage manager<em>npm</em></li>
+                    <li>version control<em>git</em></li>
+                    <li>code editor<em>visual studio</em></li>
+                    <li>webpack<em>version4</em></li>
+                    <li>hosting<em>netlify</em></li>
+                  </ul>
+                </div>
+                <div class="skill-items">
+                  <span class="skill-title">language</span>
+                  <ul class="skill-item">
+                    <li>ielts6.0(academic)<em>english</em></li>
+                    <li>fce<em>english</em></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="work-section">
+            <div class="work-container">
+              <div class="contents-title sub-wrap"><span>what</span> i have done</div>
+              <div class="work-slide-wrapper">
+                <div class="swiper-container work-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a href="">
+                        <div class="slide-img"><img src="./img/kinfork_thumb.png" alt="kinfork"></div>
+                        <div class="slide-txt">
+                          <h4 class="slide-title">kinfork</h4>
+                          <span class="slide-desc">해외 매거진 kinfork clone</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="">
+                        <div class="slide-img"><img src="./img/movie_thumb.jpg" alt="movie_app"></div>
+                        <div class="slide-txt">
+                          <h4 class="slide-title">react movie app</h4>
+                          <span class="slide-desc">study for react</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="">
+                        <div class="slide-img"><img src="./img/oiaskin_thumb.png" alt="oiaskin"></div>
+                        <div class="slide-txt">
+                          <h4 class="slide-title">oiaskin</h4>
+                          <span class="slide-desc">뷰티브랜드 oiaskin clone</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="">
+                        <div class="slide-img"><img src="./img/landing_thumb.png" alt="landing page"></div>
+                        <div class="slide-txt">
+                          <h4 class="slide-title">landing page</h4>
+                          <span class="slide-desc">custom design&publishing</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="">
+                        <div class="slide-img"><img src="./img/git_explore_thumb.png" alt="github"></div>
+                        <div class="slide-txt">
+                          <h4 class="slide-title">github</h4>
+                          <span class="slide-desc">github layout clone</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="">
+                        <div class="slide-img"><img src="./img/lo_thumb.png" alt="lotto"></div>
+                        <div class="slide-txt">
+                          <h4 class="slide-title">lottery game</h4>
+                          <span class="slide-desc">study for vanilla JS</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="slide-navigation">
+                    <div class="slide-btn swiper-button-next slide-next-btn"></div>
+                    <div class="slide-btn swiper-button-prev slide-prev-btn"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -301,9 +219,30 @@
         </div>
       </main>
 
-      <footer class="footer wrapper-pd">
+      <footer class="footer">
         <div class="footer-container">
-          <p class="footer-copyright">copyright ⓒ 2021 clement_bw</p>
+          <div class="logo">
+            <img src="./img/clem-logo.png" alt="로고">
+          </div>
+          <div class="footer-contents">
+            <ul class="footer-items">
+              <li class="footer-item">
+                <span class="item-name">github</span>
+                <a href="">/clementbwkim</a>
+              </li>
+              <li class="footer-item">
+                <span class="item-name">phone</span>
+                <a href="">01092059186</a>
+              </li>
+              <li class="footer-item">
+                <span class="item-name">email</span>
+                <a href="">cbwkim@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-copyright">
+            <span>copyrightⓒ2021byeongwookkim</span>
+          </div>
         </div>
       </footer>
     </div>
