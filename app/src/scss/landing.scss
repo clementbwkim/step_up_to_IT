@@ -109,12 +109,15 @@ main{
             .slick-slide{
                 &:nth-child(1){
                     background: url(../img/slide_01.jpg) no-repeat center center;
+                    background-size: cover;
                 }
                 &:nth-child(2){
                     background: url(../img/slide_02.jpg) no-repeat center center;
+                    background-size: cover;
                 }
                 &:nth-child(3){
                     background: url(../img/slide_03.jpg) no-repeat center center;
+                    background-size: cover;
                 }
                 .banner-item{
                     display: flex !important;

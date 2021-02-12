@@ -41,7 +41,6 @@ function btnCross() {
 
 function showHideNav() {
   burgerBtnEl.click(() =>{
-    console.log(123);
     navEl.toggleClass('header-slide');
   });
 }
