@@ -146,6 +146,13 @@ $pd-20: 20px;
       color: $white;
       display: inline-block;
       transition: transform .2s;
+      @include for-size(small-width) {
+        font-size: 2.5em;
+      }
+      @include for-size(xsmall-width) {
+        font-size: 2em;
+      }
+
       .item-hover-line {
         position: absolute;
         left: 0;
