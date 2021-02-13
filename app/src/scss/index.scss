@@ -504,8 +504,10 @@ $pd-20: 20px;
         }
       }
 
-      &:nth-child(2) {
-        margin: 2em 0;
+      @include for-size(medium-width) {
+        &:nth-child(2) {
+          margin: 2em 0;
+        }
       }
 
       &:first-child.active {
