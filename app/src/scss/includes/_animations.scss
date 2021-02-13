@@ -38,3 +38,47 @@
     opacity: 1;
   }
 }
+
+//index 
+@keyframes text_mask_left {
+  0%{
+      width: 0%;
+      margin-left: 0%;
+  }
+  50%{
+      width: 100%;
+      margin-left: 0%;
+  }
+  100%{
+      width: 100%;
+      margin-left: 101%;
+  }
+}
+
+@keyframes text_mask_right {
+  0%{
+      width: 0%;
+      margin-right: 0%;
+  }
+  50%{
+      width: 100%;
+      margin-right: 0%;
+  }
+  100%{
+      width: 100%;
+      margin-right: 101%;
+  }
+}
+
+@keyframes text_opacity {
+  0%{
+      opacity: 0;
+      color:$custom-yellow;
+      transform:translateX(-50%);
+  }
+  100%{
+      opacity: 1;
+      color:$custom-black;
+      transform:translateX(0%);
+  }
+}

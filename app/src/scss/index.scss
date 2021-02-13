@@ -2,6 +2,7 @@
 @import 'swiper/dist/css/swiper.css';
 
 $pd-50: 50px;
+$pd-20: 20px;
 
 %underline-yellow {
   content: '';
@@ -17,6 +18,18 @@ $pd-50: 50px;
 .wrap{
   font-family: $custom-en-font, $custom-ko-font;
   font-size: 16px;
+  @include for-size(xxxlarge-width) {
+    font-size: 14px;
+  }
+  @include for-size(xlarge-width) {
+    font-size: 13px;
+  }
+  @include for-size(small-width) {
+    font-size: 12px;
+  }
+  @include for-size(xsmall-width) {
+    font-size: 11px;
+  }
 }
 .sub-wrap {
   max-width: 1300px;
@@ -26,14 +39,30 @@ $pd-50: 50px;
 .section-gap {
   padding: 4em 50px;
   box-sizing: border-box;
+  @include for-size(small-width) {
+    padding: 4em 20px;
+  }
 }
 
 .contents-title {
   font-size: 4em;
   text-transform: uppercase;
   font-weight: 500;
+  transform: translateX(-20%);
+  opacity: 0;
+
+  @include for-size(small-width) {
+    font-size: 2.5em;
+  }
+  
   span {
     color: $custom-blue;
+  }
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1.2s ease-in-out;
   }
 }
 
@@ -41,21 +70,44 @@ $pd-50: 50px;
   position: fixed;
   width: 100%;
   z-index: 1000;
+  transition: all .5s ease-in-out;
   .header-container {
     padding: $pd-50;
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    transition: all .3s ease-in-out;
+    @include for-size(small-width) {
+      padding: $pd-20;
+    }
     .menu-button {
       width: 50px;
       outline: none;
       cursor: pointer;
+      z-index: 9;
       .bar {
         width: 100%;
-        height: 5px;
+        height: 3px;
         background: $white;
         display: inline-block;
         border-radius: 3px;
+        transition: all .3s ease-in;
+      }
+
+      &.cross {
+        .bar:first-child {
+          transform: translateY(20px) rotate(45deg);
+          transition: all .3s ease-in;
+        }
+        .bar:nth-child(2) {
+          opacity: 0;
+          visibility: hidden;
+          transition: all .3s ease-in;
+        }
+        .bar:last-child {
+          transform: translateY(-10px) rotate(-45deg);
+          transition: all .3s ease-in;
+        }
       }
     }
     .logo {
@@ -63,6 +115,10 @@ $pd-50: 50px;
       text-align: center;
       img {
         max-width: 100px;
+
+        @include for-size(small-width) {
+          max-width: 70px;
+        }
       }
     }
   }
@@ -73,12 +129,15 @@ $pd-50: 50px;
     background: $custom-grey;
     top: 0;
     padding: $pd-50;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     visibility: hidden;
     opacity: 0;
+    transition: all .2s ease-in;
+
     .nav-list-item a {
       position: relative;
       font-size: 3em;
@@ -104,6 +163,21 @@ $pd-50: 50px;
         }
       }
     }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transition: all .2s ease-in;
+    }
+  }
+
+  &.on {
+    background: $custom-blue;
+    transition: all .5s ease-in-out;
+    .header-container {
+      padding: 20px;
+      transition: all .3s ease-in-out;
+    }
   }
 }
 
@@ -113,8 +187,14 @@ $pd-50: 50px;
   position: relative;
   padding: $pd-50;
   box-sizing: border-box;
-  background: $custom-blue;
+  background: url('../img/index_main.jpg') no-repeat center center;
+  background-size: cover;
   margin-bottom: 4em;
+  @include for-size(small-width) {
+    height: 100vh;
+    padding: $pd-20;
+  }
+
   .banner-email {
     position: absolute;
     top: 140px;
@@ -122,6 +202,11 @@ $pd-50: 50px;
     color: $white;
     transform: rotate(90deg);
     letter-spacing: 3px;
+
+    @include for-size(small-width) {
+      top: 110px;
+      right: -50px;
+    }
   }
   .banner-txt-wrapper {
     position: absolute;
@@ -132,19 +217,63 @@ $pd-50: 50px;
     line-height: 1.5;
     text-transform: uppercase;
     font-weight: 500;
+    @include for-size(small-width) {
+      padding: $pd-20;
+    }
     .txt-greeting {
       font-size: 1em;
+      display: inline-block;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all .3s ease-in-out;
+
+      &.txt-on {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all .3s ease-in-out;
+        transition-delay: .3s;
+      }
     }
     .txt-position {
       font-size: 3em;
       margin: 14px 0;
+      position: relative;
+      transform: translateX(-30%);
+      opacity: 0;
+      z-index: 1;
+      transition: all 1s ease-in-out;
+
+      &::after {
+        @extend %underline-yellow;
+        width: 110%;
+        bottom: 10px;
+        left: 20px;
+      }
+
+      &.txt-on {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1.2s ease-in-out;
+        transition-delay: .6s;
+      }
     }
     .txt-intro {
       font-size: 2em;
       font-weight: 400;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: all .3s ease-in-out;
+
+      &.txt-on {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 1.5s ease-in-out;
+        transition-delay: .9s;
+      }
     }
   }
 }
+
 
 .profile-container {
  
@@ -154,7 +283,27 @@ $pd-50: 50px;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: $custom-blue;
+    transform: translateX(-30%);
+    opacity: 0;
+
+    @include for-size(large-width) {
+      font-size: 6em;
+    } 
+    @include for-size(medium-width) {
+      font-size: 5em;
+    }
+    @include for-size(small-width) {
+      font-size: 4em;
+    }
+    @include for-size(xsmall-width) {
+      font-size: 3.5em;
+    }
     
+    &.active {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 1.5s ease-in-out;
+    }
     .empty-word {
       text-shadow: -1px 0 $custom-blue, 0 1px $custom-blue, 1px 0 $custom-blue, 0 -1px $custom-blue;
       color: $white;
@@ -177,6 +326,43 @@ $pd-50: 50px;
     }
     .profile-txt-en {
       font-size: 2.5em;
+      @include for-size(xsmall-width) {
+        font-size: 2em;
+      }
+
+      .txt-effect{
+          position: relative;
+          overflow: hidden;
+          display: inline-block;
+          transition: transform .5s;
+          line-height: 1.2;
+
+        .en-item {
+          animation:text_opacity 2s 1s 1 cubic-bezier(0.24, 0.77, 0.32, 0.95) both; 
+          animation-play-state: paused;
+        }
+       
+        .item-cover {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 10;
+          height: 100%;
+          background: $custom-yellow;
+          animation: text_mask_left 2s 1 cubic-bezier(0.24, 0.77, 0.32, 0.95) both;
+          animation-play-state: paused;
+        }
+      }
+
+      &.active {
+        .en-item {
+          animation-play-state: running;
+
+        }
+        .item-cover {
+          animation-play-state: running;
+        }
+      }
     }
     .profile-line-box {
       position: relative;
@@ -201,6 +387,43 @@ $pd-50: 50px;
       justify-content: flex-end;
       font-size: 2em;
       font-family: $custom-ko-font;
+      @include for-size(xsmall-width) {
+        font-size: 1.8em;
+      }
+
+      .txt-effect{
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        transition: transform .5s;
+        transition-delay: .3s;
+        line-height: 1.2;
+
+      .ko-item {
+        animation:text_opacity 2s 1s 1 cubic-bezier(0.24, 0.77, 0.32, 0.95) both; 
+        animation-play-state: paused;
+      }
+     
+      .item-cover {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+        height: 100%;
+        background: $custom-blue;
+        animation: text_mask_right 2s 1 cubic-bezier(0.24, 0.77, 0.32, 0.95) both;
+        animation-play-state: paused;
+        }
+      }
+
+      &.active {
+        .ko-item {
+          animation-play-state: running;
+        }
+        .item-cover {
+          animation-play-state: running;
+        }
+      }
     }
   }
 }
@@ -214,14 +437,28 @@ $pd-50: 50px;
     text-transform: uppercase;
     line-height: 1.8;
 
+    @include for-size(medium-width) {
+      flex-wrap: wrap;
+    }
+
     .skill-items{
       width: 28%;
+      transform: translateY(20%);
+      opacity: 0;
+
+      @include for-size(medium-width) {
+        width: 100%;
+      }
+      
       .skill-title {
         display: block;
         position: relative;
         font-size: 1.8em;
         color: $custom-blue;
         font-weight: 500;
+        @include for-size(large-width) {
+          font-size: 1.5em;
+        }
         &::after {
           width: 100%;
           @extend %underline-yellow;
@@ -236,10 +473,22 @@ $pd-50: 50px;
         border-left: 3px solid $custom-blue;
         padding-left: 1em;
         letter-spacing: 1px;
+        @include for-size(large-width) {
+          font-size: 1.1em;
+        }
+        @include for-size(medium-width) {
+          font-size: 1.3em;
+        }
 
         em{
           font-size: 0.6em;
           color: $custom-grey;
+          @include for-size(large-width) {
+            font-size: 0.4em;
+          }
+          @include for-size(medium-width) {
+            font-size: 0.6em;
+          }
         }
         em::before {
           content: '+';
@@ -247,7 +496,31 @@ $pd-50: 50px;
           padding: 0 5px;
         }
       }
+
+      &:nth-child(2) {
+        margin: 2em 0;
+      }
+
+      &:first-child.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        transition-delay: .3s;
+      }
+      &:nth-child(2).active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        transition-delay: .6s;
+      }
+      &:last-child.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        transition-delay: .9s;
+      }
     }
+    
     
   }
 }
@@ -255,18 +528,34 @@ $pd-50: 50px;
 
 .work-container {
   padding-bottom: 6em;
+
+  .contents-title {
+    padding: 0 50px;
+
+    @include for-size(small-width) {
+      padding: 0 20px;
+    }
+  }
   .work-slide-wrapper {
     position: relative;
     width: 120%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 20%);
     margin: 5em auto;
+    opacity: 0;
+
+    @include for-size(small-width) {
+      width: 100%;
+    }
 
     .slide-img {
       height: auto;
       max-height: 350px;
       overflow: hidden;
       box-shadow: 0 2px 7px 3px #ddd;
+      @include for-size(xxxlarge-width) {
+        max-height: 300px;
+      }
     }
     .slide-txt {
       margin-top: 2em;
@@ -292,6 +581,17 @@ $pd-50: 50px;
       height: 100%;
       max-width: 1300px;
       margin: 0 auto;
+      outline: none;
+
+      @include for-size(xxxlarge-width) {
+        max-width: 1000px;
+      }
+      @include for-size(xlarge-width) {
+        max-width: 800px;
+      }
+      @include for-size(large-width) {
+        max-width: 500px;
+      }
       
 
       .slide-btn {
@@ -310,6 +610,11 @@ $pd-50: 50px;
           background: rgba(255,255,255,0.8) url('../img/left-arrow.png') no-repeat center center;
           left: 0;
         }
+
+        @include for-size(small-width) {
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
 
@@ -319,6 +624,12 @@ $pd-50: 50px;
         visibility: visible;
         transition: all .5s ease-in-out;
       }
+    }
+
+    &.active{
+      transform: translate(-50%, 0);
+      opacity: 1;
+      transition: all 1.2s ease-in-out;
     }
   }
 }
@@ -332,8 +643,18 @@ $pd-50: 50px;
     align-items: center;
     padding: $pd-50;
 
+    @include for-size(small-width) {
+      padding: 50px 20px;
+      text-align: center;
+      justify-content: center;
+    }
+
     .logo {
       width: 80%;
+      @include for-size(small-width) {
+        width: 100%;
+      }
+
       img {
         max-width: 100px;
       }
@@ -341,6 +662,10 @@ $pd-50: 50px;
     .footer-contents {
       color: $white;
       line-height: 1.5;
+
+      @include for-size(small-width) {
+        margin: 3em 0;
+      }
       .footer-item {
         .item-name {
           display: block;
