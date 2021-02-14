@@ -74,9 +74,9 @@ const workSlide = {
 		spaceBetween: 30,
 		loop: true,
 		speed: 1500,
-    // autoplay: {
-		// 	delay: 3000,
-		// },
+    autoplay: {
+			delay: 3000,
+		},
 		navigation: {
 			nextEl: '.slide-next-btn',
 			prevEl: '.slide-prev-btn',
