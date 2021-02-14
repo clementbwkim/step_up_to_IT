@@ -8,9 +8,7 @@
 
 ### - UI Design
 
-![landing page](./app/src/img/landing_page.gif)
-
-점차 진해지는 톤온톤 그라데이션으로 노력하는만큼 열정이 진해진다는 것을 표현하였고, 배경과 어우러지고 성장을 뜻하는 초록색을 포인트 컬러로 사용하여 전체적으로 편안한 색감을 주려고 했습니다. 또한 컨텐츠들은 최대한 한눈에 볼 수 있도록 심플하게 구성하였습니다.
+![landing page](./app/src/img/main_index.gif)
 
 ## :heavy_check_mark: Demo
 
@@ -18,11 +16,14 @@
 
 ## :heavy_check_mark: Contents
 
-|                             Page Link                             | Description                                                                                                                                                           |
-| :---------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [:star: Kinfork Clone](https://stepupbk.netlify.app/kinfork.html) | 프로젝트의 **메인 컨텐츠**로 Kinfork.com 메인 레이아웃 및 이벤트 효과 클론                                                                                            |
-|     [Github Clone](https://stepupbk.netlify.app/github.html)      | github.com/explore 레이아웃 및 이벤트 효과 클론                                                                                                                       |
-|   [Lottery program](https://stepupbk.netlify.app/lottery.html)    | html, scss를 사용하여 UI를 구현하였고, Vanilla JS로 기능 구현하였고 금액을 입력하면 해당 갯수만큼의 번호들을 추출하고 당첨 번호와 비교하여 수익률을 알 수 있도록 제작 |
+|                               Page Link                                | Description                                                                                                                                                           |
+| :--------------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   [:star: Kinfork Clone](https://stepupbk.netlify.app/kinfork.html)    | 프로젝트의 **메인 컨텐츠**로 Kinfork.com 메인 레이아웃 및 이벤트 효과 클론                                                                                            |
+|        [Oiaskin Clone](http://clem.dothome.co.kr/oiaskin.html)         | 해외 뷰티 브랜드 오이아 스킨 레이아웃 및 다양한 라이브러리(swiper slider... etc) 사용능력을 향상 시키려고 노력하였다.                                                 |
+| [Movie app by react](https://clementbwkim.github.io/movie_app_2019/#/) | 오픈 API를 이용하여 데이터를 받아와 React로 구성된 레이아웃에 출력하고 퍼블리싱 하였다.                                                                               |
+|       [Landing page](https://stepupbk.netlify.app/landing.html)        | 비지니스 랜딩 페이지를 디자인하여 구현하였고 반응형으로 구현하였다.                                                                                                   |
+|        [Github Clone](https://stepupbk.netlify.app/github.html)        | github.com/explore 레이아웃 및 이벤트 효과 클론                                                                                                                       |
+|      [Lottery program](https://stepupbk.netlify.app/lottery.html)      | html, scss를 사용하여 UI를 구현하였고, Vanilla JS로 기능 구현하였고 금액을 입력하면 해당 갯수만큼의 번호들을 추출하고 당첨 번호와 비교하여 수익률을 알 수 있도록 제작 |
 
 <br>
 
@@ -70,6 +71,7 @@ slick-slider.js를 사용하여 슬라이드 형식을 구현하였습니다.
 ### :memo: UI-libs
 
 - slick-slider.js
+- swiper.js
 
 ---
 
