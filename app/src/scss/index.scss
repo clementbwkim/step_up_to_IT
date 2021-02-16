@@ -15,6 +15,30 @@ $pd-20: 20px;
   z-index: -1;
 }
 
+%contents-style {
+  display: flex;
+  justify-content: space-between;
+  margin: 3em auto;
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+%contents-title-style {
+  display: block;
+  position: relative;
+  font-size: 1.8em;
+  color: $custom-blue;
+  font-weight: 500;
+}
+
+%contents-item-style {
+  font-size: 1.3em;
+  font-family: $custom-ko-font;
+  border-left: 3px solid $custom-blue;
+  padding-left: 1em;
+  letter-spacing: 1px;
+}
+
 .wrap{
   font-family: $custom-en-font, $custom-ko-font;
   font-size: 16px;
@@ -410,7 +434,6 @@ $pd-20: 20px;
         animation:text_opacity 2s 1s 1 cubic-bezier(0.24, 0.77, 0.32, 0.95) both; 
         animation-play-state: paused;
       }
-     
       .item-cover {
         position: absolute;
         right: 0;
@@ -435,14 +458,127 @@ $pd-20: 20px;
   }
 }
 
+.about-container {
+  .about-contents-wrapper {
+    margin: 7em auto;
+    transform: translateY(20%);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+
+    @include for-size(medium-width) {
+      margin: 5em auto;
+    }
+      .about-item {
+        display: block;
+        font-size: 2em;
+        font-family: $custom-ko-font;
+        line-height: 1.5;
+        @include for-size(medium-width) {
+          font-size: 1.6em;
+        }
+        @include for-size(xsmall-width) {
+          font-size: 1.5em;
+        }
+        .point-word {
+          font-weight: 600;
+        }
+      }
+
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        transition-delay: .3s;
+      }
+  }
+  .history-contents {
+    @extend %contents-style;
+
+    @include for-size(medium-width) {
+      flex-wrap: wrap;
+    }
+
+    .history-items{
+      width: 45%;
+      transform: translateY(20%);
+      opacity: 0;
+
+      @include for-size(medium-width) {
+        width: 100%;
+      }
+      
+      .history-title {
+        @extend %contents-title-style;
+
+        @include for-size(large-width) {
+          font-size: 1.5em;
+        }
+        &::after {
+          width: 100%;
+          @extend %underline-yellow;
+          bottom: 10px;
+          left: 15px;
+          
+        }
+      }
+      .history-item{
+        @extend %contents-item-style;
+
+        @include for-size(large-width) {
+          font-size: 1.1em;
+        }
+        @include for-size(medium-width) {
+          font-size: 1.3em;
+        }
+        em{
+          font-size: 0.6em;
+          color: $custom-grey;
+          @include for-size(large-width) {
+            font-size: 0.4em;
+          }
+          @include for-size(medium-width) {
+            font-size: 0.6em;
+          }
+        }
+        li em::before {
+          content: '+';
+          display: inline-block;
+          padding: 0 5px;
+        }
+      }
+
+      @include for-size(medium-width) {
+        &:nth-child(2) {
+          margin: 2em 0;
+        }
+      }
+
+      &:first-child.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        transition-delay: .3s;
+      }
+      &:nth-child(2).active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        transition-delay: .6s;
+      }
+      &:last-child.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        transition-delay: .9s;
+      }
+    }
+  }
+}
+
 .skill-container {
   margin-bottom: 6em;
   .skill-contents {
-    display: flex;
-    justify-content: space-between;
-    margin: 3em auto;
-    text-transform: uppercase;
-    line-height: 1.8;
+    @extend %contents-style;
 
     @include for-size(medium-width) {
       flex-wrap: wrap;
@@ -458,11 +594,8 @@ $pd-20: 20px;
       }
       
       .skill-title {
-        display: block;
-        position: relative;
-        font-size: 1.8em;
-        color: $custom-blue;
-        font-weight: 500;
+      @extend %contents-title-style;
+
         @include for-size(large-width) {
           font-size: 1.5em;
         }
@@ -475,11 +608,8 @@ $pd-20: 20px;
         }
       }
       .skill-item{
-        font-size: 1.3em;
-        font-family: $custom-ko-font;
-        border-left: 3px solid $custom-blue;
-        padding-left: 1em;
-        letter-spacing: 1px;
+        @extend %contents-item-style;
+        
         @include for-size(large-width) {
           font-size: 1.1em;
         }
