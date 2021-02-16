@@ -39,6 +39,11 @@ $pd-20: 20px;
   letter-spacing: 1px;
 }
 
+%small-desc {
+  font-size: 0.6em;
+  color: $custom-grey;
+}
+
 .wrap{
   font-family: $custom-en-font, $custom-ko-font;
   font-size: 16px;
@@ -473,11 +478,11 @@ $pd-20: 20px;
         font-size: 2em;
         font-family: $custom-ko-font;
         line-height: 1.5;
-        @include for-size(medium-width) {
-          font-size: 1.6em;
-        }
-        @include for-size(xsmall-width) {
-          font-size: 1.5em;
+
+        br {
+          @include for-size(large-width) {
+            display: none;
+          }
         }
         .point-word {
           font-weight: 600;
@@ -523,16 +528,22 @@ $pd-20: 20px;
       }
       .history-item{
         @extend %contents-item-style;
-
         @include for-size(large-width) {
           font-size: 1.1em;
         }
         @include for-size(medium-width) {
           font-size: 1.3em;
         }
+
+        li:nth-child(2) {
+          margin: 1em 0;
+        }
+        span {
+          @extend %small-desc;
+          display: block;
+        }
         em{
-          font-size: 0.6em;
-          color: $custom-grey;
+          @extend %small-desc; 
           @include for-size(large-width) {
             font-size: 0.4em;
           }
@@ -540,7 +551,7 @@ $pd-20: 20px;
             font-size: 0.6em;
           }
         }
-        li em::before {
+        em::before {
           content: '+';
           display: inline-block;
           padding: 0 5px;
@@ -618,8 +629,7 @@ $pd-20: 20px;
         }
 
         em{
-          font-size: 0.6em;
-          color: $custom-grey;
+          @extend %small-desc;
           @include for-size(large-width) {
             font-size: 0.4em;
           }
@@ -659,11 +669,8 @@ $pd-20: 20px;
         transition-delay: .9s;
       }
     }
-    
-    
   }
 }
-
 
 .work-container {
   padding-bottom: 6em;
@@ -813,6 +820,7 @@ $pd-20: 20px;
         }
         a {
           color: $white;
+          font-family: $custom-ko-font;
         }
       }
       .footer-item:nth-child(2) {
@@ -825,7 +833,6 @@ $pd-20: 20px;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    
   }
 }
 
